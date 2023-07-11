@@ -32,7 +32,7 @@ export default function Layout({ children }) {
       <div
         className={classNames(
           'wrapper',
-          'border border-solid border-border',
+          'border border-solid border-gold',
           'relative',
           'transition-all'
         )}

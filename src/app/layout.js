@@ -1,5 +1,12 @@
 import classNames from 'classnames';
 import './globals.css';
+import { Aleo } from 'next/font/google';
+
+const aleo = Aleo({
+  weight: ['300', '400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'Next.js',
@@ -9,7 +16,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={classNames('bg-bg min-h-screen h-screen')}>
+      <body
+        className={classNames(
+          'bg-bg min-h-screen h-screen font-base text-dark',
+          aleo.className
+        )}
+      >
         {children}
       </body>
     </html>

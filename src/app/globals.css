@@ -4,16 +4,16 @@
 
 .wrapper {
   border-image-slice: 1;
-  border-image-source: linear-gradient(to bottom, theme('colors.border'), theme('colors.bg'));
+  border-image-source: linear-gradient(to bottom, theme('colors.gold'), theme('colors.bg'));
   min-height: calc(100vh - 2rem + 2px);
 }
 
 .wrapper::before {
   content: '';
-  border: 1px solid theme('colors.border');
+  border: 1px solid theme('colors.gold');
   position: absolute;
   border-image-slice: 1;
-  border-image-source: linear-gradient(to bottom, theme('colors.border'), theme('colors.bg'));
+  border-image-source: linear-gradient(to bottom, theme('colors.gold'), theme('colors.bg'));
   transition: all 0.15s;
   top: -3px;
   right: -3px;
@@ -37,7 +37,7 @@
 .wrapper.solid::before,
 .wrapper.near-bottom,
 .wrapper.near-bottom::before {
-  border-image-source: linear-gradient(to bottom, theme('colors.border'), theme('colors.border'));
+  border-image-source: linear-gradient(to bottom, theme('colors.gold'), theme('colors.gold'));
   
 }
 
