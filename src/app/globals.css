@@ -2,26 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.wrapper {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to bottom, theme('colors.border'), theme('colors.bg'));
+  min-height: calc(100vh - 2rem + 2px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.wrapper::before {
+  content: '';
+  border: 1px solid theme('colors.border');
+  position: absolute;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to bottom, theme('colors.border'), theme('colors.bg'));
+  transition: all 0.15s;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  z-index: -1;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.wrapper::after {
+  content: '';
+  background: linear-gradient(to bottom, rgba(255, 253, 249, 0), rgba(255, 253, 249, 1));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 10vh;
+}
+
+.wrapper.solid,
+.wrapper.solid::before,
+.wrapper.near-bottom,
+.wrapper.near-bottom::before {
+  border-image-source: linear-gradient(to bottom, theme('colors.border'), theme('colors.border'));
+  
+}
+
+.content {
+  max-height: calc(100vh - 2rem);
 }

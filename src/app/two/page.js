@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Layout from '@/components/Layout';
 
-export default function Home() {
+export default function Two() {
   return (
     <Layout>
       <motion.div
@@ -11,7 +11,7 @@ export default function Home() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        Page 1
+        Page Two
       </motion.div>
     </Layout>
   );
