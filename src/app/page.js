@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+/* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Layout from '@/components/Layout';
 
 export default function Home() {

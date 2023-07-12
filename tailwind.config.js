@@ -21,7 +21,7 @@ module.exports = {
         ...colors,
       },
       fontFamily: {
-        base: ['Aleo"', 'serif'],
+        base: ['Aleo', 'serif'],
       },
       typography: {
         DEFAULT: {

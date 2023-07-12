@@ -1,5 +1,6 @@
 'use client';
 
+import PropTypes from 'prop-types';
 import { useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import Navbar from './Navbar';
@@ -16,7 +17,7 @@ export default function Layout({ children }) {
     }
   }, []);
 
-  const handleScroll = (event) => {
+  const handleScroll = () => {
     const threshold =
       content.current.scrollHeight - content.current.offsetHeight * 1.2;
 
@@ -50,3 +51,7 @@ export default function Layout({ children }) {
     </div>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.any,
+};

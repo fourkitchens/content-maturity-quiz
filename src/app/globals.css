@@ -38,7 +38,6 @@
 .wrapper.near-bottom,
 .wrapper.near-bottom::before {
   border-image-source: linear-gradient(to bottom, theme('colors.gold'), theme('colors.gold'));
-  
 }
 
 .content {

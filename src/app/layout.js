@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import './globals.css';
 import { Aleo } from 'next/font/google';
+import PropTypes from 'prop-types';
 
 const aleo = Aleo({
   weight: ['300', '400', '700'],
@@ -27,3 +28,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+RootLayout.propTypes = {
+  children: PropTypes.any,
+};
