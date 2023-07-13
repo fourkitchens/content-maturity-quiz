@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Layout from '@/components/Layout';
+import Button from '@/components/Button';
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
             the content on your website works for your organization rather than
             against it?
           </p>
+          <Button url="/two">Start Quiz</Button>
         </div>
       </motion.div>
     </Layout>
