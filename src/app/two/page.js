@@ -3,16 +3,37 @@
 import { motion } from 'framer-motion';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Layout from '@/components/Layout';
+import Button from '@/components/Button';
 
 export default function Two() {
   return (
     <Layout>
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
+        initial={{
+          opacity: 0,
+          x: '50vw',
+        }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ type: 'spring', duration: 0.5 }}
       >
-        Page Two
+        <div className="prose">
+          <h1>This is page 2!</h1>
+          <h3>
+            It should go without saying, but the better your content strategy
+            practices, the better your content.{' '}
+          </h3>
+          <p className="lead">
+            We’ve created a Content Maturity Assessment to help you answer that
+            question.
+          </p>
+          <p>
+            Your website is how you tell your story, achieve your goals, and
+            make a difference. So, how do you protect your investment and ensure
+            the content on your website works for your organization rather than
+            against it?
+          </p>
+          <Button url="/">Back to Page 1</Button>
+        </div>
       </motion.div>
     </Layout>
   );

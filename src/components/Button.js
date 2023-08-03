@@ -32,7 +32,7 @@ export default function Button({ children, url }) {
     <Link
       href={url}
       className={classNames(
-        'bg-green inline-block rounded-lg pt-5 pb-6 px-10 transition-all group',
+        'bg-green inline-block rounded-lg pt-5 pb-5 px-10 transition-all group',
         'text-white text-center text-2xl no-underline'
       )}
       onMouseEnter={handleOnMouseEnter}
@@ -41,7 +41,7 @@ export default function Button({ children, url }) {
       <div className="relative">
         {children}
         <Underline
-          className="w-[100px] absolute -bottom-1 left-0 transition-all"
+          className="w-[113px] absolute -bottom-1 left-0 right-0 transition-all"
           style={{
             strokeDasharray: 1,
             strokeDashoffset: hoverStateActive ? 0 : 1,

@@ -3,7 +3,6 @@
 import PropTypes from 'prop-types';
 import { useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import Navbar from './Navbar';
 
 export default function Layout({ children }) {
   const wrapper = useRef(null);
@@ -39,7 +38,6 @@ export default function Layout({ children }) {
         )}
         ref={wrapper}
       >
-        <Navbar />
         <div
           className={classNames('content', 'overflow-scroll', 'p-8')}
           onScroll={handleScroll}
