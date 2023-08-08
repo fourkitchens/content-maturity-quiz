@@ -17,7 +17,7 @@ function Underline(props) {
   );
 }
 
-export default function Button({ children, url }) {
+export default function ButtonTakeQuiz({ children, url }) {
   const [hoverStateActive, sethoverStateActive] = useState(false);
 
   const handleOnMouseEnter = () => {
@@ -32,7 +32,9 @@ export default function Button({ children, url }) {
     <Link
       href={url}
       className={classNames(
-        'bg-green inline-block rounded-lg pt-5 pb-5 px-10 transition-all group',
+        'bg-green inline-block rounded-lg transition-all group',
+        'py-3 px-4 block w-full',
+        'md:pt-5 md:pb-5 md:px-10 ',
         'text-white text-center text-2xl no-underline'
       )}
       onMouseEnter={handleOnMouseEnter}
@@ -41,7 +43,7 @@ export default function Button({ children, url }) {
       <div className="relative">
         {children}
         <Underline
-          className="w-[113px] absolute -bottom-1 left-0 right-0 transition-all"
+          className="w-[113px] absolute -bottom-1 left-0 right-0 transition-all hidden md:block"
           style={{
             strokeDasharray: 1,
             strokeDashoffset: hoverStateActive ? 0 : 1,
@@ -53,7 +55,7 @@ export default function Button({ children, url }) {
   );
 }
 
-Button.propTypes = {
+ButtonTakeQuiz.propTypes = {
   children: PropTypes.any,
   url: PropTypes.string.isRequired,
 };

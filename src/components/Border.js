@@ -3,8 +3,12 @@
 import PropTypes from 'prop-types';
 import { useRef, useEffect } from 'react';
 import classNames from 'classnames';
+/* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
+import Image from 'next/image';
+import Link from 'next/link';
+import logoImage from '@/assets/logo.svg';
 
-export default function Layout({ children }) {
+export default function Border({ children }) {
   const wrapper = useRef(null);
   const content = useRef(null);
 
@@ -28,7 +32,7 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div className="min-h-screen h-screen p-4 flex flex-col flex-nowrap">
+    <div className="min-h-screen h-screen p-2 md:p-4 flex flex-col flex-nowrap">
       <div
         className={classNames(
           'wrapper',
@@ -43,6 +47,13 @@ export default function Layout({ children }) {
           onScroll={handleScroll}
           ref={content}
         >
+          <Link href="/">
+            <Image
+              src={logoImage}
+              alt=""
+              className="max-w-[200px] mx-auto mb-8"
+            />
+          </Link>
           {children}
         </div>
       </div>
@@ -50,6 +61,6 @@ export default function Layout({ children }) {
   );
 }
 
-Layout.propTypes = {
+Border.propTypes = {
   children: PropTypes.any,
 };

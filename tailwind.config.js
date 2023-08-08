@@ -2,6 +2,7 @@
 
 const colors = {
   bg: '#FFFDF9',
+  beige: '#FDF6E0',
   gold: '#BF993E',
   green: '#24635C',
   orange: '#C97600',
@@ -16,6 +17,11 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'burst-top': "url('/emphasis.svg')",
+        'question-marks': "url('/question-marks.svg')",
+      },
+      backgroundSize: {
+        300: '300%',
       },
       colors: {
         ...colors,
@@ -23,29 +29,8 @@ module.exports = {
       fontFamily: {
         base: ['Aleo', 'serif'],
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            h1: {
-              color: colors.green,
-            },
-            h2: {
-              color: colors.dark,
-            },
-            h3: {
-              color: colors.dark,
-            },
-            p: {
-              color: colors.dark,
-            },
-            '[class~="lead"]': {
-              color: colors.dark,
-            },
-          },
-        },
-      },
     },
   },
   // eslint-disable-next-line import/no-extraneous-dependencies, global-require
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [],
 };

@@ -2,12 +2,12 @@
 
 import { motion } from 'framer-motion';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
-import Layout from '@/components/Layout';
-import Button from '@/components/Button';
+import Border from '@/components/Border';
+import Button from '@/components/ButtonTakeQuiz';
 
 export default function Two() {
   return (
-    <Layout>
+    <Border>
       <motion.div
         initial={{
           opacity: 0,
@@ -35,6 +35,6 @@ export default function Two() {
           <Button url="/">Back to Page 1</Button>
         </div>
       </motion.div>
-    </Layout>
+    </Border>
   );
 }
