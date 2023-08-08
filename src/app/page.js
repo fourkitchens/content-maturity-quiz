@@ -6,8 +6,9 @@ import Image from 'next/image';
 import Border from '@/components/Border';
 import ButtonTakeQuiz from '@/components/ButtonTakeQuiz';
 import Typography from '@/components/Typography';
-import heroImage from '@/assets/home/Yuppies Living Area New@2x.png';
+import heroImage from '@/assets/home/hero.png';
 import spiralImage from '@/assets/home/spiral.svg';
+import quizByImage from '@/assets/home/quiz-by-4k.png';
 
 export default function Home() {
   return (
@@ -82,7 +83,12 @@ export default function Home() {
           <ButtonTakeQuiz url="/two">Take the quiz</ButtonTakeQuiz>
         </section>
 
-        <section>Foo</section>
+        <section>
+          <Image src={quizByImage} alt="" />
+          <Typography tag="h2">
+            Quiz by Four Kitchens. We make websites with love. For good
+          </Typography>
+        </section>
       </motion.div>
     </Border>
   );
