@@ -15,11 +15,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'burst-top': "url('/emphasis.svg')",
         'question-marks': "url('/question-marks.svg')",
+        oval: "url('/oval.svg')",
         'content-underline': "url('/content-underline.svg')",
       },
       backgroundSize: {
@@ -34,5 +32,5 @@ module.exports = {
     },
   },
   // eslint-disable-next-line import/no-extraneous-dependencies, global-require
-  plugins: [],
+  plugins: [require('@tailwindcss/container-queries')],
 };

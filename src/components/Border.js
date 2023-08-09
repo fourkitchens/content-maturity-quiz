@@ -1,7 +1,7 @@
 'use client';
 
 import PropTypes from 'prop-types';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import classNames from 'classnames';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Image from 'next/image';
@@ -12,7 +12,7 @@ export default function Border({ children }) {
   const wrapper = useRef(null);
 
   return (
-    <div className="flex flex-col flex-nowrap">
+    <div className="flex flex-col flex-nowrap overflow-hidden">
       <div className={classNames('wrapper relative')} ref={wrapper}>
         <Link href="/">
           <Image

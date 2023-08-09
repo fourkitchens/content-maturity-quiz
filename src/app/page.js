@@ -55,17 +55,24 @@ export default function Home() {
             against it?
           </p>
 
-          <Typography tag="h3" className="ml-[100px] !my-16 relative">
+          <Typography
+            tag="h3"
+            className="ml-[25vw] !my-16 !mb-20 relative home-your-content @container"
+          >
             <Image
               src={contentSmallImage}
               alt=""
               className={classNames(
-                'absolute -left-[160px] -top-[5vw] sm:-top-9 -z-10 w-auto max-h-[220px]'
+                'absolute -left-[190px] -top-4 -z-10 max-h-[300px] w-[270px] max-w-none',
+                '@[248px]:-top-6 @[248px]:-left-[190px] @[248px]:w-[250px]',
+                '@[315px]:-top-11 @[315px]:-left-[190px]'
               )}
             />
             It should go without saying, but the better your content strategy
             practices, the better{' '}
-            <span className="bg-content-underline">your content.</span>
+            <span className="relative whitespace-nowrap after:content-[''] after:bg-content-underline after:bg-no-repeat after:bg-contain after:absolute after:block after:-bottom-[23px] after:-left-0 after:right-0 after:-z-[1] after:h-full">
+              your content.
+            </span>
           </Typography>
 
           <p>
