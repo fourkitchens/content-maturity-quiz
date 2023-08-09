@@ -72,7 +72,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="bg-beige bg-question-marks bg-300 bg-right space-y-8 left-1/2 right-1/2 w-screen max-w-[100vw] relative mx-[-50vw] p-10 md:p-12">
+        <section className="bg-beige bg-question-marks bg-300 bg-right space-y-8 left-1/2 right-1/2 w-screen max-w-[97.5vw] relative mx-[-50vw] p-10 md:p-12">
           <Typography tag="h2">Why take this quiz?</Typography>
           <p>
             Our quiz dives into how an organization manages its content, from
@@ -83,11 +83,14 @@ export default function Home() {
           <ButtonTakeQuiz url="/two">Take the quiz</ButtonTakeQuiz>
         </section>
 
-        <section>
+        <section className="space-y-8 py-10">
           <Image src={quizByImage} alt="" />
           <Typography tag="h2">
             Quiz by Four Kitchens. We make websites with love. For good
           </Typography>
+          <p>
+            We’d love to partner together on your journey to content maturity!
+          </p>
         </section>
       </motion.div>
     </Border>
