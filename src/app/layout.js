@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={classNames(
-          'bg-bg min-h-screen h-screen text-lg text-dark font-medium',
+          'bg-bg text-lg text-dark font-medium',
           aleo.className
         )}
       >

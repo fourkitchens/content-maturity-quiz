@@ -7,6 +7,7 @@ const colors = {
   green: '#24635C',
   orange: '#C97600',
   dark: '#0D2427',
+  gray: '#717171',
 };
 
 module.exports = {
@@ -19,6 +20,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'burst-top': "url('/emphasis.svg')",
         'question-marks': "url('/question-marks.svg')",
+        'content-underline': "url('/content-underline.svg')",
       },
       backgroundSize: {
         300: '300%',

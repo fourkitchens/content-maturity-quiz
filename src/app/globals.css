@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
 .wrapper::before {
   content: '';
   border: 1px solid theme('colors.gold');
@@ -24,3 +25,4 @@
   top: 0;
   width: 100%;
 }
+*/

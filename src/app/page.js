@@ -3,12 +3,15 @@
 import { motion } from 'framer-motion';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Image from 'next/image';
+import classNames from 'classnames';
 import Border from '@/components/Border';
 import ButtonTakeQuiz from '@/components/ButtonTakeQuiz';
 import Typography from '@/components/Typography';
 import heroImage from '@/assets/home/hero.png';
 import spiralImage from '@/assets/home/spiral.svg';
 import quizByImage from '@/assets/home/quiz-by-4k.png';
+import contentImage from '@/assets/home/content.png';
+import contentSmallImage from '@/assets/home/content-small.png';
 
 export default function Home() {
   return (
@@ -21,7 +24,7 @@ export default function Home() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ type: 'spring', duration: 0.5 }}
       >
-        <section className="space-y-4 pb-10 border-b border-solid border-gold mb-10 mt-14">
+        <section className="space-y-6 px-8 mb-10 mt-14 ">
           <Typography tag="h1" className="text-center">
             How{' '}
             <span className="relative after:content-[''] after:bg-burst-top after:bg-no-repeat after:bg-contain after:absolute after:h-[30px] after:left-0 after:right-0 after:top-[-25px] after:block">
@@ -35,9 +38,10 @@ export default function Home() {
             question.
           </p>
           <ButtonTakeQuiz url="/two">Take the quiz</ButtonTakeQuiz>
+          <hr className="!mt-14 border-t-0 border-b border-solid border-gold" />
         </section>
 
-        <section className="space-y-8 mb-10">
+        <section className="space-y-8 mb-10 px-8">
           <Typography tag="h2">
             Let’s talk about{' '}
             <span className="relative after:content-[''] after:bg-oval after:bg-no-repeat after:bg-contain after:absolute  after:block after:-inset-x-3 after:-top-6 after:-bottom-8 after:-left-2 after:-z-[1]">
@@ -50,10 +54,20 @@ export default function Home() {
             the content on your website works for your organization rather than
             against it?
           </p>
-          <Typography tag="h3">
+
+          <Typography tag="h3" className="ml-[100px] !my-16 relative">
+            <Image
+              src={contentSmallImage}
+              alt=""
+              className={classNames(
+                'absolute -left-[160px] -top-[5vw] sm:-top-9 -z-10 w-auto max-h-[220px]'
+              )}
+            />
             It should go without saying, but the better your content strategy
-            practices, the better your content.
+            practices, the better{' '}
+            <span className="bg-content-underline">your content.</span>
           </Typography>
+
           <p>
             But what does better mean? The answer lies in understanding your
             content strategy maturity.
@@ -72,7 +86,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="bg-beige bg-question-marks bg-300 bg-right space-y-8 left-1/2 right-1/2 w-screen max-w-[97.5vw] relative mx-[-50vw] p-10 md:p-12">
+        <section className="bg-beige bg-question-marks bg-300 bg-right space-y-8 px-8 py-10">
           <Typography tag="h2">Why take this quiz?</Typography>
           <p>
             Our quiz dives into how an organization manages its content, from
@@ -83,7 +97,7 @@ export default function Home() {
           <ButtonTakeQuiz url="/two">Take the quiz</ButtonTakeQuiz>
         </section>
 
-        <section className="space-y-8 py-10">
+        <section className="space-y-8 py-10 px-8">
           <Image src={quizByImage} alt="" />
           <Typography tag="h2">
             Quiz by Four Kitchens. We make websites with love. For good
@@ -91,6 +105,18 @@ export default function Home() {
           <p>
             We’d love to partner together on your journey to content maturity!
           </p>
+          <a
+            href="https://fourkitchens.com"
+            className={classNames(
+              'bg-orange text-white text-center',
+              'rounded-lg transition-all relative top-0',
+              'hover:-top-1',
+              'py-3 px-4 block w-full',
+              'md:pt-5 md:pb-5 md:px-10'
+            )}
+          >
+            Let's connect
+          </a>
         </section>
       </motion.div>
     </Border>
