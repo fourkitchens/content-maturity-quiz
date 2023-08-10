@@ -17,7 +17,7 @@ function Underline(props) {
   );
 }
 
-export default function ButtonTakeQuiz({ children, url }) {
+export default function ButtonTakeQuiz({ children, url, className }) {
   const [hoverStateActive, sethoverStateActive] = useState(false);
 
   const handleOnMouseEnter = () => {
@@ -34,14 +34,15 @@ export default function ButtonTakeQuiz({ children, url }) {
       className={classNames(
         'bg-green inline-block rounded-lg transition-all group',
         'py-3 px-4 block w-full',
-        'sm:inline-block sm:w-auto sm:text-center',
-        'sm:pt-5 sm:pb-5 sm:px-10 ',
-        'text-white text-center text-2xl no-underline'
+        'sm:block sm:w-auto sm:text-center',
+        'sm:pt-5 sm:pb-5 sm:px-10 sm:max-w-fit sm:mx-auto',
+        'text-white text-center text-2xl no-underline',
+        className
       )}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}
     >
-      <div className="relative">
+      <div className="relative whitespace-nowrap">
         {children}
         <Underline
           className="w-[113px] absolute -bottom-1 left-0 right-0 transition-all hidden md:block"
@@ -57,6 +58,7 @@ export default function ButtonTakeQuiz({ children, url }) {
 }
 
 ButtonTakeQuiz.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
+  className: PropTypes.string,
   url: PropTypes.string.isRequired,
 };

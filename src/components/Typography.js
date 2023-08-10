@@ -11,19 +11,21 @@ const Typography = ({ tag, children, className }) => {
     case 'h1':
       classList.push(baseHeadingStyles);
       classList.push('text-3xl text-green');
-      classList.push('sm:text-5xl');
+      classList.push('sm:text-4xl');
+      classList.push('md:text-5xl');
       break;
     case 'h2':
       classList.push(baseHeadingStyles);
       classList.push('text-2xl');
       classList.push('sm:text-3xl');
+      classList.push('md:text-4xl');
       break;
     case 'h3':
       classList.push(baseHeadingStyles);
       classList.push('text-xl');
       break;
     default:
-      console.log(`Sorry, we are out of.`);
+      console.log(`No tag match.`);
   }
 
   return <Tag className={classList.join(' ')}>{children}</Tag>;

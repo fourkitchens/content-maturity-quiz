@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={classNames(
-          'bg-bg text-lg text-dark font-medium relative',
+          'bg-bg text-lg lg:text-xl text-dark font-medium relative',
           'm-2 border border-solid border-gold',
           'after:content-[""] after:absolute after:-inset-1 after:-z-10',
           'after:border after:border-solid after:border-gold',
