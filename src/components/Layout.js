@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logoImage from '@/assets/logo.svg';
 
-export default function Border({ children }) {
+export default function Layout({ children }) {
   const wrapper = useRef(null);
 
   return (
@@ -35,6 +35,6 @@ export default function Border({ children }) {
   );
 }
 
-Border.propTypes = {
+Layout.propTypes = {
   children: PropTypes.any,
 };

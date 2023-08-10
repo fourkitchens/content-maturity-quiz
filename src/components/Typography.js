@@ -11,10 +11,12 @@ const Typography = ({ tag, children, className }) => {
     case 'h1':
       classList.push(baseHeadingStyles);
       classList.push('text-3xl text-green');
+      classList.push('sm:text-5xl');
       break;
     case 'h2':
       classList.push(baseHeadingStyles);
       classList.push('text-2xl');
+      classList.push('sm:text-3xl');
       break;
     case 'h3':
       classList.push(baseHeadingStyles);

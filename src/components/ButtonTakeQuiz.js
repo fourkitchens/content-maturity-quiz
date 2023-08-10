@@ -34,7 +34,8 @@ export default function ButtonTakeQuiz({ children, url }) {
       className={classNames(
         'bg-green inline-block rounded-lg transition-all group',
         'py-3 px-4 block w-full',
-        'md:pt-5 md:pb-5 md:px-10 ',
+        'sm:inline-block sm:w-auto sm:text-center',
+        'sm:pt-5 sm:pb-5 sm:px-10 ',
         'text-white text-center text-2xl no-underline'
       )}
       onMouseEnter={handleOnMouseEnter}

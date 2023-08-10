@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Image from 'next/image';
 import classNames from 'classnames';
-import Border from '@/components/Border';
+import PropTypes from 'prop-types';
+import Layout from '@/components/Layout';
 import ButtonTakeQuiz from '@/components/ButtonTakeQuiz';
 import Typography from '@/components/Typography';
 import heroImage from '@/assets/home/hero.png';
@@ -12,10 +13,22 @@ import spiralImage from '@/assets/home/spiral.svg';
 import quizByImage from '@/assets/home/quiz-by-4k.png';
 import contentImage from '@/assets/home/content.png';
 import contentSmallImage from '@/assets/home/content-small.png';
+import decorationImage from '@/assets/home/decoration.svg';
+
+const Section = ({ children, className }) => (
+  <section className={classNames('mb-10 mt-14 px-8', className)}>
+    <div className="space-y-6 max-w-[600px] mx-auto">{children}</div>
+  </section>
+);
+
+Section.propTypes = {
+  children: PropTypes.any.isRequired,
+  className: PropTypes.string,
+};
 
 export default function Home() {
   return (
-    <Border>
+    <Layout>
       <motion.div
         initial={{
           opacity: 0,
@@ -24,27 +37,38 @@ export default function Home() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ type: 'spring', duration: 0.5 }}
       >
-        <section className="space-y-6 px-8 mb-10 mt-14 ">
+        <Section className="mt-14">
           <Typography tag="h1" className="text-center">
             How{' '}
-            <span className="relative after:content-[''] after:bg-burst-top after:bg-no-repeat after:bg-contain after:absolute after:h-[30px] after:left-0 after:right-0 after:top-[-25px] after:block">
+            <span className="relative after:content-[''] after:bg-burst-top after:bg-no-repeat after:bg-contain after:absolute after:h-[30px] after:left-0 after:right-0 after:top-[-25px] after:block sm:after:h-[35px] sm:after:left-2 sm:after:top-[-35px]">
               effective
             </span>{' '}
             is your content strategy organization?
           </Typography>
-          <Image src={heroImage} alt="" className="mx-auto" />
+          <Image
+            src={heroImage}
+            alt=""
+            className="mx-auto sm:!-mt-6 -z-10 relative"
+          />
           <p>
             We’ve created a Content Maturity Assessment to help you answer that
             question.
           </p>
           <ButtonTakeQuiz url="/two">Take the quiz</ButtonTakeQuiz>
           <hr className="!mt-14 border-t-0 border-b border-solid border-gold" />
-        </section>
+        </Section>
 
-        <section className="space-y-8 mb-10 px-8">
+        <Section>
           <Typography tag="h2">
             Let’s talk about{' '}
-            <span className="relative after:content-[''] after:bg-oval after:bg-no-repeat after:bg-contain after:absolute  after:block after:-inset-x-3 after:-top-6 after:-bottom-8 after:-left-2 after:-z-[1]">
+            <span
+              className={classNames(
+                'relative',
+                "after:content-[''] after:bg-oval after:bg-no-repeat after:bg-contain after:absolute after:block after:-z-[1]",
+                'after:-top-6 after:-bottom-8 after:-left-2 after:-right-3',
+                'sm:after'
+              )}
+            >
               Content
             </span>
           </Typography>
@@ -91,21 +115,30 @@ export default function Home() {
             work more efficiently, effectively, and sustainably to achieve their
             goals.
           </p>
-        </section>
+        </Section>
 
-        <section className="bg-beige bg-question-marks bg-300 bg-right space-y-8 px-8 py-10">
+        <Section className="bg-beige bg-question-marks bg-no-repeat bg-300 sm:bg-cover bg-right py-10 sm:text-center relative">
           <Typography tag="h2">Why take this quiz?</Typography>
-          <p>
+          <p className="sm:text-left">
             Our quiz dives into how an organization manages its content, from
             planning and creation to distribution and measurement. We'll
             evaluate your responses and identify opportunities for improvement,
             enabling you to level up your organizational content strategy.
           </p>
           <ButtonTakeQuiz url="/two">Take the quiz</ButtonTakeQuiz>
-        </section>
+          <Image
+            src={decorationImage}
+            alt=""
+            className="hidden sm:block absolute bottom-[-70px] right-[-170px]"
+          />
+        </Section>
 
-        <section className="space-y-8 py-10 px-8">
-          <Image src={quizByImage} alt="" />
+        <Section>
+          <Image
+            src={quizByImage}
+            alt=""
+            className="sm:float-right sm:w-[46%] sm:relative sm:top-11"
+          />
           <Typography tag="h2">
             Quiz by Four Kitchens. We make websites with love. For good
           </Typography>
@@ -118,14 +151,14 @@ export default function Home() {
               'bg-orange text-white text-center',
               'rounded-lg transition-all relative top-0',
               'hover:-top-1',
-              'py-3 px-4 block w-full',
-              'md:pt-5 md:pb-5 md:px-10'
+              'py-3 px-5 block w-full',
+              'sm:inline-block sm:w-auto'
             )}
           >
             Let's connect
           </a>
-        </section>
+        </Section>
       </motion.div>
-    </Border>
+    </Layout>
   );
 }
