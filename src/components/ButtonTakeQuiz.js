@@ -18,7 +18,7 @@ function Underline(props) {
 }
 
 export default function ButtonTakeQuiz({ children, url, className }) {
-  const [hoverStateActive, sethoverStateActive] = useState(false);
+  const [hoverStateActive, sethoverStateActive] = useState(true);
 
   const handleOnMouseEnter = () => {
     sethoverStateActive(true);
@@ -45,7 +45,7 @@ export default function ButtonTakeQuiz({ children, url, className }) {
       <div className="relative whitespace-nowrap">
         {children}
         <Underline
-          className="w-[113px] absolute -bottom-1 left-0 right-0 transition-all hidden md:block"
+          className="w-[150px] absolute -bottom-2 left-0 right-0 transition-all hidden md:block"
           style={{
             strokeDasharray: 1,
             strokeDashoffset: hoverStateActive ? 0 : 1,

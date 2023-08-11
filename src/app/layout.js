@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
           'm-2 border border-solid border-gold',
           'after:content-[""] after:absolute after:-inset-1 after:-z-10',
           'after:border after:border-solid after:border-gold',
+          'cursor-arrow',
           aleo.className
         )}
       >

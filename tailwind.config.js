@@ -26,6 +26,10 @@ module.exports = {
       colors: {
         ...colors,
       },
+      cursor: {
+        arrow: 'url(/cursor-arrow.svg), auto',
+        hand: 'url(/cursor-hand.svg), pointer',
+      },
       fontFamily: {
         base: ['Aleo', 'serif'],
       },
