@@ -18,7 +18,7 @@ function Underline(props) {
 }
 
 export default function ButtonTakeQuiz({ children, url, className }) {
-  const [hoverStateActive, sethoverStateActive] = useState(true);
+  const [hoverStateActive, sethoverStateActive] = useState(false);
 
   const handleOnMouseEnter = () => {
     sethoverStateActive(true);
