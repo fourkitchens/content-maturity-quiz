@@ -96,7 +96,8 @@ export default function Home() {
                 'relative',
                 "after:content-[''] after:bg-oval after:bg-no-repeat after:bg-contain after:absolute after:block after:-z-[1]",
                 'after:-top-6 after:-bottom-8 after:-left-2 after:-right-3',
-                'sm:after:-top-8 sm:after:-bottom-10 sm:after:-left-4 sm:after:-right-5 sm:ml-2'
+                'sm:after:-top-8 sm:after:-bottom-10 sm:after:-left-4 sm:after:-right-5 sm:ml-2',
+                'md:after:-top-10 md:after:-bottom-12 md:after:-left-6 md:after:-right-7 md:ml-4'
               )}
             >
               Content
