@@ -12,7 +12,6 @@ import heroImage from '@/assets/home/hero.png';
 import spiralImage from '@/assets/home/spiral.svg';
 import quizByImage from '@/assets/home/quiz-by-4k.png';
 import contentImage from '@/assets/home/content.png';
-import contentSmallImage from '@/assets/home/content-small.png';
 import decorationImage from '@/assets/home/decoration.svg';
 import quizArrowMedium from '@/assets/home/quiz-arrow-medium.svg';
 import quizArrowLarge from '@/assets/home/quiz-arrow-large.svg';
@@ -115,7 +114,7 @@ export default function Home() {
             className="ml-[25vw] sm:ml-[25%] !my-16 !mb-20 sm:!mb-16 relative home-your-content @container"
           >
             <Image
-              src={contentSmallImage}
+              src={contentImage}
               alt=""
               className={classNames(
                 'absolute -left-[190px] -top-4 -z-10 max-h-[300px] w-[270px] max-w-none',
