@@ -29,7 +29,7 @@ module.exports = {
       cursor: {
         arrow: 'url(/cursor-arrow.svg), auto',
         hand: 'url(/cursor-hand.svg), pointer',
-        text: 'url(/cursor-text.svg), text',
+        text: 'text',
       },
       fontFamily: {
         base: ['Aleo', 'serif'],
