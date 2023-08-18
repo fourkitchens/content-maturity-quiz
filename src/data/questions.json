@@ -1,0 +1,50 @@
+{
+  "questions": [
+    {
+      "0": {
+        "question": "Our documented content strategy",
+        "shortname": "doc_strat",
+        "type": "single",
+        "choices": [
+          {
+            "text": "Is used by all content creators to guide their work",
+            "value": 0,
+            "id": 0
+          },
+          {
+            "text": "Identifies our target audiences",
+            "value": 1,
+            "id": 1
+          },
+          {
+            "text": "Describes the kind of content we’ll publish",
+            "value": 3,
+            "id": 2
+          }
+        ]
+      },
+      "1": {
+        "question": "Anohter list of questions",
+        "shortname": "another",
+        "type": "multiple",
+        "choices": [
+          {
+            "text": "Is used by all content creators to guide their work",
+            "value": 0,
+            "id": 0
+          },
+          {
+            "text": "Identifies our target audiences",
+            "value": 1,
+            "id": 1
+          },
+          {
+            "text": "Describes the kind of content we’ll publish",
+            "value": 3,
+            "id": 2
+          }
+        ]
+      }
+    }
+  ]
+}

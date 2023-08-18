@@ -1,40 +1,28 @@
 'use client';
 
-import { motion } from 'framer-motion';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Layout from '@/components/Layout';
-import Button from '@/components/ButtonTakeQuiz';
+import CheckboxList from '@/components/CheckboxList';
+import q from '@/data/questions.json';
+import Typography from '@/components/Typography';
 
 export default function Two() {
   return (
     <Layout>
-      <motion.div
-        initial={{
-          opacity: 0,
-          x: '50vw',
-        }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ type: 'spring', duration: 0.5 }}
-      >
-        <div className="prose">
-          <h1>This is page 2!</h1>
-          <h3>
-            It should go without saying, but the better your content strategy
-            practices, the better your content.{' '}
-          </h3>
-          <p className="lead">
-            We’ve created a Content Maturity Assessment to help you answer that
-            question.
-          </p>
-          <p>
-            Your website is how you tell your story, achieve your goals, and
-            make a difference. So, how do you protect your investment and ensure
-            the content on your website works for your organization rather than
-            against it?
-          </p>
-          <Button url="/">Back to Page 1</Button>
+      <div>
+        <div className="prose lg:max-w-[750px] mx-auto">
+          <Typography tag="h3" className="mt-10 mb-6">
+            Checkboxes that only allow you to select only one.
+          </Typography>
+
+          <CheckboxList data={q.questions[0][0]} />
+
+          <Typography tag="h3" className="mt-10 mb-6">
+            Select as many checkboxes as you like.
+          </Typography>
+          <CheckboxList data={q.questions[0][1]} />
         </div>
-      </motion.div>
+      </div>
     </Layout>
   );
 }

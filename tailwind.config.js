@@ -4,7 +4,7 @@ const colors = {
   bg: '#FFFDF9',
   beige: '#FDF6E0',
   gold: '#BF993E',
-  green: '#24635C',
+  green: { DEFAULT: '#24635C', 200: '#3E9F94' },
   orange: '#C97600',
   dark: '#0D2427',
   gray: '#717171',
@@ -14,6 +14,15 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      animation: {
+        'checkbox-checked': 'checkbox-checked 300ms ease-out forwards',
+      },
+      keyframes: {
+        'checkbox-checked': {
+          '0%': { strokeDashoffset: 1 },
+          '100%': { strokeDashoffset: 0 },
+        },
+      },
       backgroundImage: {
         'burst-top': "url('/emphasis.svg')",
         'question-marks': "url('/question-marks.svg')",

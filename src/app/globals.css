@@ -20,3 +20,8 @@ blockquote
 code {
   @apply cursor-text;
 }
+
+.checkbox-checked {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
