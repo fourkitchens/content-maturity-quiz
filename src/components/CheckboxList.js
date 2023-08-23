@@ -104,7 +104,7 @@ const Checkbox = ({
         value={value}
       />
       <CheckboxImage checked={isChecked} className="block w-14" />
-      <span>{text}</span>
+      <span className="relative top-[.2rem]">{text}</span>
     </label>
   );
 };
