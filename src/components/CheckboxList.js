@@ -1,7 +1,7 @@
 import { easeInOut, useAnimate } from 'framer-motion';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import classNames from 'classnames';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const CheckboxImage = ({ checked }) => (
@@ -49,6 +49,11 @@ const Checkbox = ({
 }) => {
   const [scope, animate] = useAnimate();
   const inputType = type === 'single' ? 'radio' : 'checkbox';
+  const [isChecked, setIsChecked] = useState(checked);
+
+  useEffect(() => {
+    setIsChecked(checked);
+  }, [checked]);
 
   function handleChange(e) {
     if (e.target.checked) {
@@ -67,6 +72,12 @@ const Checkbox = ({
       }
       setCheckedID(checkedID);
     }
+
+    if (!e.target.checked) {
+      setIsChecked(false);
+    } else {
+      setIsChecked(true);
+    }
   }
 
   return (
@@ -80,7 +91,7 @@ const Checkbox = ({
         'hover:scale-[102%]',
         'lg:p-8',
         'checked:bg-black',
-        { 'bg-beige': checked }
+        { 'bg-beige': isChecked }
       )}
     >
       <input
@@ -88,11 +99,11 @@ const Checkbox = ({
         id={name + id}
         name={type === 'single' ? name : `${name}+${id}`}
         onChange={handleChange}
-        className=""
-        checked={checked}
+        className="hidden"
+        checked={isChecked}
         value={value}
       />
-      <CheckboxImage checked={checked} className="block w-14" />
+      <CheckboxImage checked={isChecked} className="block w-14" />
       <span>{text}</span>
     </label>
   );
@@ -109,13 +120,12 @@ Checkbox.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-const CheckboxList = ({ data }) => {
+const CheckboxList = ({ data, className }) => {
   const { choices, shortname, type } = data;
   const [checkedID, setCheckedID] = useState(['']);
 
   return (
-    <div className="space-y-4">
-      {console.log('checkedID', checkedID)}
+    <div className={classNames('space-y-4', className)}>
       {choices.map((choice, i) => (
         <Checkbox
           checked={checkedID.includes(choice.id)}
@@ -134,6 +144,7 @@ const CheckboxList = ({ data }) => {
 };
 
 CheckboxList.propTypes = {
+  className: PropTypes.string,
   data: PropTypes.any,
 };
 
