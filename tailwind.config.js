@@ -1,13 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = {
-  bg: '#FFFDF9',
   beige: '#FDF6E0',
-  gold: '#BF993E',
+  bg: '#FFFDF9',
+  dark: '#0D2427',
+  gold: { DEFAULT: '#BF993E', 500: '#F9E3B8' },
+  gray: { DEFAULT: '#717171', 400: '#242424' },
   green: { DEFAULT: '#24635C', 200: '#3E9F94' },
   orange: '#C97600',
-  dark: '#0D2427',
-  gray: '#717171',
+  yellow: '#EFBF4D',
 };
 
 module.exports = {
