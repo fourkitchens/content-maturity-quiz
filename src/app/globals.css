@@ -30,10 +30,6 @@ code {
   box-shadow: inset -30px 0px 15px 0px theme('colors.bg');
 }
 
-.progress-tracker > ul {
-  @apply w-max pr-10 min-[485px]:pr-0;
-}
-
 @supports (animation-timeline: auto) {
   .progress-tracker {
     animation: scroll-shadow-inset linear;
@@ -55,5 +51,3 @@ code {
     }
   }
 }
-
-

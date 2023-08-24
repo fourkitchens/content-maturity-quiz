@@ -13,7 +13,7 @@ export default function Two() {
     <Layout>
       <div>
         <div className="prose lg:max-w-[750px] mx-auto">
-          <ProgressTracker count={10} currentID={0} />
+          <ProgressTracker count={10} currentID={7} />
           <ul className="flex flex-row gap-4 mx-auto my-10 p-0 justify-center">
             <li>
               <Link href="/" className="text-blue-500 underline">
