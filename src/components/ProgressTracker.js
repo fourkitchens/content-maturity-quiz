@@ -6,28 +6,50 @@ const ProgressTracker = ({ count, currentID }) => {
   const steps = [...Array(count)];
 
   return (
-    <ul
-      className={classNames('flex flex-row gap-4 items-center mx-auto w-min')}
-    >
-      {steps.map((v, i) => (
-        <li
-          key={i}
-          className={classNames(
-            'flex items-center justify-center',
-            'rounded-full aspect-square',
-            'text-xs font-semibold',
-            {
-              'w-[28px] h-[28px] bg-yellow text-gray-400':
-                i !== currentID && i < currentID,
-            },
-            { 'w-[28px] h-[28px] bg-gold-500 text-gray': i !== currentID },
-            { 'w-[36px] h-[36px] bg-green text-white': i === currentID }
-          )}
-        >
-          {i + 1}
-        </li>
-      ))}
-    </ul>
+    <div className="progress-tracker w-full overflow-x-auto py-2 mx-auto">
+      <ul
+        className={classNames(
+          'flex flex-row items-center min-[485px]:justify-center'
+        )}
+      >
+        {steps.map((v, i) => (
+          <li
+            key={i}
+            className={classNames(
+              'px-2 md:px-4 relative',
+              'after:content-[""] after:h-[6px]',
+              'after:block after:absolute after:left-0 after:right-0 after:-z-30',
+              'after:top-[40%] after:translate-x-1/2',
+              { ' after:bg-gold-500': i !== currentID - 1 && i >= currentID },
+              {
+                'after:bg-yellow': i !== currentID && i < currentID,
+              },
+              {
+                'after:bg-gradient-to-r after:from-yellow after:to-green-300 after:z-40 after:left-6':
+                  i === currentID - 1,
+              },
+              { ' after:content-none': i === steps.length - 1 }
+            )}
+          >
+            <span
+              className={classNames(
+                'flex items-center justify-center relative -z-20',
+                'rounded-full aspect-square',
+                'text-xs font-semibold',
+                {
+                  'w-[28px] h-[28px] bg-yellow text-gray-400':
+                    i !== currentID && i < currentID,
+                },
+                { 'w-[28px] h-[28px] bg-gold-500 text-gray': i !== currentID },
+                { 'w-[36px] h-[36px] bg-green-300 text-white': i === currentID }
+              )}
+            >
+              {i + 1}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

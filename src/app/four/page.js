@@ -8,34 +8,22 @@ import q from '@/data/questions.json';
 import Typography from '@/components/Typography';
 import ProgressTracker from '@/components/ProgressTracker';
 
-export default function Two() {
+export default function Four() {
   return (
     <Layout>
       <div>
         <div className="prose lg:max-w-[750px] mx-auto">
-          <ProgressTracker count={10} currentID={0} />
+          <ProgressTracker count={10} currentID={2} />
           <ul className="flex flex-row gap-4 mx-auto my-10 p-0 justify-center">
             <li>
-              <Link href="/" className="text-blue-500 underline">
-                ← Previous
-              </Link>
-            </li>
-            <li>
               <Link href="/three" className="text-blue-500 underline">
-                Next →
+                ← Previous
               </Link>
             </li>
           </ul>
           <Typography tag="h3" className="mt-10 mb-6">
-            Checkboxes that only allow you to select only one.
+            Page 3
           </Typography>
-
-          <CheckboxList data={q.questions[0][0]} />
-
-          <Typography tag="h3" className="mt-10 mb-6">
-            Select as many checkboxes as you like.
-          </Typography>
-          <CheckboxList data={q.questions[0][1]} />
         </div>
       </div>
     </Layout>

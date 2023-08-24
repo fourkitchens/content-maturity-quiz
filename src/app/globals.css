@@ -25,3 +25,18 @@ code {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
 }
+
+.progress-tracker {
+  animation: scroll-shadow-inset linear;
+  animation-timeline: scroll( self inline );
+}
+
+@keyframes scroll-shadow-inset {
+  from {
+    box-shadow: inset -30px 0px 15px 0px theme('colors.bg');
+  }
+
+  to {
+    box-shadow: inset 30px 0px 15px 0px theme('colors.bg');
+  }
+}
