@@ -26,11 +26,23 @@ code {
   stroke-dashoffset: 1;
 }
 
+.progress-tracker {
+  box-shadow: inset -30px 0px 15px 0px theme('colors.bg');
+}
 
-@supports (animation-timeline) {
+.progress-tracker > ul {
+  @apply w-max pr-10 min-[485px]:pr-0;
+}
+
+@supports (animation-timeline: auto) {
   .progress-tracker {
     animation: scroll-shadow-inset linear;
     animation-timeline: scroll( self inline );
+    box-shadow: none;
+  }
+
+  .progress-tracker > ul {
+    @apply w-auto;
   }
 
   @keyframes scroll-shadow-inset {
@@ -44,12 +56,4 @@ code {
   }
 }
 
-@supports not (animation-timeline) {
-  .progress-tracker {
-    box-shadow: inset -30px 0px 15px 0px theme('colors.bg');
-  }
 
-  .progress-tracker > ul {
-    @apply w-max pr-6 min-[485px]:pr-0;
-  }
-}
