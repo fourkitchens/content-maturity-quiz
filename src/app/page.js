@@ -79,7 +79,7 @@ export default function Home() {
               alt=""
               className="hidden lg:block relative top-8 -left-9"
             />
-            <ButtonTakeQuiz url="/two" className="lg:relative lg:-left-12">
+            <ButtonTakeQuiz url="/1" className="lg:relative lg:-left-12">
               Take the quiz
             </ButtonTakeQuiz>
           </div>
@@ -156,7 +156,7 @@ export default function Home() {
             evaluate your responses and identify opportunities for improvement,
             enabling you to level up your organizational content strategy.
           </p>
-          <ButtonTakeQuiz url="/two">Take the quiz</ButtonTakeQuiz>
+          <ButtonTakeQuiz url="/1">Take the quiz</ButtonTakeQuiz>
           <Image
             src={decorationImage}
             alt=""

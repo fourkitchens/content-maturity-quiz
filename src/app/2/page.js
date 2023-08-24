@@ -8,7 +8,7 @@ import q from '@/data/questions.json';
 import Typography from '@/components/Typography';
 import ProgressTracker from '@/components/ProgressTracker';
 
-export default function Three() {
+export default function Two() {
   return (
     <Layout>
       <div>
@@ -16,12 +16,12 @@ export default function Three() {
           <ProgressTracker count={10} currentID={1} />
           <ul className="flex flex-row gap-4 mx-auto my-10 p-0 justify-center">
             <li>
-              <Link href="/two" className="text-blue-500 underline">
+              <Link href="/1" className="text-blue-500 underline">
                 ← Previous
               </Link>
             </li>
             <li>
-              <Link href="/four" className="text-blue-500 underline">
+              <Link href="/3" className="text-blue-500 underline">
                 Next →
               </Link>
             </li>

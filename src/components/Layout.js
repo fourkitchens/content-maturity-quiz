@@ -39,10 +39,10 @@ export default function Layout({ children }) {
         ref={wrapper}
       >
         <Link href="/" className="text-center block">
-          <p className="uppercase font-bold text-xs mb-1 sm:mb-2 tracking-widest">
+          <p className="uppercase font-bold text-xs mb-1 sm:mb-2 tracking-widest !cursor-hand">
             Better results throught content
           </p>
-          <h1 className="flex flex-row gap-1 sm:gap-2 max-w-max mx-auto items-center text-2xl sm:text-3xl md:text-4xl text-green font-medium">
+          <h1 className="flex flex-row gap-1 sm:gap-2 max-w-max mx-auto items-center text-2xl sm:text-3xl md:text-4xl text-green font-medium !cursor-hand">
             The Content
             <PencilIcon className="mx-auto max-w-[40px] sm:max-w-full" />
             Strategy Quiz

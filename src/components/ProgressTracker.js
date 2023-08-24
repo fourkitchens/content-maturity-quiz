@@ -1,9 +1,38 @@
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import classNames from 'classnames';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-const ProgressTracker = ({ count, currentID }) => {
-  const steps = [...Array(count)];
+const Marker = ({ currentID, i }) => (
+  <span
+    className={classNames(
+      'flex items-center justify-center',
+      'rounded-full aspect-square',
+      'text-xs font-semibold',
+      'relative -z-10',
+      {
+        'w-[28px] h-[28px] bg-yellow text-gray-400':
+          i !== currentID && i < currentID,
+      },
+      {
+        'w-[28px] h-[28px] bg-gold-500 text-gray': i !== currentID,
+      },
+      {
+        'w-[36px] h-[36px] bg-green-300 text-white': i === currentID,
+      }
+    )}
+  >
+    {i + 1}
+  </span>
+);
+
+Marker.propTypes = {
+  currentID: PropTypes.number.isRequired,
+  i: PropTypes.number.isRequired,
+};
+
+const ProgressTracker = ({ currentID }) => {
+  const steps = [...Array(10)];
 
   return (
     <div className="progress-tracker w-full overflow-x-auto py-2 mx-auto snap-x snap-mandatory">
@@ -34,21 +63,16 @@ const ProgressTracker = ({ count, currentID }) => {
               { ' after:content-none': i === steps.length - 1 }
             )}
           >
-            <span
-              className={classNames(
-                'flex items-center justify-center relative -z-10',
-                'rounded-full aspect-square',
-                'text-xs font-semibold',
-                {
-                  'w-[28px] h-[28px] bg-yellow text-gray-400':
-                    i !== currentID && i < currentID,
-                },
-                { 'w-[28px] h-[28px] bg-gold-500 text-gray': i !== currentID },
-                { 'w-[36px] h-[36px] bg-green-300 text-white': i === currentID }
-              )}
-            >
-              {i + 1}
-            </span>
+            {i < currentID ? (
+              <Link
+                href={i + 1 <= currentID ? `/${i + 1}` : ''}
+                className="relative"
+              >
+                <Marker i={i} currentID={currentID} />
+              </Link>
+            ) : (
+              <Marker i={i} currentID={currentID} />
+            )}
           </li>
         ))}
       </ul>
@@ -57,7 +81,6 @@ const ProgressTracker = ({ count, currentID }) => {
 };
 
 ProgressTracker.propTypes = {
-  count: PropTypes.number.isRequired,
   currentID: PropTypes.number.isRequired,
 };
 
