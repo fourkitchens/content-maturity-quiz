@@ -50,6 +50,6 @@ code {
   }
 
   .progress-tracker > ul {
-    @apply w-max pr-6;
+    @apply w-max pr-6 min-[485px]:pr-0;
   }
 }
