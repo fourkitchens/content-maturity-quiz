@@ -26,17 +26,30 @@ code {
   stroke-dashoffset: 1;
 }
 
-.progress-tracker {
-  animation: scroll-shadow-inset linear;
-  animation-timeline: scroll( self inline );
+
+@supports (animation-timeline) {
+  .progress-tracker {
+    animation: scroll-shadow-inset linear;
+    animation-timeline: scroll( self inline );
+  }
+
+  @keyframes scroll-shadow-inset {
+    from {
+      box-shadow: inset -30px 0px 15px 0px theme('colors.bg');
+    }
+
+    to {
+      box-shadow: inset 30px 0px 15px 0px theme('colors.bg');
+    }
+  }
 }
 
-@keyframes scroll-shadow-inset {
-  from {
+@supports not (animation-timeline) {
+  .progress-tracker {
     box-shadow: inset -30px 0px 15px 0px theme('colors.bg');
   }
 
-  to {
-    box-shadow: inset 30px 0px 15px 0px theme('colors.bg');
+  .progress-tracker > ul {
+    @apply w-max pr-6;
   }
 }
