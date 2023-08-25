@@ -15,6 +15,7 @@ import contentImage from '@/assets/home/content.png';
 import decorationImage from '@/assets/home/decoration.svg';
 import quizArrowMedium from '@/assets/home/quiz-arrow-medium.svg';
 import quizArrowLarge from '@/assets/home/quiz-arrow-large.svg';
+import Pagination from '@/components/Pagination';
 
 const Section = ({ children, className, wrapperClassName }) => (
   <section className={classNames('mb-10 mt-14 px-8', className)}>
@@ -48,6 +49,8 @@ export default function Home() {
         }}
       >
         <Section>
+          <Pagination currentID={2} />
+
           <Typography tag="h1" className="text-center">
             How{' '}
             <span className="relative after:content-[''] after:bg-burst-top after:bg-no-repeat after:bg-contain after:absolute after:h-[30px] after:left-0 after:right-0 after:top-[-25px] after:block sm:after:h-[35px] sm:after:left-2 sm:after:top-[-35px]">
