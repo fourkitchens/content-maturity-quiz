@@ -39,7 +39,7 @@ const ProgressTracker = ({ currentID }) => {
       <ul
         className={classNames(
           'flex flex-row items-center min-[485px]:justify-center',
-          'w-max pr-10 min-[485px]:pr-0'
+          'w-max pr-10 pl-[40%] min-[485px]:px-0'
         )}
       >
         {steps.map((v, i) => (

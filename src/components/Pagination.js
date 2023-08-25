@@ -68,7 +68,7 @@ const Pagination = ({ currentID }) => {
 
       <li className="leading-tight text-center">Question {currentID + 1}/10</li>
 
-      {currentID <= 9 && (
+      {currentID < 9 && (
         <li>
           <Link
             href={nextLink}
