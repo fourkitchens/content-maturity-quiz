@@ -7,6 +7,7 @@ import CheckboxList from '@/components/CheckboxList';
 import q from '@/data/questions.json';
 import Typography from '@/components/Typography';
 import ProgressTracker from '@/components/ProgressTracker';
+import Pagination from '@/components/Pagination';
 
 export default function Two() {
   return (
@@ -14,20 +15,9 @@ export default function Two() {
       <div>
         <div className="prose lg:max-w-[750px] mx-auto">
           <ProgressTracker count={10} currentID={1} />
-          <ul className="flex flex-row gap-4 mx-auto my-10 p-0 justify-center">
-            <li>
-              <Link href="/1" className="text-blue-500 underline">
-                ← Previous
-              </Link>
-            </li>
-            <li>
-              <Link href="/3" className="text-blue-500 underline">
-                Next →
-              </Link>
-            </li>
-          </ul>
+          <Pagination currentID={1} />
           <Typography tag="h3" className="mt-10 mb-6">
-            Page 3
+            Page 2
           </Typography>
         </div>
       </div>

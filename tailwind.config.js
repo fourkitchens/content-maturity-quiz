@@ -6,7 +6,13 @@ const colors = {
   dark: '#0D2427',
   gold: { DEFAULT: '#BF993E', 500: '#F9E3B8' },
   gray: { DEFAULT: '#717171', 400: '#242424' },
-  green: { DEFAULT: '#24635C', 200: '#3E9F94', 300: '#0C7C6F' },
+  green: {
+    DEFAULT: '#24635C',
+    100: '#64D2C5',
+    200: '#3E9F94',
+    300: '#0C7C6F',
+    400: '#24635C',
+  },
   orange: '#C97600',
   yellow: '#EFBF4D',
 };
