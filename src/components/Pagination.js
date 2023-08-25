@@ -58,7 +58,7 @@ const Pagination = ({ currentID }) => {
           className={classNames(
             'flex flex-row gap-2 items-center',
             'rounded-lg bg-white text-green-400 px-6 py-2',
-            'border border-solid border-green-100',
+            'border border-solid border-green-400',
             'transition-all relative top-0 hover:-top-1'
           )}
         >
