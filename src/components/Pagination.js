@@ -51,9 +51,7 @@ const Pagination = ({ currentID }) => {
   const nextLink = `/${currentID + 2}`;
 
   return (
-    <ul className="flex flex-row gap-4 items-center justify-between mx-auto my-10 p-0  text-base ">
-      {console.log(currentID, currentID > 0)}
-
+    <ul className="flex flex-row gap-4 items-center justify-between mx-auto my-10 p-0  text-base">
       <li>
         <Link
           href={previousLink}
@@ -68,7 +66,7 @@ const Pagination = ({ currentID }) => {
         </Link>
       </li>
 
-      <li>Question {currentID + 1}/10</li>
+      <li className="leading-tight text-center">Question {currentID + 1}/10</li>
 
       {currentID <= 9 && (
         <li>
