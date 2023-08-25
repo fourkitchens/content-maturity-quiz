@@ -46,37 +46,48 @@ const RightArrowIcon = () => (
   </svg>
 );
 
-const Pagination = ({ currentID }) => (
-  <ul className="flex flex-row gap-4 items-center justify-between mx-auto my-10 p-0  text-base ">
-    <li>
-      <Link
-        href={`/${currentID}`}
-        className={classNames(
-          'flex flex-row gap-2 items-center',
-          'rounded-lg bg-white text-green-400 px-6 py-2',
-          'border border-solid border-green-100',
-          'transition-all relative top-0 hover:-top-1'
-        )}
-      >
-        <LeftArrowIcon /> Previous
-      </Link>
-    </li>
-    <li>Question {currentID + 1}/10</li>
-    <li>
-      <Link
-        href={`/${currentID + 2}`}
-        className={classNames(
-          'flex flex-row gap-2 items-center',
-          'rounded-lg bg-green text-white inline-block px-6 py-2',
-          'border border-solid border-green',
-          'transition-all relative top-0 hover:-top-1'
-        )}
-      >
-        Next <RightArrowIcon />
-      </Link>
-    </li>
-  </ul>
-);
+const Pagination = ({ currentID }) => {
+  const previousLink = currentID > 0 ? `/${currentID}` : '/';
+  const nextLink = `/${currentID + 2}`;
+
+  return (
+    <ul className="flex flex-row gap-4 items-center justify-between mx-auto my-10 p-0  text-base ">
+      {console.log(currentID, currentID > 0)}
+
+      <li>
+        <Link
+          href={previousLink}
+          className={classNames(
+            'flex flex-row gap-2 items-center',
+            'rounded-lg bg-white text-green-400 px-6 py-2',
+            'border border-solid border-green-100',
+            'transition-all relative top-0 hover:-top-1'
+          )}
+        >
+          <LeftArrowIcon /> Previous
+        </Link>
+      </li>
+
+      <li>Question {currentID + 1}/10</li>
+
+      {currentID <= 9 && (
+        <li>
+          <Link
+            href={nextLink}
+            className={classNames(
+              'flex flex-row gap-2 items-center',
+              'rounded-lg bg-green text-white inline-block px-6 py-2',
+              'border border-solid border-green',
+              'transition-all relative top-0 hover:-top-1'
+            )}
+          >
+            Next <RightArrowIcon />
+          </Link>
+        </li>
+      )}
+    </ul>
+  );
+};
 
 Pagination.propTypes = {
   currentID: PropTypes.number.isRequired,
