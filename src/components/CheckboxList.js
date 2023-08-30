@@ -86,12 +86,13 @@ const Checkbox = ({
       htmlFor={name + id}
       className={classNames(
         'p-4 flex flex-row gap-4 rounded-lg transition-all relative',
-        'border border-green-200 border-solid',
+        'border border-green-200 border-solid ',
         'leading-tight cursor-arrow',
         'hover:scale-[102%]',
         'lg:p-8',
         'checked:bg-black',
-        { 'bg-beige': isChecked }
+        { 'bg-beige': isChecked },
+        { 'bg-white': !isChecked }
       )}
     >
       <input

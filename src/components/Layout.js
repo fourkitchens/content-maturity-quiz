@@ -33,7 +33,7 @@ export default function Layout({ children }) {
   const wrapper = useRef(null);
 
   return (
-    <div className="flex flex-col flex-nowrap overflow-hidden">
+    <div className="flex flex-col flex-nowrap">
       <div
         className={classNames('wrapper relative space-y-8 md:space-y-24 mt-8')}
         ref={wrapper}

@@ -24,7 +24,7 @@
         ]
       },
       "1": {
-        "question": "Anohter list of questions",
+        "question": "Select a lot of answers",
         "shortname": "another",
         "type": "multiple",
         "choices": [

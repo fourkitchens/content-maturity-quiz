@@ -50,6 +50,9 @@ module.exports = {
       fontFamily: {
         base: ['Aleo', 'serif'],
       },
+      gridTemplateColumns: {
+        question: '1fr minmax(1fr, 28rem)',
+      },
     },
   },
   // eslint-disable-next-line import/no-extraneous-dependencies, global-require

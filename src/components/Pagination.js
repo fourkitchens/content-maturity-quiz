@@ -66,7 +66,9 @@ const Pagination = ({ currentID }) => {
         </Link>
       </li>
 
-      <li className="leading-tight text-center">Question {currentID + 1}/10</li>
+      <li className="leading-tight text-center hidden sm:inline">
+        Question {currentID + 1}/10
+      </li>
 
       {currentID < 9 && (
         <li>
