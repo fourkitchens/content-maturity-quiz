@@ -53,10 +53,7 @@ export default function Layout({ children }) {
 
         <footer className="p-10">
           <p className="text-center sm:text-right font-bold text-gray text-lg">
-            Cooked up by{' '}
-            <a href="https://fourkitchens.com" className="text-green underline">
-              Four Kitchens
-            </a>
+            Cooked up by <a href="https://fourkitchens.com">Four Kitchens</a>
           </p>
         </footer>
       </div>

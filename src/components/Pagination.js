@@ -48,7 +48,7 @@ const RightArrowIcon = () => (
 
 const Pagination = ({ currentID }) => {
   const previousLink = currentID > 0 ? `/${currentID}` : '/';
-  const nextLink = `/${currentID + 2}`;
+  const nextLink = currentID < 8 ? `/${currentID + 2}` : '/results';
 
   return (
     <ul className="flex flex-row gap-4 items-center justify-between mx-auto my-10 p-0  text-base">

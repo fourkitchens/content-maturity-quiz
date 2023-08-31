@@ -5,7 +5,7 @@ const colors = {
   bg: '#FFFDF9',
   dark: '#0D2427',
   gold: { DEFAULT: '#BF993E', 500: '#F9E3B8' },
-  gray: { DEFAULT: '#717171', 400: '#242424' },
+  gray: { DEFAULT: '#717171', 400: '#242424', 300: '#333' },
   green: {
     DEFAULT: '#24635C',
     100: '#64D2C5',

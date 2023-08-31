@@ -6,6 +6,10 @@ a {
   @apply cursor-hand;
 }
 
+p > a {
+  @apply text-green underline;
+}
+
 p,
 h1,
 h2,
