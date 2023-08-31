@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Image from 'next/image';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import Layout from '@/components/Layout';
 import ButtonTakeQuiz from '@/components/ButtonTakeQuiz';
 import Typography from '@/components/Typography';
@@ -15,26 +14,9 @@ import contentImage from '@/assets/home/content.png';
 import decorationImage from '@/assets/home/decoration.svg';
 import quizArrowMedium from '@/assets/home/quiz-arrow-medium.svg';
 import quizArrowLarge from '@/assets/home/quiz-arrow-large.svg';
-import Pagination from '@/components/Pagination';
-
-const Section = ({ children, className, wrapperClassName }) => (
-  <section className={classNames('mb-10 mt-14 px-8', className)}>
-    <div
-      className={classNames(
-        'space-y-6 max-w-[650px] mx-auto lg:max-w-[750px]',
-        wrapperClassName
-      )}
-    >
-      {children}
-    </div>
-  </section>
-);
-
-Section.propTypes = {
-  children: PropTypes.any.isRequired,
-  className: PropTypes.string,
-  wrapperClassName: PropTypes.string,
-};
+import Section from '@/components/Section';
+import Divider from '@/components/Divider';
+import ButtonOrange from '@/components/ButtonOrange';
 
 export default function Home() {
   return (
@@ -49,8 +31,6 @@ export default function Home() {
         }}
       >
         <Section>
-          <Pagination currentID={2} />
-
           <Typography tag="h1" className="text-center">
             How{' '}
             <span className="relative after:content-[''] after:bg-burst-top after:bg-no-repeat after:bg-contain after:absolute after:h-[30px] after:left-0 after:right-0 after:top-[-25px] after:block sm:after:h-[35px] sm:after:left-2 sm:after:top-[-35px]">
@@ -88,7 +68,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <hr className="!mt-14 border-t-0 border-b border-solid border-gold lg:!mb-24 lg:!mt-32 mx-8 lg:mx-auto max-w-[1000px]" />
+        <Divider />
 
         <Section>
           <Typography tag="h2">
@@ -179,18 +159,10 @@ export default function Home() {
           <p>
             We’d love to partner together on your journey to content maturity!
           </p>
-          <a
-            href="https://fourkitchens.com"
-            className={classNames(
-              'bg-orange text-white text-center',
-              'rounded-lg transition-all relative top-0',
-              'hover:-top-1',
-              'py-3 px-5 block w-full',
-              'sm:inline-block sm:w-auto'
-            )}
-          >
+
+          <ButtonOrange url="https://fourkitchens.com">
             Let's connect
-          </a>
+          </ButtonOrange>
         </Section>
       </motion.div>
     </Layout>

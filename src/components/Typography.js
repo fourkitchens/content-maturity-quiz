@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 const Typography = ({ tag, children, className }) => {
   const Tag = tag || 'span';

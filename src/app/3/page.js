@@ -1,10 +1,7 @@
 'use client';
 
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
-import Link from 'next/link';
 import Layout from '@/components/Layout';
-import CheckboxList from '@/components/CheckboxList';
-import q from '@/data/questions.json';
 import Typography from '@/components/Typography';
 import ProgressTracker from '@/components/ProgressTracker';
 import Pagination from '@/components/Pagination';
