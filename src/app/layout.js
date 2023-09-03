@@ -4,6 +4,7 @@ import { Aleo } from 'next/font/google';
 import PropTypes from 'prop-types';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import metadataDefaults from '@/data/metadata';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const aleo = Aleo({
   weight: ['300', '400', '700'],
@@ -41,6 +42,9 @@ export default function RootLayout({ children }) {
           aleo.className
         )}
       >
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics gaID={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
         {children}
       </body>
     </html>
