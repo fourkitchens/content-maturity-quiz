@@ -26,6 +26,10 @@ export const metadata = {
         height: 1600,
       },
     ],
+    other: {
+      'twitter:label1': 'Estimated time:',
+      'twitter:data1': '3 minutes',
+    },
   },
 };
 
