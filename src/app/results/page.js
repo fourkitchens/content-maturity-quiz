@@ -14,17 +14,21 @@ import ButtonOrange from '@/components/ButtonOrange';
 export default function Results() {
   return (
     <Layout>
-      <Section className="relative !mt-[150px]">
+      <Section className="relative !mt-[125px] md:!mt-[150px]">
         <div
           className={classNames(
+            '[--window-image-width:70vw] lg:[--window-image-width:475px]',
+            'w-[--window-image-width]',
             'inline-block text-center',
-            'absolute -top-[10%] left-[33%]'
+            'absolute -top-[100px] md:-top-[10%] left-window-image'
           )}
         >
           <div
-            className={classNames('absolute top-[35%] right-0 bottom-0 left-0')}
+            className={classNames(
+              'absolute top-[32%] md:top-[35%] right-0 bottom-0 left-0'
+            )}
           >
-            <p className="text-gray-300 uppercase font-semibold tracking-wider text-xl mb-4">
+            <p className="text-gray-300 uppercase font-semibold tracking-wider text-xl mb-1 md:mb-4">
               Your results
             </p>
             <h1
@@ -39,7 +43,11 @@ export default function Results() {
               Level 1: Ad Hoc
             </h1>
           </div>
-          <Image src={windowImage} alt="" className="w-[475px]" />
+          <Image
+            src={windowImage}
+            alt=""
+            className="w-[--window-image-width]"
+          />
         </div>
 
         <Image

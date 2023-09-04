@@ -53,6 +53,9 @@ module.exports = {
       gridTemplateColumns: {
         question: '1fr minmax(1fr, 28rem)',
       },
+      inset: {
+        'window-image': 'calc(50vw - (var(--window-image-width) / 2))',
+      },
     },
   },
   // eslint-disable-next-line import/no-extraneous-dependencies, global-require
