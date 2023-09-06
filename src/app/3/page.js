@@ -4,7 +4,7 @@
 import Layout from '@/components/Layout';
 import q from '@/data/questions.json';
 import QuestionLayout from '@/components/QuestionLayout';
-import image from '@/assets/home/yuppies-managing.png';
+import image from '@/assets/illustrations3.svg';
 
 export default function Page() {
   return (

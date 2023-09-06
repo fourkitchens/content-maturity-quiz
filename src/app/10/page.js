@@ -2,22 +2,13 @@
 
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Layout from '@/components/Layout';
-import Typography from '@/components/Typography';
-import ProgressTracker from '@/components/ProgressTracker';
-import Pagination from '@/components/Pagination';
+import q from '@/data/questions.json';
+import QuestionLayout from '@/components/QuestionLayout';
 
 export default function Page() {
   return (
     <Layout>
-      <div>
-        <div className="prose lg:max-w-[750px] mx-auto">
-          <ProgressTracker count={10} currentID={9} />
-          <Typography tag="h3" className="mt-10 mb-6">
-            This will be the results page.
-          </Typography>
-          <Pagination currentID={9} />
-        </div>
-      </div>
+      <QuestionLayout data={q.questions[0][9]} currentID={9} columns={2} />
     </Layout>
   );
 }

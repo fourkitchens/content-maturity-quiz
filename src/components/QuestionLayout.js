@@ -7,7 +7,7 @@ import Typography from '@/components/Typography';
 import Pagination from '@/components/Pagination';
 import ProgressTracker from './ProgressTracker';
 
-const QuestionLayout = ({ data, currentID, image }) => {
+const QuestionLayout = ({ data, columns, currentID, image }) => {
   const { type, question } = data;
 
   return (
@@ -23,10 +23,14 @@ const QuestionLayout = ({ data, currentID, image }) => {
         )}
       </Typography>
 
-      <section className="px-2 mt-8 md:px-8 md:grid md:gap-2 grid-cols-2">
+      <section
+        className={classNames('px-2 mt-8 md:px-8', {
+          'md:grid md:gap-2 grid-cols-2': !columns,
+        })}
+      >
         <main className={classNames('col-start-2 relative z-20')}>
           <div className="space-y-4">
-            <CheckboxList data={data} />
+            <CheckboxList data={data} columns={columns} />
           </div>
 
           <Pagination currentID={currentID} />
@@ -48,6 +52,7 @@ const QuestionLayout = ({ data, currentID, image }) => {
 };
 
 QuestionLayout.propTypes = {
+  columns: PropTypes.number,
   currentID: PropTypes.number.isRequired,
   data: PropTypes.any.isRequired,
   image: PropTypes.any,

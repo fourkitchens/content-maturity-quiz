@@ -1,7 +1,5 @@
 import { easeInOut, useAnimate } from 'framer-motion';
-/* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import classNames from 'classnames';
-import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const CheckboxImage = () => (
@@ -61,12 +59,13 @@ const Checkbox = ({ id, name, text, type, value }) => {
         ref={scope}
         htmlFor={name + id}
         className={classNames(
-          'p-4 flex flex-row gap-4 rounded-lg transition-all relative',
+          'p-4 flex flex-row gap-4 items-center rounded-lg transition-all relative',
           'border border-green-200 border-solid bg-white',
           'leading-tight cursor-arrow',
           'hover:scale-[102%]',
           'lg:p-8',
-          'peer-checked:bg-beige'
+          'peer-checked:bg-beige',
+          'h-full'
         )}
       >
         <CheckboxImage className="block w-14" />
@@ -84,11 +83,17 @@ Checkbox.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-const CheckboxList = ({ data, className }) => {
+const CheckboxList = ({ data, className, columns = false }) => {
   const { choices, shortname, type } = data;
 
   return (
-    <div className={classNames('space-y-4', className)}>
+    <div
+      className={classNames(
+        { 'space-y-4': !columns },
+        { 'md:grid md:gap-4 md:grid-cols-2': columns },
+        className
+      )}
+    >
       {choices.map((choice, i) => (
         <Checkbox
           id={i}
@@ -97,6 +102,7 @@ const CheckboxList = ({ data, className }) => {
           text={choice.text}
           type={type}
           value={choice.value}
+          className="self-stretch"
         />
       ))}
     </div>
@@ -104,6 +110,7 @@ const CheckboxList = ({ data, className }) => {
 };
 
 CheckboxList.propTypes = {
+  columns: PropTypes.bool,
   className: PropTypes.string,
   data: PropTypes.any,
 };
