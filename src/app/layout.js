@@ -26,10 +26,12 @@ export const metadata = {
         height: 1600,
       },
     ],
-    other: {
-      'twitter:label1': 'Estimated time:',
-      'twitter:data1': '3 minutes',
-    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: metadataDefaults.title,
+    description: metadataDefaults.description,
+    images: [metadataDefaults.image],
   },
 };
 
