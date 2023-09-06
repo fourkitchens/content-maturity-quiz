@@ -2,22 +2,14 @@
 
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Layout from '@/components/Layout';
-import Typography from '@/components/Typography';
-import ProgressTracker from '@/components/ProgressTracker';
-import Pagination from '@/components/Pagination';
+import q from '@/data/questions.json';
+import QuestionLayout from '@/components/QuestionLayout';
+import image from '@/assets/home/yuppies-managing.png';
 
-export default function Three() {
+export default function Page() {
   return (
     <Layout>
-      <div>
-        <div className="prose lg:max-w-[750px] mx-auto">
-          <ProgressTracker count={10} currentID={2} />
-          <Pagination currentID={2} />
-          <Typography tag="h3" className="mt-10 mb-6">
-            Page 3
-          </Typography>
-        </div>
-      </div>
+      <QuestionLayout data={q.questions[0][2]} currentID={2} image={image} />
     </Layout>
   );
 }

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const CheckboxImage = ({ checked }) => (
+const CheckboxImage = () => (
   <svg
     width="30"
     height="28"
@@ -26,94 +26,57 @@ const CheckboxImage = ({ checked }) => (
       strokeLinecap="round"
       strokeLinejoin="round"
       pathLength="1"
-      className={classNames('animate-checkbox-checked checkbox-checked', {
-        hidden: !checked,
-      })}
+      className={classNames('animate-checkbox-checked checkbox-checked hidden')}
     />
   </svg>
 );
 
-CheckboxImage.propTypes = {
-  checked: PropTypes.bool.isRequired,
-};
-
-const Checkbox = ({
-  checked,
-  checkedID,
-  id,
-  name,
-  setCheckedID,
-  text,
-  type,
-  value,
-}) => {
+const Checkbox = ({ id, name, text, type, value }) => {
   const [scope, animate] = useAnimate();
   const inputType = type === 'single' ? 'radio' : 'checkbox';
-  const [isChecked, setIsChecked] = useState(checked);
-
-  useEffect(() => {
-    setIsChecked(checked);
-  }, [checked]);
 
   function handleChange(e) {
     if (e.target.checked) {
-      const updateCheckIDValue = type === 'single' ? [id] : [id, ...checkedID];
-      setCheckedID(updateCheckIDValue);
       animate(
         scope.current,
         { top: [0, 35, 0] },
         { duration: 0.15 },
         { ease: easeInOut }
       );
-    } else {
-      const index = checkedID.indexOf(id);
-      if (index > -1) {
-        checkedID.splice(index, 1);
-      }
-      setCheckedID(checkedID);
-    }
-
-    if (!e.target.checked) {
-      setIsChecked(false);
-    } else {
-      setIsChecked(true);
     }
   }
 
   return (
-    <label
-      ref={scope}
-      htmlFor={name + id}
-      className={classNames(
-        'p-4 flex flex-row gap-4 rounded-lg transition-all relative',
-        'border border-green-200 border-solid ',
-        'leading-tight cursor-arrow',
-        'hover:scale-[102%]',
-        'lg:p-8',
-        'checked:bg-black',
-        { 'bg-beige': isChecked },
-        { 'bg-white': !isChecked }
-      )}
-    >
+    <div>
       <input
         type={inputType}
         id={name + id}
         name={type === 'single' ? name : `${name}+${id}`}
         onChange={handleChange}
-        className="hidden"
-        checked={isChecked}
+        className={classNames('peer hidden')}
         value={value}
       />
-      <CheckboxImage checked={isChecked} className="block w-14" />
-      <span className="relative top-[.2rem]">{text}</span>
-    </label>
+
+      <label
+        ref={scope}
+        htmlFor={name + id}
+        className={classNames(
+          'p-4 flex flex-row gap-4 rounded-lg transition-all relative',
+          'border border-green-200 border-solid bg-white',
+          'leading-tight cursor-arrow',
+          'hover:scale-[102%]',
+          'lg:p-8',
+          'peer-checked:bg-beige'
+        )}
+      >
+        <CheckboxImage className="block w-14" />
+        <span className="relative top-[.2rem]">{text}</span>
+      </label>
+    </div>
   );
 };
 
 Checkbox.propTypes = {
-  checked: PropTypes.bool.isRequired,
-  checkedID: PropTypes.array,
-  setCheckedID: PropTypes.func.isRequired,
   id: PropTypes.any.isRequired,
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
@@ -123,18 +86,14 @@ Checkbox.propTypes = {
 
 const CheckboxList = ({ data, className }) => {
   const { choices, shortname, type } = data;
-  const [checkedID, setCheckedID] = useState(['']);
 
   return (
     <div className={classNames('space-y-4', className)}>
       {choices.map((choice, i) => (
         <Checkbox
-          checked={checkedID.includes(choice.id)}
-          checkedID={checkedID}
-          id={choice.id}
+          id={i}
           key={i}
           name={shortname}
-          setCheckedID={setCheckedID}
           text={choice.text}
           type={type}
           value={choice.value}

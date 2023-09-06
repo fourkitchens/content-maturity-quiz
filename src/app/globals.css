@@ -30,6 +30,10 @@ code {
   stroke-dashoffset: 1;
 }
 
+input:checked + label svg .checkbox-checked  {
+  display: inline;
+}
+
 .progress-tracker {
   box-shadow: inset -30px 0px 15px 0px theme('colors.bg');
 }

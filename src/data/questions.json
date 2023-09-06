@@ -2,46 +2,292 @@
   "questions": [
     {
       "0": {
-        "question": "Our documented content strategy",
-        "shortname": "doc_strat",
-        "type": "single",
-        "choices": [
-          {
-            "text": "Is used by all content creators to guide their work",
-            "value": 0,
-            "id": 0
-          },
-          {
-            "text": "Identifies our target audiences",
-            "value": 1,
-            "id": 1
-          },
-          {
-            "text": "Describes the kind of content we’ll publish",
-            "value": 3,
-            "id": 2
-          }
-        ]
-      },
-      "1": {
-        "question": "Select a lot of answers",
-        "shortname": "another",
+        "question": "Our documented content strategy:",
+        "shortname": "zero",
         "type": "multiple",
         "choices": [
           {
             "text": "Is used by all content creators to guide their work",
-            "value": 0,
-            "id": 0
+            "value": 3
           },
           {
             "text": "Identifies our target audiences",
-            "value": 1,
-            "id": 1
+            "value": 3
           },
           {
             "text": "Describes the kind of content we’ll publish",
-            "value": 3,
-            "id": 2
+            "value": 3
+          },
+          {
+            "text": "Defines what content should achieve for users and business",
+            "value": 3
+          },
+          {
+            "text": "Is reviewed for relevancy and refined as needed",
+            "value": 3
+          },
+          {
+            "text": "We don’t use a documented content strategy",
+            "value": 0
+          }
+        ]
+      },
+      "1": {
+        "question": "We’ve connected with our internal teams and leadership to:",
+        "shortname": "one",
+        "type": "multiple",
+        "choices": [
+          {
+            "text": "Understand their goals, objectives, and needs",
+            "value": 1
+          },
+          {
+            "text": "Identify internal subject matter experts",
+            "value": 1
+          },
+          {
+            "text": "Determine existing capabilities and skillsets",
+            "value": 1
+          },
+          {
+            "text": "Uncover pain points or content challenges",
+            "value": 1
+          },
+          {
+            "text": "Gather insights from prior or ongoing research",
+            "value": 1
+          },
+          {
+            "text": "None apply",
+            "value": 0
+          }
+        ]
+      },
+      "2": {
+        "question": "Have you defined what success looks like by setting measurable goals and objectives for the content you publish?",
+        "shortname": "two",
+        "type": "single",
+        "choices": [
+          {
+            "text": "Yes, for content site-wide",
+            "value": 15
+          },
+          {
+            "text": "Yes, but only for some content",
+            "value": 8
+          },
+          {
+            "text": "Unsure",
+            "value": 1
+          },
+          {
+            "text": "No",
+            "value": 0
+          }
+        ]
+      },
+      "3": {
+        "question": "Are you using analytics, data, or some type of key performance indicators to guide your content decisions?",
+        "shortname": "three",
+        "type": "single",
+        "choices": [
+          {
+            "text": "Yes, regularly and site-wide",
+            "value": 15
+          },
+          {
+            "text": "Yes, but only some content and/or infrequently",
+            "value": 8
+          },
+          {
+            "text": "We have data but aren’t confident in our processes",
+            "value": 1
+          },
+          {
+            "text": "We don't collect analytics",
+            "value": 0
+          }
+        ]
+      },
+      "4": {
+        "question": "Do you have a clear understanding of the specific groups or types of people you want to reach with your content?",
+        "shortname": "four",
+        "type": "single",
+        "choices": [
+          {
+            "text": "Yes, and we always create content with them in mind",
+            "value": 5
+          },
+          {
+            "text": "Yes, but only some people create with them in mind",
+            "value": 3
+          },
+          {
+            "text": "Our content is for everyone",
+            "value": 0
+          },
+          {
+            "text": "No",
+            "value": 0
+          }
+        ]
+      },
+      "5": {
+        "question": "Our content creation and management guidelines:",
+        "shortname": "five",
+        "type": "multiple",
+        "choices": [
+          {
+            "text": "Are supported by leadership",
+            "value": 3
+          },
+          {
+            "text": "Outline roles and responsibilities",
+            "value": 3
+          },
+          {
+            "text": "Are followed by everyone working with content",
+            "value": 3
+          },
+          {
+            "text": "Specify our minimum quality standards",
+            "value": 3
+          },
+          {
+            "text": "Include workflows and approval processes",
+            "value": 3
+          },
+          {
+            "text": "None apply",
+            "value": 0
+          }
+        ]
+      },
+      "6": {
+        "question": "Do you review your content to confirm it has a clearly defined purpose, a way to be measured, and is accurate?",
+        "shortname": "six",
+        "type": "single",
+        "choices": [
+          {
+            "text": "Yes, for all content on our website",
+            "value": 10
+          },
+          {
+            "text": "Yes, but only for some content",
+            "value": 8
+          },
+          {
+            "text": "We review for some of this",
+            "value": 1
+          },
+          {
+            "text": "No",
+            "value": 0
+          }
+        ]
+      },
+      "7": {
+        "question": "Do you have a list of all the people involved in creating content and their specific roles and responsibilities?",
+        "shortname": "seven",
+        "type": "single",
+        "choices": [
+          {
+            "text": "Yes, and our list is centralized",
+            "value": 5
+          },
+          {
+            "text": "Yes, but our list is decentralized ",
+            "value": 2
+          },
+          {
+            "text": "We have some of this",
+            "value": 1
+          },
+          {
+            "text": "No",
+            "value": 0
+          }
+        ]
+      },
+      "8": {
+        "question": "Are you using any of the following to guide content creation?",
+        "shortname": "eight",
+        "type": "multiple",
+        "choices": [
+          {
+            "text": "Brand guidelines",
+            "value": 1
+          },
+          {
+            "text": "Content best practices guidelines",
+            "value": 1
+          },
+          {
+            "text": "Editorial/content planning calendar",
+            "value": 1
+          },
+          {
+            "text": "Editorial style guide",
+            "value": 1
+          },
+          {
+            "text": "Inclusivity guidelines",
+            "value": 1
+          },
+          {
+            "text": "Search engine optimization best practices",
+            "value": 1
+          },
+          {
+            "text": "User journey maps",
+            "value": 1
+          },
+          {
+            "text": "User personas or archetypes",
+            "value": 1
+          },
+          {
+            "text": "Voice and tone guidelines",
+            "value": 1
+          },
+          {
+            "text": "Web accessibility guidelines",
+            "value": 1
+          },
+          {
+            "text": "None apply",
+            "value": 0
+          }
+        ]
+      },
+      "9": {
+        "question": "Our Content Management System:",
+        "shortname": "nine",
+        "type": "multiple",
+        "choices": [
+          {
+            "text": "Automatically archives or deletes content",
+            "value": 1
+          },
+          {
+            "text": "Has appropriate content workflows in place",
+            "value": 1
+          },
+          {
+            "text": "Is well documented and understood by users",
+            "value": 1
+          },
+          {
+            "text": "Makes it easy for anyone to publish, manage, organize, and repurpose content",
+            "value": 1
+          },
+          {
+            "text": "Supports the findability and discoverability of content",
+            "value": 1
+          },
+          {
+            "text": "None apply",
+            "value": 0
           }
         ]
       }
