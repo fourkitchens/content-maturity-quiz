@@ -90,7 +90,7 @@ const CheckboxList = ({ data, className, columns = false }) => {
     <div
       className={classNames(
         { 'space-y-4': !columns },
-        { 'md:grid md:gap-4 md:grid-cols-2': columns },
+        { 'grid gap-4 grid-cols-1 md:grid-cols-2': columns },
         className
       )}
     >

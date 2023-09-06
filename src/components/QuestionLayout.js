@@ -17,7 +17,7 @@ const QuestionLayout = ({ data, columns, currentID, image }) => {
       <Typography tag="h1" className="md:text-center px-4">
         {question}
         {type === 'multiple' && (
-          <span className="text-3xl block font-normal mt-2">
+          <span className="text-xl md:text-2xl lg:text-3xl block font-normal mt-2">
             (Check all that apply)
           </span>
         )}
