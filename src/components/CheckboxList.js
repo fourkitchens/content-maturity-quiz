@@ -1,6 +1,7 @@
 import { easeInOut, useAnimate } from 'framer-motion';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const CheckboxImage = () => (
   <svg
@@ -29,7 +30,7 @@ const CheckboxImage = () => (
   </svg>
 );
 
-const Checkbox = ({ id, name, text, type, value }) => {
+const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
   const [scope, animate] = useAnimate();
   const inputType = type === 'single' ? 'radio' : 'checkbox';
 
@@ -42,6 +43,7 @@ const Checkbox = ({ id, name, text, type, value }) => {
         { ease: easeInOut }
       );
     }
+    checkHandler();
   }
 
   return (
@@ -50,9 +52,10 @@ const Checkbox = ({ id, name, text, type, value }) => {
         type={inputType}
         id={name + id}
         name={type === 'single' ? name : `${name}+${id}`}
-        onChange={handleChange}
-        className={classNames('peer hidden')}
+        onClick={handleChange}
+        className={classNames('peer ')}
         value={value}
+        checked={isChecked}
       />
 
       <label
@@ -76,7 +79,9 @@ const Checkbox = ({ id, name, text, type, value }) => {
 };
 
 Checkbox.propTypes = {
+  checkHandler: PropTypes.func,
   id: PropTypes.any.isRequired,
+  isChecked: PropTypes.bool,
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
@@ -85,6 +90,15 @@ Checkbox.propTypes = {
 
 const CheckboxList = ({ data, className, columns = false }) => {
   const { choices, shortname, type } = data;
+  const [choiceList, setChoiceList] = useState(choices);
+
+  const updateCheckStatus = (index) => {
+    setChoiceList(
+      choiceList.map((choice, i) =>
+        i === index ? { ...choice, checked: !choice.checked } : choice
+      )
+    );
+  };
 
   return (
     <div
@@ -94,15 +108,17 @@ const CheckboxList = ({ data, className, columns = false }) => {
         className
       )}
     >
-      {choices.map((choice, i) => (
+      {choiceList.map((choice, i) => (
         <Checkbox
+          checkHandler={() => updateCheckStatus(i)}
+          className="self-stretch"
           id={i}
+          isChecked={choice.checked}
           key={i}
           name={shortname}
           text={choice.text}
           type={type}
           value={choice.value}
-          className="self-stretch"
         />
       ))}
     </div>
@@ -110,8 +126,8 @@ const CheckboxList = ({ data, className, columns = false }) => {
 };
 
 CheckboxList.propTypes = {
-  columns: PropTypes.bool,
   className: PropTypes.string,
+  columns: PropTypes.bool,
   data: PropTypes.any,
 };
 

@@ -8,27 +8,33 @@
         "choices": [
           {
             "text": "Is used by all content creators to guide their work",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "Identifies our target audiences",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "Describes the kind of content we’ll publish",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "Defines what content should achieve for users and business",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "Is reviewed for relevancy and refined as needed",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "We don’t use a documented content strategy",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       },
@@ -39,27 +45,33 @@
         "choices": [
           {
             "text": "Understand their goals, objectives, and needs",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Identify internal subject matter experts",
-            "value": 1
+            "value": 1,
+            "checked": true
           },
           {
             "text": "Determine existing capabilities and skillsets",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Uncover pain points or content challenges",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Gather insights from prior or ongoing research",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "None apply",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       },
@@ -70,19 +82,23 @@
         "choices": [
           {
             "text": "Yes, for content site-wide",
-            "value": 15
+            "value": 15,
+            "checked": false
           },
           {
             "text": "Yes, but only for some content",
-            "value": 8
+            "value": 8,
+            "checked": false
           },
           {
             "text": "Unsure",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "No",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       },
@@ -93,19 +109,23 @@
         "choices": [
           {
             "text": "Yes, regularly and site-wide",
-            "value": 15
+            "value": 15,
+            "checked": false
           },
           {
             "text": "Yes, but only some content and/or infrequently",
-            "value": 8
+            "value": 8,
+            "checked": false
           },
           {
             "text": "We have data but aren’t confident in our processes",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "We don't collect analytics",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       },
@@ -116,19 +136,23 @@
         "choices": [
           {
             "text": "Yes, and we always create content with them in mind",
-            "value": 5
+            "value": 5,
+            "checked": false
           },
           {
             "text": "Yes, but only some people create with them in mind",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "Our content is for everyone",
-            "value": 0
+            "value": 0,
+            "checked": false
           },
           {
             "text": "No",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       },
@@ -139,27 +163,33 @@
         "choices": [
           {
             "text": "Are supported by leadership",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "Outline roles and responsibilities",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "Are followed by everyone working with content",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "Specify our minimum quality standards",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "Include workflows and approval processes",
-            "value": 3
+            "value": 3,
+            "checked": false
           },
           {
             "text": "None apply",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       },
@@ -170,19 +200,23 @@
         "choices": [
           {
             "text": "Yes, for all content on our website",
-            "value": 10
+            "value": 10,
+            "checked": false
           },
           {
             "text": "Yes, but only for some content",
-            "value": 8
+            "value": 8,
+            "checked": false
           },
           {
             "text": "We review for some of this",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "No",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       },
@@ -193,19 +227,23 @@
         "choices": [
           {
             "text": "Yes, and our list is centralized",
-            "value": 5
+            "value": 5,
+            "checked": false
           },
           {
             "text": "Yes, but our list is decentralized ",
-            "value": 2
+            "value": 2,
+            "checked": false
           },
           {
             "text": "We have some of this",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "No",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       },
@@ -216,47 +254,58 @@
         "choices": [
           {
             "text": "Brand guidelines",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Content best practices guidelines",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Editorial/content planning calendar",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Editorial style guide",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Inclusivity guidelines",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Search engine optimization best practices",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "User journey maps",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "User personas or archetypes",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Voice and tone guidelines",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Web accessibility guidelines",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "None apply",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       },
@@ -267,27 +316,33 @@
         "choices": [
           {
             "text": "Automatically archives or deletes content",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Has appropriate content workflows in place",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Is well documented and understood by users",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Makes it easy for anyone to publish, manage, organize, and repurpose content",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "Supports the findability and discoverability of content",
-            "value": 1
+            "value": 1,
+            "checked": false
           },
           {
             "text": "None apply",
-            "value": 0
+            "value": 0,
+            "checked": false
           }
         ]
       }
