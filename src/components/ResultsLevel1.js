@@ -22,7 +22,7 @@ Section.propTypes = {
 };
 
 const ResultsLevel1 = () => (
-  <article className={classNames('mb-10 mt-14 px-8 space-y-8')}>
+  <article className={classNames('mb-10 !mt-14 px-8 space-y-16')}>
     <section
       className={classNames('space-y-6 max-w-[650px] mx-auto lg:max-w-[750px]')}
     >
@@ -46,9 +46,16 @@ const ResultsLevel1 = () => (
     </section>
 
     <Section className="md:grid md:grid-cols-2">
-      <Image src={airplaneImage} alt="" />
+      <Image src={airplaneImage} alt="" className={classNames('hidden')} />
       <div>
         <Typography tag="h3" className="mb-4">
+          <Image
+            src={airplaneImage}
+            alt=""
+            className={classNames(
+              'md:hidden float-right w-[37vw] -ml-7 mt-[-1.7rem] airplane -rotate-12'
+            )}
+          />
           Formalize your strategy.
         </Typography>
         <p>
@@ -60,22 +67,44 @@ const ResultsLevel1 = () => (
     </Section>
 
     <Section>
-      <Image src={crossesImage} alt="" />
+      <Image src={crossesImage} alt="" className={classNames('hidden')} />
       <div>
-        <Typography tag="h3">Define success.</Typography>
+        <Typography tag="h3" className="mb-4">
+          <div className="flex flex-row gap-2 items-center content-center mx-auto">
+            <Image
+              src={crossesImage}
+              alt=""
+              className={classNames('md:hidden w-[18vw] rotate-180')}
+            />
+            Define success.
+            <Image
+              src={crossesImage}
+              alt=""
+              className={classNames('md:hidden w-[18vw]')}
+            />
+          </div>
+        </Typography>
         <p>
           Each piece of content you create should be in service of accomplishing
           something. Plan for your success metrics and measurement approach to
           evolve alongside your strategy.
         </p>
       </div>
-      <Image src={crossesImage} alt="" />
+      <Image src={crossesImage} alt="" className={classNames('hidden')} />
     </Section>
 
     <Section className="md:grid md:grid-cols-2">
-      <Image src={bubbleImage} alt="" />
+      <Image
+        src={bubbleImage}
+        alt=""
+        className={classNames(
+          'float-right w-[39vw] bubble  mr-[-1.2rem] mt-[3.9rem]'
+        )}
+      />
       <div>
-        <Typography tag="h3">Interview stakeholders.</Typography>
+        <Typography tag="h3" className="mb-4">
+          Interview stakeholders.
+        </Typography>
         <p>
           Connect with your internal teams to determine their individual
           business and content needs, objectives, capabilities, and challenges.
@@ -84,10 +113,16 @@ const ResultsLevel1 = () => (
     </Section>
 
     <Section className="md:grid md:grid-cols-2">
-      <Image src={heartImage} alt="" />
       <div>
-        <Typography tag="h3">Understand your audience.</Typography>
+        <Typography tag="h3" className="mb-4">
+          Understand your audience.
+        </Typography>
         <p>
+          <Image
+            src={heartImage}
+            alt=""
+            className={classNames('w-[30vw] float-left -ml-4 -mt-4 heart')}
+          />
           What types of communications work best? How can your organization meet
           your users’ needs while achieving your objectives?
         </p>
@@ -95,10 +130,13 @@ const ResultsLevel1 = () => (
     </Section>
 
     <Section className="md:grid md:grid-cols-2">
-      <Image src={books} alt="" />
+      <Image src={books} alt="" className="hidden" />
       <div>
-        <Typography tag="h3">Set your standards.</Typography>
+        <Typography tag="h3" className="mb-4">
+          Set your standards.
+        </Typography>
         <p>
+          <Image src={books} alt="" className="w-[37vw] float-right ml-3" />
           Establish what quality content looks like for your organization and
           provide guidelines for your community of creators.
         </p>
@@ -106,9 +144,11 @@ const ResultsLevel1 = () => (
     </Section>
 
     <Section className="md:grid md:grid-cols-2">
-      <Image src={laptop} alt="" />
+      <Image src={laptop} alt="" className="w-[55vw] mb-3" />
       <div>
-        <Typography tag="h3">Educate and advocate.</Typography>
+        <Typography tag="h3" className="mb-4">
+          Educate and advocate.
+        </Typography>
         <p>
           Explain what you’re doing, why you’re doing it, and what you hope to
           achieve. Make it easy for your community to contribute to your
