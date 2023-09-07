@@ -55,7 +55,7 @@ const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
         onClick={handleChange}
         className={classNames('peer ')}
         value={value}
-        checked={isChecked}
+        defaultChecked={isChecked}
       />
 
       <label
