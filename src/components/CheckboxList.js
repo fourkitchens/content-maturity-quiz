@@ -53,7 +53,7 @@ const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
         id={name + id}
         name={type === 'single' ? name : `${name}+${id}`}
         onClick={handleChange}
-        className={classNames('peer ')}
+        className={classNames('peer hidden')}
         value={value}
         defaultChecked={isChecked}
       />
