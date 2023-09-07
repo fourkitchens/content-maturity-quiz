@@ -10,17 +10,18 @@ import creditImage from '@/assets/results/credit.svg';
 import Typography from '@/components/Typography';
 import Divider from '@/components/Divider';
 import ButtonOrange from '@/components/ButtonOrange';
+import ResultsLevel1 from '@/components/ResultsLevel1';
 
 export default function Results() {
   return (
     <Layout>
-      <Section className="relative !mt-[125px] md:!mt-[150px]">
+      <Section className="relative !mt-[145px] md:!mt-[170px]">
         <div
           className={classNames(
-            '[--window-image-width:70vw] lg:[--window-image-width:475px]',
+            '[--window-image-width:80vw] md:[--window-image-width:425px] lg:[--window-image-width:475px]',
             'w-[--window-image-width]',
             'inline-block text-center',
-            'absolute -top-[100px] md:-top-[10%] left-window-image'
+            'absolute -top-[120px] md:-top-[15%] left-window-image'
           )}
         >
           <div
@@ -55,8 +56,8 @@ export default function Results() {
           alt=""
           className={classNames(
             'mx-auto -z-10 relative',
-            'sm:!-mt-6 sm:scale-110 sm:!mb-11 md:!mb-24 lg:!mt-6 lg:!mb-36',
-            'md:scale-125 lg:scale-[125%] xl:scale-125 '
+            'sm:!-mt-6 sm:!mb-11 md:!mb-24 lg:!mt-6 lg:!mb-36',
+            'scale-[120%] lg:scale-[125%] xl:scale-125 '
           )}
         />
 
@@ -68,6 +69,10 @@ export default function Results() {
           their own thing and hoping for the best.
         </p>
       </Section>
+
+      <Divider />
+
+      <ResultsLevel1 />
 
       <Divider />
 
@@ -91,19 +96,24 @@ export default function Results() {
 
       <Divider />
 
-      <Section className="!mt-20" wrapperClassName="lg:max-w-[960px]">
+      <Section
+        className="!mt-20"
+        wrapperClassName="lg:max-w-[960px] md:flex md:flex-row md:gap-2 md:items-start"
+      >
         <Image
           src={creditImage}
           alt=""
-          className="sm:float-left sm:w-[46%] sm:relative sm:top-11"
+          className="sm:float-left sm:w-[46%] sm:relative sm:top-11 md:top-0"
         />
-        <Typography tag="h2">Credit where credit is due</Typography>
-        <p>
-          We’ve adapted our maturity model from research conducted by Hilary
-          Marsh, Carrie Hane, and Dina Lewis. Check out their findings if you’d
-          like to learn more about content maturity!
-        </p>
-        <ButtonOrange url="#">Learn about their research</ButtonOrange>
+        <div className="space-y-6">
+          <Typography tag="h2">Credit where credit is due</Typography>
+          <p>
+            We’ve adapted our maturity model from research conducted by Hilary
+            Marsh, Carrie Hane, and Dina Lewis. Check out their findings if
+            you’d like to learn more about content maturity!
+          </p>
+          <ButtonOrange url="#">Learn about their research</ButtonOrange>
+        </div>
       </Section>
     </Layout>
   );

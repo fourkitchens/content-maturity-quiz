@@ -22,6 +22,8 @@ const Typography = ({ tag, children, className }) => {
     case 'h3':
       classList.push(baseHeadingStyles);
       classList.push('text-xl');
+      classList.push('sm:text-2xl');
+      classList.push('md:text-3xl');
       break;
     default:
       console.log(`No tag match.`);
