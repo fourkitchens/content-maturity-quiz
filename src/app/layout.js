@@ -51,6 +51,21 @@ export default function RootLayout({ children }) {
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics gaID={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}
+
+        {process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER ? (
+          <noscript>
+            <iframe
+              title="gtm"
+              src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER}`}
+              height="0"
+              width="0"
+              style={{
+                display: 'none',
+                visibility: 'hidden',
+              }}
+            />
+          </noscript>
+        ) : null}
         {children}
       </body>
     </html>
