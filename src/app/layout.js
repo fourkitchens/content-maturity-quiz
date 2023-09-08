@@ -48,6 +48,10 @@ export default function RootLayout({ children }) {
           aleo.className
         )}
       >
+        {console.log(
+          'process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS',
+          process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS
+        )}
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics gaID={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}
