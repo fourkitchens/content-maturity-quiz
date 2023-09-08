@@ -22,7 +22,9 @@ Section.propTypes = {
 };
 
 const ResultsLevel1 = () => (
-  <article className={classNames('mb-10 !mt-14 px-8 space-y-16')}>
+  <article
+    className={classNames('mb-10 !mt-14 sm:!mt-20 md:!mt-24 px-8 space-y-16')}
+  >
     <section
       className={classNames('space-y-6 max-w-[650px] mx-auto lg:max-w-[750px]')}
     >
@@ -45,15 +47,15 @@ const ResultsLevel1 = () => (
       </p>
     </section>
 
-    <Section className="md:grid md:grid-cols-2">
-      <Image src={airplaneImage} alt="" className={classNames('hidden')} />
+    <Section className="md:grid md:grid-cols-2 lg:gap-8">
       <div>
         <Typography tag="h3" className="mb-4">
           <Image
             src={airplaneImage}
             alt=""
             className={classNames(
-              'md:hidden float-right w-[37vw] -ml-7 mt-[-1.7rem] airplane -rotate-12'
+              'md:hidden float-right w-[150px] -ml-7 mt-[-1.7rem] airplane -rotate-12',
+              'sm:rotate-0 sm:w-[200px] sm:-mt-16'
             )}
           />
           Formalize your strategy.
@@ -64,23 +66,34 @@ const ResultsLevel1 = () => (
           and the value it provides to your users and the business.
         </p>
       </div>
+      <Image
+        src={airplaneImage}
+        alt=""
+        className={classNames(
+          'hidden md:block w-[200px] justify-self-center self-center lg:justify-self-start'
+        )}
+      />
     </Section>
 
-    <Section>
-      <Image src={crossesImage} alt="" className={classNames('hidden')} />
+    <Section className="md:flex md:flex-row md:gap-4">
+      <Image
+        src={crossesImage}
+        alt=""
+        className={classNames('hidden md:block w-[100px]')}
+      />
       <div>
         <Typography tag="h3" className="mb-4">
-          <div className="flex flex-row gap-2 items-center content-center mx-auto">
+          <div className="flex flex-row gap-2 items-center justify-center mx-auto md:block">
             <Image
               src={crossesImage}
               alt=""
-              className={classNames('md:hidden w-[18vw] rotate-180')}
+              className={classNames('md:hidden w-[50px] rotate-180')}
             />
             Define success.
             <Image
               src={crossesImage}
               alt=""
-              className={classNames('md:hidden w-[18vw]')}
+              className={classNames('md:hidden w-[50px]')}
             />
           </div>
         </Typography>
@@ -90,15 +103,22 @@ const ResultsLevel1 = () => (
           evolve alongside your strategy.
         </p>
       </div>
-      <Image src={crossesImage} alt="" className={classNames('hidden')} />
+      <Image
+        src={crossesImage}
+        alt=""
+        className={classNames('hidden md:block w-[100px]')}
+      />
     </Section>
 
-    <Section className="md:grid md:grid-cols-2">
+    <Section className="md:grid md:grid-cols-2 lg:gap-8">
       <Image
         src={bubbleImage}
         alt=""
         className={classNames(
-          'float-right w-[39vw] bubble  mr-[-1.2rem] mt-[3.9rem]'
+          'float-right w-[150px] bubble mr-[-1.2rem] mt-[2rem] p-4',
+          'sm:w-[200px] sm:mt-0',
+          'md:m-0 md:float-none md:justify-self-center',
+          'lg:justify-self-end'
         )}
       />
       <div>
@@ -112,7 +132,7 @@ const ResultsLevel1 = () => (
       </div>
     </Section>
 
-    <Section className="md:grid md:grid-cols-2">
+    <Section className="md:grid md:grid-cols-2 lg:gap-8">
       <div>
         <Typography tag="h3" className="mb-4">
           Understand your audience.
@@ -121,32 +141,59 @@ const ResultsLevel1 = () => (
           <Image
             src={heartImage}
             alt=""
-            className={classNames('w-[30vw] float-left -ml-4 -mt-4 heart')}
+            className={classNames(
+              'w-[80px] float-left -ml-4 -mt-4 mr-4 heart',
+              'sm:w-[120px] md:hidden'
+            )}
           />
           What types of communications work best? How can your organization meet
           your users’ needs while achieving your objectives?
         </p>
       </div>
+      <Image
+        src={heartImage}
+        alt=""
+        className={classNames(
+          'w-[150px] justify-self-center lg:justify-self-start'
+        )}
+      />
     </Section>
 
-    <Section className="md:grid md:grid-cols-2">
-      <Image src={books} alt="" className="hidden" />
+    <Section className="md:flex md:flex-flow md:gap-8">
+      <Image src={books} alt="" className="hidden md:block w-[130px]" />
       <div>
         <Typography tag="h3" className="mb-4">
           Set your standards.
         </Typography>
         <p>
-          <Image src={books} alt="" className="w-[37vw] float-right ml-3" />
+          <Image
+            src={books}
+            alt=""
+            className={classNames(
+              'w-[100px] float-right ml-3',
+              'sm:w-[150px] sm:-mt-8 md:hidden'
+            )}
+          />
           Establish what quality content looks like for your organization and
           provide guidelines for your community of creators.
         </p>
       </div>
+      <Image src={books} alt="" className="hidden md:block w-[130px]" />
     </Section>
 
-    <Section className="md:grid md:grid-cols-2">
-      <Image src={laptop} alt="" className="w-[55vw] mb-3" />
+    <Section className="md:grid md:grid-cols-2 lg:gap-8">
+      <Image
+        src={laptop}
+        alt=""
+        className={classNames('w-[300px] self-center lg:justify-self-end')}
+      />
       <div>
         <Typography tag="h3" className="mb-4">
+          <Image
+            src={laptop}
+            alt=""
+            className={classNames('w-[200px] mb-3', 'sm:w-[250px] md:hidden')}
+          />
           Educate and advocate.
         </Typography>
         <p>

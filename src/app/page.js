@@ -108,7 +108,12 @@ export default function Home() {
             />
             It should go without saying, but the better your content strategy
             practices, the better{' '}
-            <span className="relative whitespace-nowrap after:content-[''] after:bg-content-underline after:bg-no-repeat after:bg-contain after:absolute after:block after:-bottom-[23px] after:-left-0 after:right-0 after:-z-[1] after:h-full">
+            <span
+              className={classNames(
+                "relative whitespace-nowrap after:content-[''] after:bg-content-underline after:bg-no-repeat after:bg-contain after:absolute after:block after:-bottom-[23px] after:-left-0 after:right-0 after:-z-[1] after:h-full",
+                'md:after:-bottom-[33px]'
+              )}
+            >
               your content.
             </span>
           </Typography>
@@ -143,7 +148,7 @@ export default function Home() {
           <Image
             src={decorationImage}
             alt=""
-            className="hidden sm:block absolute bottom-[-70px] right-[-170px]"
+            className="hidden lg:block absolute bottom-[-70px] right-4"
           />
         </Section>
 

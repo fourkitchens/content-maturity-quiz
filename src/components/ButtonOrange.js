@@ -6,7 +6,7 @@ const ButtonOrange = ({ children, url, className }) => (
     href={url}
     className={classNames(
       'bg-orange text-white text-center',
-      'rounded-lg transition-all relative top-0',
+      'rounded-lg transition-[top] relative top-0',
       'hover:-top-1',
       'py-3 px-5 block w-full',
       'sm:inline-block sm:w-auto',

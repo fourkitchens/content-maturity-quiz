@@ -62,7 +62,7 @@ const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
         ref={scope}
         htmlFor={name + id}
         className={classNames(
-          'p-4 flex flex-row gap-4 items-center rounded-lg transition-all relative',
+          'p-4 flex flex-row gap-4 items-center rounded-lg transition-checkbox relative',
           'border border-green-200 border-solid bg-white',
           'leading-tight cursor-arrow',
           'hover:scale-[102%]',

@@ -32,7 +32,7 @@ export default function ButtonTakeQuiz({ children, url, className }) {
     <Link
       href={url}
       className={classNames(
-        'bg-green inline-block rounded-lg transition-all group',
+        'bg-green inline-block rounded-lg group',
         'py-3 px-4 block w-full',
         'sm:block sm:w-auto sm:text-center',
         'sm:pt-5 sm:pb-5 sm:px-10 sm:max-w-fit sm:mx-auto',

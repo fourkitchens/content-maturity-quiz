@@ -18,10 +18,10 @@ export default function Results() {
       <Section className="relative !mt-[145px] md:!mt-[170px]">
         <div
           className={classNames(
-            '[--window-image-width:80vw] md:[--window-image-width:425px] lg:[--window-image-width:475px]',
+            '[--window-image-width:312px] sm:[--window-image-width:402px] md:[--window-image-width:425px] lg:[--window-image-width:475px]',
             'w-[--window-image-width]',
             'inline-block text-center',
-            'absolute -top-[120px] md:-top-[15%] left-window-image'
+            'absolute -top-[120px] sm:-top-[15%] left-window-image'
           )}
         >
           <div

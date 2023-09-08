@@ -56,6 +56,9 @@ module.exports = {
       inset: {
         'window-image': 'calc(50vw - (var(--window-image-width) / 2))',
       },
+      transitionProperty: {
+        checkbox: 'top, transform',
+      },
     },
   },
   // eslint-disable-next-line import/no-extraneous-dependencies, global-require

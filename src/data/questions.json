@@ -51,7 +51,7 @@
           {
             "text": "Identify internal subject matter experts",
             "value": 1,
-            "checked": true
+            "checked": false
           },
           {
             "text": "Determine existing capabilities and skillsets",
