@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Image from 'next/image';
 import classNames from 'classnames';
@@ -11,6 +13,7 @@ import Typography from '@/components/Typography';
 import Divider from '@/components/Divider';
 import ButtonOrange from '@/components/ButtonOrange';
 import ResultsLevel1 from '@/components/ResultsLevel1';
+import EmailResults from '@/components/EmailResults';
 
 export default function Results() {
   return (
@@ -69,6 +72,10 @@ export default function Results() {
           their own thing and hoping for the best.
         </p>
       </Section>
+
+      <Divider />
+
+      <EmailResults />
 
       <Divider />
 
