@@ -8,7 +8,7 @@ function Underline(props) {
       <path
         d="M2.41256 6.22467C19.7092 4.09854 71.0272 0.832086 137.927 4.7753"
         stroke="#EFBF4D"
-        strokeWidth="4.5301"
+        strokeWidth="3"
         strokeLinecap="round"
         pathLength="1"
       />

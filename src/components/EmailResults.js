@@ -52,8 +52,8 @@ const EmailResults = () => (
         Take the results{' '}
         <span
           className={classNames(
-            "relative whitespace-nowrap after:content-[''] after:bg-content-underline-yellow after:bg-no-repeat after:bg-contain after:absolute after:block after:-bottom-[23px] after:-left-0 after:right-0 after:-z-[1] after:h-full",
-            'lg:after:-bottom-[33px]'
+            "relative whitespace-nowrap after:content-[''] after:bg-content-underline-yellow after:bg-no-repeat after:bg-contain after:absolute after:block after:-bottom-[25px] after:-left-0 after:right-0 after:-z-[1] after:h-full",
+            'sm:after:-bottom-[34px] lg:after:-bottom-[33px]'
           )}
         >
           with you!
