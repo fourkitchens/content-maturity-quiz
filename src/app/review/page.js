@@ -48,7 +48,7 @@ const pageList = [
     url: '/10',
   },
   {
-    title: 'Results Level 1',
+    title: 'Results',
     url: '/results',
   },
 ];
@@ -67,7 +67,7 @@ export default function Page() {
         <Typography tag="h2">List of pages</Typography>
         <ul>
           {pageList.map((page, i) => (
-            <li>
+            <li key={i}>
               <Link href={page.url} className="text-green underline">
                 {page.title}
               </Link>

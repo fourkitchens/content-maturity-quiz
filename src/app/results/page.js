@@ -1,6 +1,10 @@
+'use client';
+
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Image from 'next/image';
 import classNames from 'classnames';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import Layout from '@/components/Layout';
 import windowImage from '@/assets/results/window.svg';
 import resultsHeroImage from '@/assets/results/result-hero.svg';
@@ -10,18 +14,49 @@ import creditImage from '@/assets/results/credit.svg';
 import Typography from '@/components/Typography';
 import Divider from '@/components/Divider';
 import ButtonOrange from '@/components/ButtonOrange';
-import ResultsLevel1 from '@/components/ResultsLevel1';
+import ResultsLevel from '@/components/ResultsLevel';
+import resultsLevelData from '@/data/resultsLevelData';
+
+const ResultsSwitcher = ({ setResultsLevel }) => (
+  <div
+    className={classNames(
+      'text-sm flex flex-row gap-4 bg-slate-300 w-max p-4 rounded-sm fixed left-4 bottom-4 z-50 '
+    )}
+  >
+    <label htmlFor="results">Change results page:</label>
+    <select
+      name="results"
+      id="results"
+      onChange={(e) => {
+        setResultsLevel(e.target.value);
+      }}
+    >
+      {resultsLevelData.map((result, i) => (
+        <option value={i} key={i}>
+          {result.title}
+        </option>
+      ))}
+    </select>
+  </div>
+);
+
+ResultsSwitcher.propTypes = {
+  setResultsLevel: PropTypes.func.isRequired,
+};
 
 export default function Results() {
+  const [resultsLevel, setResultsLevel] = useState(0);
+
   return (
     <Layout>
-      <Section className="relative !mt-[145px] md:!mt-[170px]">
+      <ResultsSwitcher setResultsLevel={setResultsLevel} />
+      <Section className="relative !mt-[175px] md:!mt-[170px]">
         <div
           className={classNames(
-            '[--window-image-width:312px] sm:[--window-image-width:402px] md:[--window-image-width:425px] lg:[--window-image-width:475px]',
+            '[--window-image-width:350px] sm:[--window-image-width:402px] md:[--window-image-width:425px] lg:[--window-image-width:475px]',
             'w-[--window-image-width]',
             'inline-block text-center',
-            'absolute -top-[120px] sm:-top-[15%] left-window-image'
+            'absolute -top-[150px] sm:-top-[15%] left-window-image'
           )}
         >
           <div
@@ -35,13 +70,20 @@ export default function Results() {
             <h1
               className={classNames(
                 'inline-block rounded-full z-20',
-                'border-4 border-solid border-green',
+                'border-solid border-green',
                 'px-6 pt-3 pb-2',
-                'text-3xl text-green leading-none',
-                'sm:text-4xl md:text-4xl'
+                'text-green leading-none',
+                {
+                  'border-4 text-3xl sm:text-4xl md:text-4xl':
+                    resultsLevel <= 1,
+                },
+                {
+                  'border-2 md:border-[3px] text-lg sm:text-xl md:text-2xl':
+                    resultsLevel >= 2,
+                }
               )}
             >
-              Level 1: Ad Hoc
+              {resultsLevelData[resultsLevel].title}
             </h1>
           </div>
           <Image
@@ -62,17 +104,13 @@ export default function Results() {
         />
 
         <p className="!mt-[100px]">
-          Organizations at the Ad Hoc level have started thinking about content
-          strategy or experimenting with some practices but lacks the key
-          indicators of maturity, leading to fragmented or duplicative efforts
-          and inconsistent results. At times it may feel like everyone is doing
-          their own thing and hoping for the best.
+          {resultsLevelData[resultsLevel].description}
         </p>
       </Section>
 
       <Divider />
 
-      <ResultsLevel1 />
+      <ResultsLevel content={resultsLevelData[resultsLevel]} />
 
       <Divider />
 
