@@ -16,6 +16,7 @@ import Divider from '@/components/Divider';
 import ButtonOrange from '@/components/ButtonOrange';
 import ResultsLevel from '@/components/ResultsLevel';
 import resultsLevelData from '@/data/resultsLevelData';
+import EmailResults from '@/components/EmailResults';
 
 const ResultsSwitcher = ({ setResultsLevel }) => (
   <div
@@ -107,6 +108,10 @@ export default function Results() {
           {resultsLevelData[resultsLevel].description}
         </p>
       </Section>
+
+      <Divider />
+
+      <EmailResults />
 
       <Divider />
 
