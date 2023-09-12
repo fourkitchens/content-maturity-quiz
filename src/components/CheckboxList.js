@@ -1,7 +1,9 @@
+/* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import { easeInOut, useAnimate } from 'framer-motion';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import ScoreContext from '@/utils/ScoreContext';
 
 const CheckboxImage = () => (
   <svg
@@ -33,6 +35,7 @@ const CheckboxImage = () => (
 const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
   const [scope, animate] = useAnimate();
   const inputType = type === 'single' ? 'radio' : 'checkbox';
+  const { score, setScore } = useContext(ScoreContext);
 
   function handleChange(e) {
     if (e.target.checked) {
@@ -42,6 +45,9 @@ const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
         { duration: 0.15 },
         { ease: easeInOut }
       );
+      setScore(() => score + 1);
+    } else {
+      setScore(() => score - 1);
     }
     checkHandler();
   }
@@ -57,7 +63,6 @@ const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
         value={value}
         defaultChecked={isChecked}
       />
-
       <label
         ref={scope}
         htmlFor={name + id}

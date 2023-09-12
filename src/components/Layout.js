@@ -1,5 +1,4 @@
-'use client';
-
+/* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import classNames from 'classnames';
