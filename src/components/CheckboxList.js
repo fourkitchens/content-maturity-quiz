@@ -32,23 +32,47 @@ const CheckboxImage = () => (
   </svg>
 );
 
+const Scoreboard = () => {
+  const { score } = useContext(ScoreContext);
+
+  return (
+    <div
+      className={classNames(
+        'flex flex-col items-center gap-0 bg-slate-100 w-max p-4 rounded-lg fixed right-6 top-4 z-50 ',
+        'border border-solid border-slate-400',
+        'font-bold text-3xl shadow-xl'
+      )}
+    >
+      <span className="inline-block text-sm">SCORE</span>
+      {score}
+    </div>
+  );
+};
+
 const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
   const [scope, animate] = useAnimate();
   const inputType = type === 'single' ? 'radio' : 'checkbox';
   const { score, setScore } = useContext(ScoreContext);
 
+  const handleScoreChange = (addValue) => {
+    addValue ? setScore(() => score + value) : setScore(() => score - value);
+  };
+
   function handleChange(e) {
-    if (e.target.checked) {
+    const { checked } = e.target;
+
+    if (checked) {
       animate(
         scope.current,
         { top: [0, 35, 0] },
         { duration: 0.15 },
         { ease: easeInOut }
       );
-      setScore(() => score + 1);
-    } else {
-      setScore(() => score - 1);
     }
+    console.log('score is ', score);
+    console.log('checked is ', checked);
+    console.log('value is ', value);
+    handleScoreChange(checked);
     checkHandler();
   }
 
@@ -63,6 +87,7 @@ const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
         value={value}
         defaultChecked={isChecked}
       />
+      {console.log('score: ', score)}
       <label
         ref={scope}
         htmlFor={name + id}
@@ -113,6 +138,7 @@ const CheckboxList = ({ data, className, columns = false }) => {
         className
       )}
     >
+      <Scoreboard />
       {choiceList.map((choice, i) => (
         <Checkbox
           checkHandler={() => updateCheckStatus(i)}

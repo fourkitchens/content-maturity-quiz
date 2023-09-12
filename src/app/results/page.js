@@ -20,7 +20,9 @@ import resultsLevelData from '@/data/resultsLevelData';
 const ResultsSwitcher = ({ setResultsLevel }) => (
   <div
     className={classNames(
-      'text-sm flex flex-row gap-4 bg-slate-300 w-max p-4 rounded-sm fixed left-4 bottom-4 z-50 '
+      'text-sm flex flex-row gap-4 bg-slate-300 w-max p-4 rounded-sm fixed left-4 bottom-4 z-50 ',
+      'border border-solid border-slate-400',
+      'font-bold text-3xl shadow-xl'
     )}
   >
     <label htmlFor="results">Change results page:</label>
