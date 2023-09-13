@@ -69,10 +69,9 @@ const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
         { ease: easeInOut }
       );
     }
-    console.log('score is ', score);
-    console.log('checked is ', checked);
-    console.log('value is ', value);
-    handleScoreChange(checked);
+    if (type !== 'single') {
+      handleScoreChange(checked);
+    }
     checkHandler();
   }
 
@@ -87,7 +86,6 @@ const Checkbox = ({ id, name, text, type, value, checkHandler, isChecked }) => {
         value={value}
         defaultChecked={isChecked}
       />
-      {console.log('score: ', score)}
       <label
         ref={scope}
         htmlFor={name + id}
@@ -120,7 +118,17 @@ Checkbox.propTypes = {
 
 const CheckboxList = ({ data, className, columns = false }) => {
   const { choices, shortname, type } = data;
+  const { score, setScore } = useContext(ScoreContext);
   const [choiceList, setChoiceList] = useState(choices);
+  const [checkboxListTotal, setCheckboxListTotal] = useState(0);
+
+  const updateScore = (index) => {
+    const previousChecklistValue = checkboxListTotal;
+    const value = choiceList.filter((choice, i) => i === index);
+
+    setScore(() => score + value[0].value - previousChecklistValue);
+    setCheckboxListTotal(value[0].value);
+  };
 
   const updateCheckStatus = (index) => {
     setChoiceList(
@@ -128,6 +136,9 @@ const CheckboxList = ({ data, className, columns = false }) => {
         i === index ? { ...choice, checked: !choice.checked } : choice
       )
     );
+    if (type === 'single') {
+      updateScore(index);
+    }
   };
 
   return (
@@ -139,6 +150,7 @@ const CheckboxList = ({ data, className, columns = false }) => {
       )}
     >
       <Scoreboard />
+
       {choiceList.map((choice, i) => (
         <Checkbox
           checkHandler={() => updateCheckStatus(i)}
