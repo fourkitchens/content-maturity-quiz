@@ -118,8 +118,8 @@ Checkbox.propTypes = {
 
 const CheckboxList = ({ data, className, columns = false }) => {
   const { choices, shortname, type } = data;
-  const { score, setScore } = useContext(ScoreContext);
   const [choiceList, setChoiceList] = useState(choices);
+  const { score, setScore } = useContext(ScoreContext);
   const [checkboxListTotal, setCheckboxListTotal] = useState(0);
 
   const updateScore = (index) => {

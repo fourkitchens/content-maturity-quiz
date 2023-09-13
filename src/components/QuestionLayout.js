@@ -2,13 +2,17 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import classNames from 'classnames';
+import { useContext } from 'react';
 import CheckboxList from '@/components/CheckboxList';
 import Typography from '@/components/Typography';
 import Pagination from '@/components/Pagination';
 import ProgressTracker from './ProgressTracker';
+import QuestionsContext from '@/utils/QuestionsContext';
 
-const QuestionLayout = ({ data, columns, currentID, image }) => {
-  const { type, question } = data;
+const QuestionLayout = ({ columns, currentID, image }) => {
+  const { questions, setQuestions } = useContext(QuestionsContext);
+  const { choices, shortname, type, question } =
+    questions.questions[0][currentID];
 
   return (
     <div className="prose lg:max-w-[1000px] mx-auto space-y-8 md:space-y-14">
@@ -30,7 +34,10 @@ const QuestionLayout = ({ data, columns, currentID, image }) => {
       >
         <main className={classNames('col-start-2 relative z-20')}>
           <div className="space-y-4">
-            <CheckboxList data={data} columns={columns} />
+            <CheckboxList
+              data={{ choices, shortname, type }}
+              columns={columns}
+            />
           </div>
 
           <Pagination currentID={currentID} />
@@ -54,7 +61,6 @@ const QuestionLayout = ({ data, columns, currentID, image }) => {
 QuestionLayout.propTypes = {
   columns: PropTypes.number,
   currentID: PropTypes.number.isRequired,
-  data: PropTypes.any.isRequired,
   image: PropTypes.any,
 };
 
