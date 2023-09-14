@@ -10,7 +10,7 @@ import ProgressTracker from './ProgressTracker';
 import QuestionsContext from '@/utils/QuestionsContext';
 
 const QuestionLayout = ({ columns, currentID, image }) => {
-  const { questions, setQuestions } = useContext(QuestionsContext);
+  const { questions } = useContext(QuestionsContext);
   const { choices, shortname, type, question } =
     questions.questions[0][currentID];
 
@@ -37,6 +37,7 @@ const QuestionLayout = ({ columns, currentID, image }) => {
             <CheckboxList
               data={{ choices, shortname, type }}
               columns={columns}
+              questionID={currentID}
             />
           </div>
 
