@@ -2,7 +2,7 @@ const resultsLevelData = [
   {
     title: 'Level 1: Ad Hoc',
     description:
-      'Organizations at the Ad Hoc level have started thinking about content strategy or experimenting with some practices but lacks the key indicators of maturity, leading to fragmented or duplicative efforts and inconsistent results. At times it may feel like everyone is doing their own thing and hoping for the best.',
+      'Organizations at the Ad Hoc level have started thinking about content strategy or experimenting with some practices, but lack the key indicators of maturity, leading to fragmented or duplicative efforts and inconsistent results. At times it may feel like everyone is doing their own thing and hoping for the best.',
     nextSteps:
       'There’s no time like the present to begin your content strategy journey! Start by establishing key foundational practices rather than diving into the deep end. Each organization is different, so consider your resources and remember that cultural shifts take time, care, and nurturing.',
     sections: [
@@ -34,7 +34,7 @@ const resultsLevelData = [
       {
         title: 'Educate and advocate.',
         description:
-          'Explain what you’re doing, why you’re doing it, and what you hope to achieve. Make it easy for your community to contribute to your efforts',
+          'Explain what you’re doing, why you’re doing it, and what you hope to achieve. Make it easy for your community to contribute to your efforts.',
       },
     ],
   },
@@ -78,7 +78,7 @@ const resultsLevelData = [
     ],
   },
   {
-    title: 'Level 3: Organized & Repeatable',
+    title: 'Level 3: Organized and Repeatable',
     description:
       'Your organization has made meaningful progress in developing the foundations for content strategy maturity. Level 3 is the most commonly encountered stage for organizations. Keep the positive momentum going so as not to plateau!',
     nextSteps:
@@ -117,7 +117,7 @@ const resultsLevelData = [
     ],
   },
   {
-    title: 'Level 4: Managed & Sustainable',
+    title: 'Level 4: Managed and Sustainable',
     description:
       'You’ve made momentous strides in operationalizing content strategy throughout your organization. At this level, organizations typically experience a significant return on investment. Plan to continually evaluate and refine your approach while nurturing your content-first culture.',
     nextSteps: false,
@@ -125,7 +125,7 @@ const resultsLevelData = [
       {
         title: 'Regularly assess your strategy.',
         description:
-          'Is your strategy achieving results? Are creators using it to guide their content choices? Are your goals and success metrics appropriate? Would a diversified strategy better support your internal teams? Review and refine as needed. Encourage leadership to be vocal with their support.',
+          'Is your strategy achieving results? Are creators using it to guide their content choices? Are your goals and success metrics appropriate? Would a diversified strategy better support your internal teams? Review and refine as needed. Encourage leadership to be vocal in their support.',
       },
       {
         title: 'Nurture your community. ',
@@ -150,14 +150,14 @@ const resultsLevelData = [
       {
         title: 'Level up your tactics.',
         description:
-          'Focus on small, sustainable changes and measure the outcomes. Changing or attempting too many tactics at once makes it difficult to measure their effectiveness. Set a goal, make a prediction,  experiment with a new tactic, and measure the outcomes. ',
+          'Focus on small, sustainable changes and measure the outcomes. Changing or trying too many tactics at once makes it difficult to measure their effectiveness. Set a goal, make a prediction,  experiment with a new tactic, and measure the outcomes. ',
       },
     ],
   },
   {
-    title: 'Level 5: Optimized & Strategic',
+    title: 'Level 5: Optimized and Strategic',
     description:
-      'Congratulations! You’ve embraced content strategy to such an extent it must feel like you’re unstoppable. Take some time to celebrate, but remember, content strategy has no endpoint. Even organizations at this level have improvements to make, efficiencies to embrace, and challenges to conquer.',
+      'Congratulations! You’ve embraced content strategy to such an extent that it must feel like you’re unstoppable. Take some time to celebrate, but remember, content strategy has no endpoint. Even organizations at this level have improvements to make, efficiencies to embrace, and challenges to conquer.',
     nextSteps: false,
     sections: [
       {
