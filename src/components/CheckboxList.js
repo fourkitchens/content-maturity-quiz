@@ -6,15 +6,35 @@ import { useContext } from 'react';
 import CheckboxImage from './CheckboxImage';
 import Scoreboard from './Scoreboard';
 import QuestionsContext from '@/utils/QuestionsContext';
-import updateQuestions from '@/utils/updateQuestions';
+import { updateQuestions, makeQuestionsFalse } from '@/utils/updateQuestions';
 
 const Checkbox = ({ id, name, text, type, value, isChecked, questionID }) => {
   const [scope, animate] = useAnimate();
   const inputType = type === 'single' ? 'radio' : 'checkbox';
   const { questions, setQuestions } = useContext(QuestionsContext);
 
-  function handleChange(e) {
+  function handleRadioChange() {
+    for (const [key] of Object.entries(
+      questions.questions[0][questionID].choices
+    )) {
+      if (Number(key) === id) {
+        updateQuestions(questions, setQuestions, questionID, id);
+      } else {
+        makeQuestionsFalse(questions, setQuestions, questionID, key);
+      }
+    }
+  }
+
+  function handleCheckboxChange() {
     updateQuestions(questions, setQuestions, questionID, id);
+  }
+
+  function handleChange(e) {
+    if (inputType === 'radio') {
+      handleRadioChange();
+    } else {
+      handleCheckboxChange();
+    }
 
     if (e.target.checked) {
       animate(

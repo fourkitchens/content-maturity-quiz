@@ -1,10 +1,13 @@
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import classNames from 'classnames';
 import { useContext } from 'react';
-import ScoreContext from '@/utils/ScoreContext';
+import QuestionsContext from '@/utils/QuestionsContext';
+import calculateScore from '@/utils/calculateScore';
 
 const Scoreboard = () => {
-  const { score } = useContext(ScoreContext);
+  const { questions } = useContext(QuestionsContext);
+
+  const score = calculateScore(questions.questions[0]);
 
   return (
     <div
