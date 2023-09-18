@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import metadataDefaults from '@/data/metadata';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import Providers from '@/utils/Providers';
 
 const aleo = Aleo({
   weight: ['300', '400', '700'],
@@ -66,7 +67,7 @@ export default function RootLayout({ children }) {
             />
           </noscript>
         ) : null}
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
