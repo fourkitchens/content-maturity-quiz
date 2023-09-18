@@ -1,3 +1,4 @@
+/* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import PropTypes from 'prop-types';
 import Script from 'next/script';
 

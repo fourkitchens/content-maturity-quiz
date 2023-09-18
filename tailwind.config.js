@@ -35,6 +35,7 @@ module.exports = {
         'question-marks': "url('/question-marks.svg')",
         oval: "url('/oval.svg')",
         'content-underline': "url('/content-underline.svg')",
+        'content-underline-yellow': "url('/content-underline-yellow.svg')",
       },
       backgroundSize: {
         300: '300%',
