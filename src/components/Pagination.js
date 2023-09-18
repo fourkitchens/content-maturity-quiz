@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 const LeftArrowIcon = () => (
@@ -53,7 +52,7 @@ const Pagination = ({ currentID }) => {
   return (
     <ul className="flex flex-row gap-4 items-center justify-between mx-auto my-10 p-0  text-base">
       <li>
-        <Link
+        <a
           href={previousLink}
           className={classNames(
             'flex flex-row gap-2 items-center',
@@ -63,7 +62,7 @@ const Pagination = ({ currentID }) => {
           )}
         >
           <LeftArrowIcon /> Previous
-        </Link>
+        </a>
       </li>
 
       <li className="leading-tight text-center hidden sm:inline">
@@ -72,7 +71,7 @@ const Pagination = ({ currentID }) => {
 
       {currentID < 9 && (
         <li>
-          <Link
+          <a
             href={nextLink}
             className={classNames(
               'flex flex-row gap-2 items-center',
@@ -82,7 +81,7 @@ const Pagination = ({ currentID }) => {
             )}
           >
             Next <RightArrowIcon />
-          </Link>
+          </a>
         </li>
       )}
     </ul>
