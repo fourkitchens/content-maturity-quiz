@@ -23,11 +23,16 @@ module.exports = {
     extend: {
       animation: {
         'checkbox-checked': 'checkbox-checked 300ms ease-out forwards',
+        'checkbox-placeholder': 'checkbox-placeholder 1s linear infinite',
       },
       keyframes: {
         'checkbox-checked': {
           '0%': { strokeDashoffset: 1 },
           '100%': { strokeDashoffset: 0 },
+        },
+        'checkbox-placeholder': {
+          '0%': { left: '-45%' },
+          '100%': { left: '100%' },
         },
       },
       backgroundImage: {

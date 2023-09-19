@@ -87,7 +87,37 @@ Checkbox.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-const CheckboxList = ({ data, className, columns = false, questionID }) => {
+const PlaceholderCheckbox = () => (
+  <div
+    className={classNames(
+      'p-4 flex flex-row gap-4 items-center rounded-lg transition-checkbox relative',
+      'border border-green-200 border-solid bg-white',
+      'leading-tight cursor-arrow',
+      'hover:scale-[102%]',
+      'lg:p-8',
+      'peer-checked:bg-beige',
+      'h-full'
+    )}
+  >
+    <CheckboxImage className="block w-14" />
+    <div className="w-full space-y-2">
+      <div className="h-[16px] w-full block bg-slate-300 rounded-sm relative overflow-hidden">
+        <div className="animate-checkbox-placeholder absolute left-0 top-0 h-full w-1/2 block bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+      </div>
+      <div className="h-[16px] w-3/4 block bg-slate-300 rounded-sm relative overflow-hidden">
+        <div className="animate-checkbox-placeholder absolute left-[-45%] h-full w-1/2 block bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+      </div>
+    </div>
+  </div>
+);
+
+const CheckboxList = ({
+  data,
+  className,
+  columns = false,
+  questionID,
+  questionsLoaded,
+}) => {
   const { choices, shortname, type } = data;
 
   return (
@@ -100,19 +130,23 @@ const CheckboxList = ({ data, className, columns = false, questionID }) => {
     >
       <Scoreboard />
 
-      {choices.map((choice, i) => (
-        <Checkbox
-          className="self-stretch"
-          id={i}
-          isChecked={choice.checked}
-          key={i}
-          name={shortname}
-          questionID={questionID}
-          text={choice.text}
-          type={type}
-          value={choice.value}
-        />
-      ))}
+      {choices.map((choice, i) =>
+        questionsLoaded ? (
+          <Checkbox
+            className="self-stretch"
+            id={i}
+            isChecked={choice.checked}
+            key={i}
+            name={shortname}
+            questionID={questionID}
+            text={choice.text}
+            type={type}
+            value={choice.value}
+          />
+        ) : (
+          <PlaceholderCheckbox key={i} />
+        )
+      )}
     </div>
   );
 };
@@ -122,6 +156,7 @@ CheckboxList.propTypes = {
   columns: PropTypes.bool,
   data: PropTypes.any,
   questionID: PropTypes.number.isRequired,
+  questionsLoaded: PropTypes.bool,
 };
 
 export default CheckboxList;
