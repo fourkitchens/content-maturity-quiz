@@ -2,17 +2,29 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import classNames from 'classnames';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CheckboxList from '@/components/CheckboxList';
 import Typography from '@/components/Typography';
 import Pagination from '@/components/Pagination';
 import ProgressTracker from './ProgressTracker';
 import QuestionsContext from '@/utils/QuestionsContext';
+import q from '@/data/questions.json';
 
 const QuestionLayout = ({ columns, currentID, image }) => {
-  const { questions } = useContext(QuestionsContext);
+  const { questions, setQuestions } = useContext(QuestionsContext);
+  const [questionsLoaded, setQuestionsLoaded] = useState(false);
+
   const { choices, shortname, type, question } =
     questions.questions[0][currentID];
+
+  useEffect(() => {
+    if (sessionStorage.getItem('contentQuizQuestions')) {
+      setQuestions(JSON.parse(sessionStorage.getItem('contentQuizQuestions')));
+    } else {
+      setQuestions(q);
+    }
+    setQuestionsLoaded(true);
+  }, [setQuestions]);
 
   return (
     <div className="prose lg:max-w-[1000px] mx-auto space-y-8 md:space-y-14">
@@ -38,6 +50,7 @@ const QuestionLayout = ({ columns, currentID, image }) => {
               data={{ choices, shortname, type }}
               columns={columns}
               questionID={currentID}
+              questionsLoaded={questionsLoaded}
             />
           </div>
 
