@@ -5,7 +5,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "email": "email dev --dir ./src/emails",
+    "email": "email dev --dir src/emails --port 3001",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:next": "next lint",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@react-email/button": "0.0.10",
+    "@react-email/components": "^0.0.7",
     "@react-email/html": "0.0.4",
     "@tailwindcss/container-queries": "^0.1.1",
     "autoprefixer": "10.4.14",
