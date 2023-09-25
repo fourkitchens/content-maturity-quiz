@@ -13,7 +13,7 @@ import {
   Text,
 } from '@react-email/components';
 import * as React from 'react';
-import resultsLevelData from '../data/resultsleveldata.js';
+import resultsLevelData from '../data/resultsLevelData.js';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASEURL
   ? `https://${process.env.NEXT_PUBLIC_BASEURL}`
@@ -37,7 +37,7 @@ const colors = {
   yellow: '#EFBF4D',
 };
 
-export default function email() {
+export default function Email() {
   const level = 1 - 1;
   const { title, description, nextSteps } = resultsLevelData[level];
   const sections = resultsLevelData[level].sections;
