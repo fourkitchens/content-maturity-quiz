@@ -15,6 +15,10 @@ import {
 import * as React from 'react';
 import resultsLevelData from '../data/resultsleveldata.js';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASEURL
+  ? `https://${process.env.NEXT_PUBLIC_BASEURL}`
+  : '';
+
 const colors = {
   beige: '#FDF6E0',
   bg: '#FFFDF9',
@@ -61,17 +65,17 @@ export default function email() {
         <Body className="bg-bg font-sans">
           <Container className="pt-4">
             <Link href="https://contentstrategyquiz.com">
-              <Img src={`http://localhost:3001/static/email-logo.png`} alt="The Content Strategy Quiz. Better results through content." width="100%" /> 
+              <Img src={`${baseUrl}/static/email-logo.png`} alt="The Content Strategy Quiz. Better results through content." width="100%" /> 
             </Link>
             
             <Section className="bg-beige border border-solid border-gold-700 p-8 mt-8 mx-auto max-w-[464px] !space-y-4">
-              <Img src={`http://localhost:3001/static/your-results.png`} alt="Your Results" className="mx-auto max-w-[122px] mb-4" /> 
-              <Img src={`http://localhost:3001/static/level-4.png`} alt={title} className="mx-auto max-w-[375px] mb-4" /> 
+              <Img src={`${baseUrl}/static/your-results.png`} alt="Your Results" className="mx-auto max-w-[122px] mb-4" /> 
+              <Img src={`${baseUrl}/static/level-4.png`} alt={title} className="mx-auto max-w-[375px] mb-4" /> 
               <Text className="text-lg my-0">{description}</Text>
             </Section>
             
             <Section className="mt-16 max-w-[400px] mx-auto">
-              <Img src={`http://localhost:3001/static/next-steps.png`} alt="Next Steps" width="151px" className="mx-auto mb-8" />
+              <Img src={`${baseUrl}/static/next-steps.png`} alt="Next Steps" width="151px" className="mx-auto mb-8" />
               <Text className="text-xl my-0">{nextSteps} </Text>
 
               <div className="mb-8 mt-8">
@@ -117,7 +121,7 @@ export default function email() {
                 Let’s connect
               </Button>
 
-              <Text className="text-sm text-slate-500 my-0 mt-8">This is the only email you will receive. You HAVE NOT been added to any mailing lists.</Text>
+              <Text className="text-sm text-slate-500 my-0 mt-8">This is the only email you will receive. <br/>You HAVE NOT been added to any mailing lists.</Text>
             </div>
           </Section>
         </Body>
