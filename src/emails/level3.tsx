@@ -13,6 +13,7 @@ import {
   Text,
 } from '@react-email/components';
 import * as React from 'react';
+import { ReactElement } from 'react';
 import resultsLevelData from '../data/resultsLevelData.js';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASEURL
@@ -37,15 +38,16 @@ const colors = {
   yellow: '#EFBF4D',
 };
 
-export default function Email() {
+export default function Email(): ReactElement {
   const level = 3 - 1;
   const { title, description, nextSteps } = resultsLevelData[level];
-  const sections = resultsLevelData[level].sections;
+  const { sections } = resultsLevelData[level];
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return (
     <Html>
       <Head>
-        <title>{title} • The Content Strategy Quiz</title>
+        <title>{title} • The Content Strategy Quiz</title>
       </Head>
       <Preview>Your content strategy result is '{title}'</Preview>
       <Tailwind
@@ -57,7 +59,7 @@ export default function Email() {
               },
               fontFamily: {
                 sans: ['Georgia', 'sans-serif'],
-              }
+              },
             },
           },
         }}
@@ -65,24 +67,41 @@ export default function Email() {
         <Body className="bg-bg font-sans">
           <Container className="pt-4">
             <Link href="https://contentstrategyquiz.com">
-              <Img src={`${baseUrl}/static/email-logo.png`} alt="The Content Strategy Quiz. Better results through content." width="100%" /> 
+              <Img
+                src={`${baseUrl}/static/email-logo.png`}
+                alt="The Content Strategy Quiz. Better results through content."
+                width="100%"
+              />
             </Link>
-            
+
             <Section className="bg-beige border border-solid border-gold-700 p-8 mt-8 mx-auto max-w-[464px] !space-y-4">
-              <Img src={`${baseUrl}/static/your-results.png`} alt="Your Results" className="mx-auto max-w-[122px] mb-4" /> 
-              <Img src={`${baseUrl}/static/level-3.png`} alt={title} className="mx-auto max-w-[382px] mb-4" /> 
+              <Img
+                src={`${baseUrl}/static/your-results.png`}
+                alt="Your Results"
+                className="mx-auto max-w-[122px] mb-4"
+              />
+              <Img
+                src={`${baseUrl}/static/level-3.png`}
+                alt={title}
+                className="mx-auto max-w-[382px] mb-4"
+              />
               <Text className="text-lg my-0">{description}</Text>
             </Section>
-            
+
             <Section className="mt-16 max-w-[400px] mx-auto">
-              <Img src={`${baseUrl}/static/next-steps.png`} alt="Next Steps" width="151px" className="mx-auto mb-8" />
+              <Img
+                src={`${baseUrl}/static/next-steps.png`}
+                alt="Next Steps"
+                width="151px"
+                className="mx-auto mb-8"
+              />
               <Text className="text-xl my-0">{nextSteps} </Text>
 
               <div className="mb-8 mt-8">
                 <Heading className="text-2xl my-0">{sections[0].title}</Heading>
                 <Text className="text-lg my-0">{sections[0].description}</Text>
               </div>
-              
+
               <div className="mb-8">
                 <Heading className="text-2xl my-0">{sections[1].title}</Heading>
                 <Text className="text-lg my-0">{sections[1].description}</Text>
@@ -102,26 +121,31 @@ export default function Email() {
                 <Heading className="text-2xl my-0">{sections[4].title}</Heading>
                 <Text className="text-lg my-0">{sections[4].description}</Text>
               </div>
-              
             </Section>
-
-            
-            
           </Container>
 
           <Section className="bg-beige p-8 mt-8">
             <div className="max-w-[464px] mx-auto">
-              <Heading className="text-xl my-0">Quiz by Four Kitchens. <br/>We make websites with love. For good.</Heading>
-              <Text className="text-base my-0">We’d love to partner together on your journey to content maturity!</Text>
-              
+              <Heading className="text-xl my-0">
+                Quiz by Four Kitchens. <br />
+                We make websites with love. For good.
+              </Heading>
+              <Text className="text-base my-0">
+                We’d love to partner together on your journey to content
+                maturity!
+              </Text>
+
               <Button
                 href="https://fourkitchens.com"
                 className="bg-orange text-white text-lg px-4 py-2 mt-4"
-                >
+              >
                 Let’s connect
               </Button>
 
-              <Text className="text-sm text-slate-500 my-0 mt-8">This is the only email you will receive. <br/>You HAVE NOT been added to any mailing lists.</Text>
+              <Text className="text-sm text-slate-500 my-0 mt-8">
+                This is the only email you will receive. <br />
+                You HAVE NOT been added to any mailing lists.
+              </Text>
             </div>
           </Section>
         </Body>
