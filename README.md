@@ -23,3 +23,8 @@
 ## Developing the Emails
 
 - `npm run email` will spin up a preview of the emails at localhost:3001.
+
+## Contributors
+
+- Randy Oest, creative direction and frontend engineering
+- YOUR NAME HERE, ROLE(S)
