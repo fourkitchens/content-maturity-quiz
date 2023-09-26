@@ -16,7 +16,7 @@ function Underline(props) {
   );
 }
 
-export default function ButtonSubmit({ children }) {
+export default function ButtonSubmit({ children, disabled }) {
   const [hoverStateActive, sethoverStateActive] = useState(false);
 
   const handleOnMouseEnter = () => {
@@ -30,6 +30,7 @@ export default function ButtonSubmit({ children }) {
   return (
     <button
       type="submit"
+      disabled={disabled}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}
       className={classNames(
@@ -56,4 +57,5 @@ export default function ButtonSubmit({ children }) {
 
 ButtonSubmit.propTypes = {
   children: PropTypes.any.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };
