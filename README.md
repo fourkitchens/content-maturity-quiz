@@ -1,6 +1,6 @@
 # The Content Strategy Quiz
 
-## Prerequistes
+## Prerequisites
 
 - Running node 18.16 per the .npmrc file.
 - `npm install`
@@ -14,6 +14,7 @@
 - [React Email](https://react.email/docs/introduction) for developing emails.
 - Email sent with [Resend](https://resend.com/home).
 - Deploys to [Netlify](https://www.netlify.com/)
+- Domain name through [Namecheap](https://www.namecheap.com/)
 
 ## Running the site locally
 
