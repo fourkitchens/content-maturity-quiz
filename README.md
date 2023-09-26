@@ -1,5 +1,7 @@
 # The Content Strategy Quiz
 
+<img src="public/sharing.png" width="600">
+
 ## Prerequisites
 
 - Running node 18.16 per the .npmrc file.
@@ -23,3 +25,8 @@
 ## Developing the Emails
 
 - `npm run email` will spin up a preview of the emails at localhost:3001.
+
+## Contributors
+
+- Randy Oest, creative direction and frontend engineering
+- YOUR NAME HERE, ROLE(S)
