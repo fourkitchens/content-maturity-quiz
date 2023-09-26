@@ -1,5 +1,7 @@
 # The Content Strategy Quiz
 
+<img src="public/sharing.png" width="600">
+
 ## Prerequisites
 
 - Running node 18.16 per the .npmrc file.
