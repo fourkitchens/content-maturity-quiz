@@ -1,41 +1,78 @@
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import Image from 'next/image';
 import classNames from 'classnames';
+import { useState } from 'react';
+import { Resend } from 'resend';
 import Section from '@/components/Section';
 import takeResultsWithYouImage from '@/assets/results/take-results-with-you.svg';
 import Typography from '@/components/Typography';
 import ButtonSubmit from '@/components/ButtonSubmit';
+import Email from '@/emails/level1';
 
-const EmailResultsForm = () => (
-  <form>
-    <div className="lg:flex lg:flex-row lg:gap-6 md:items-end">
-      <div className="lg:flex-1 mb-6 lg:mb-0">
-        <label
-          htmlFor="email"
-          className="text-[0.9375rem] font-bold mb-[0.34rem]"
-        >
-          Email
-        </label>
-        <div>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="Your Email"
-            className={classNames(
-              'text-[0.9375rem] text-gray-900 font-normal leading-6',
-              'px-4 py-[0.81rem]',
-              'w-full relative hover:scale-[102%]',
-              'border border-green-400 border-solid bg-white rounded-lg'
-            )}
-          />
+const EmailResultsForm = () => {
+  const [emailAddress, setEmailAddress] = useState('');
+  const [validEmailAddress, setValidEmailAddress] = useState(false);
+
+  const isValidEmail = (value) => {
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    setValidEmailAddress(emailRegex.test(String(value).toLowerCase()));
+    return emailRegex.test(String(value).toLowerCase());
+  };
+
+  const handleChange = (e) => {
+    setEmailAddress(String(e.target.value).toLowerCase());
+    isValidEmail(emailAddress);
+  };
+
+  const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    resend.sendEmail({
+      from: 'randy@fourkitchens.com',
+      to: emailAddress,
+      subject: 'FOO • The Content Strategy Quiz',
+      react: <Email />,
+    });
+  };
+
+  return (
+    <form onSubmit={onSubmit}>
+      <div className="lg:flex lg:flex-row lg:gap-6 md:items-end">
+        <div className="lg:flex-1 mb-6 lg:mb-0">
+          <label
+            htmlFor="email"
+            className="text-[0.9375rem] font-bold mb-[0.34rem]"
+          >
+            Email
+          </label>
+          <div>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              placeholder="Your Email"
+              value={emailAddress}
+              onChange={handleChange}
+              className={classNames(
+                'text-[0.9375rem] text-gray-900 font-normal leading-6',
+                'px-4 py-[0.81rem]',
+                'w-full relative',
+                'border border-green-400 border-solid bg-white rounded-lg'
+              )}
+            />
+          </div>
         </div>
+        <ButtonSubmit disabled={!validEmailAddress}>
+          Send me the results
+        </ButtonSubmit>
       </div>
-      <ButtonSubmit>Send me the results</ButtonSubmit>
-    </div>
-  </form>
-);
+    </form>
+  );
+};
 
 const EmailResults = () => (
   <Section
