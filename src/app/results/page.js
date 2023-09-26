@@ -18,32 +18,53 @@ import ResultsLevel from '@/components/ResultsLevel';
 import resultsLevelData from '@/data/resultsLevelData';
 import EmailResults from '@/components/EmailResults';
 
-const ResultsSwitcher = ({ setResultsLevel }) => (
-  <div
-    className={classNames(
-      'text-sm flex flex-row gap-4 bg-slate-300 w-max p-4 rounded-sm fixed left-4 bottom-4 z-50 ',
-      'border border-solid border-slate-400',
-      'font-bold text-3xl shadow-xl'
-    )}
-  >
-    <label htmlFor="results">Change results page:</label>
-    <select
-      name="results"
-      id="results"
-      onChange={(e) => {
-        setResultsLevel(e.target.value);
-      }}
+const ResultsSwitcher = ({ setResultsLevel, resultsLevel }) => {
+  const handleChange = (value) => {
+    switch (true) {
+      case value >= 91:
+        setResultsLevel(4);
+        break;
+      case value >= 61:
+        setResultsLevel(3);
+        break;
+      case value >= 41:
+        setResultsLevel(2);
+        break;
+      case value >= 31:
+        setResultsLevel(1);
+        break;
+      default:
+        setResultsLevel(0);
+    }
+  };
+
+  return (
+    <div
+      className={classNames(
+        'text-sm flex flex-row gap-4 bg-slate-300 w-max p-4 rounded-sm fixed left-4 bottom-4 z-50 ',
+        'border border-solid border-slate-400',
+        'font-bold text-3xl shadow-xl'
+      )}
     >
-      {resultsLevelData.map((result, i) => (
-        <option value={i} key={i}>
-          {result.title}
-        </option>
-      ))}
-    </select>
-  </div>
-);
+      <div>
+        <input
+          type="range"
+          id="score"
+          name="score"
+          min="0"
+          max="100"
+          onChange={(e) => {
+            handleChange(e.target.value);
+          }}
+        />
+        <label htmlFor="score">Score: ?? / Level: {resultsLevel + 1} </label>
+      </div>
+    </div>
+  );
+};
 
 ResultsSwitcher.propTypes = {
+  resultsLevel: PropTypes.number.isRequired,
   setResultsLevel: PropTypes.func.isRequired,
 };
 
@@ -52,7 +73,10 @@ export default function Results() {
 
   return (
     <Layout>
-      <ResultsSwitcher setResultsLevel={setResultsLevel} />
+      <ResultsSwitcher
+        setResultsLevel={setResultsLevel}
+        resultsLevel={resultsLevel}
+      />
       <Section className="relative !mt-[175px] md:!mt-[170px]">
         <div
           className={classNames(
