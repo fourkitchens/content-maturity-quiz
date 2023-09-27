@@ -29,4 +29,5 @@
 ## Contributors
 
 - Randy Oest, creative direction and frontend engineering
+- Ashley Hitson, UI
 - YOUR NAME HERE, ROLE(S)
