@@ -30,4 +30,4 @@
 
 - Randy Oest, creative direction and frontend engineering
 - Brendan Wu, project lead and UI designer
-- YOUR NAME HERE, ROLE(S)
+- Ashley Hitson, UI
