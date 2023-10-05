@@ -29,4 +29,5 @@
 ## Contributors
 
 - Randy Oest, creative direction and frontend engineering
-- YOUR NAME HERE, ROLE(S)
+- Brendan Wu, project lead and UI designer
+- Ashley Hitson, UI

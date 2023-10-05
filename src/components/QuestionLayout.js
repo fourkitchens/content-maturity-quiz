@@ -18,8 +18,8 @@ const QuestionLayout = ({ columns, currentID, image }) => {
     questions.questions[0][currentID];
 
   useEffect(() => {
-    if (sessionStorage.getItem('contentQuizQuestions')) {
-      setQuestions(JSON.parse(sessionStorage.getItem('contentQuizQuestions')));
+    if (localStorage.getItem('contentQuizQuestions')) {
+      setQuestions(JSON.parse(localStorage.getItem('contentQuizQuestions')));
     } else {
       setQuestions(q);
     }
