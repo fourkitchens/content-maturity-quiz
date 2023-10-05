@@ -18,12 +18,14 @@ const QuestionLayout = ({ columns, currentID, image }) => {
     questions.questions[0][currentID];
 
   useEffect(() => {
-    if (localStorage.getItem('contentQuizQuestions')) {
-      setQuestions(JSON.parse(localStorage.getItem('contentQuizQuestions')));
-    } else {
-      setQuestions(q);
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('contentQuizQuestions')) {
+        setQuestions(JSON.parse(localStorage.getItem('contentQuizQuestions')));
+      } else {
+        setQuestions(q);
+      }
+      setQuestionsLoaded(true);
     }
-    setQuestionsLoaded(true);
   }, [setQuestions]);
 
   return (

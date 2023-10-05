@@ -12,8 +12,10 @@ export default function Results() {
   const { questions, setQuestions } = useContext(QuestionsContext);
   const score = calculateScore(questions.questions[0]);
 
-  if (localStorage.getItem('contentQuizQuestions')) {
-    setQuestions(JSON.parse(localStorage.getItem('contentQuizQuestions')));
+  if (typeof window !== 'undefined') {
+    if (localStorage.getItem('contentQuizQuestions')) {
+      setQuestions(JSON.parse(localStorage.getItem('contentQuizQuestions')));
+    }
   }
 
   switch (true) {

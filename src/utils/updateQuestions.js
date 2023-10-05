@@ -5,7 +5,9 @@ const updateQuestions = (questions, setQuestions, questionID, choiceID) => {
   });
   questions.questions[0][questionID].choices[choiceID].checked =
     !questions.questions[0][questionID].choices[choiceID].checked;
-  localStorage.setItem('contentQuizQuestions', JSON.stringify(questions));
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('contentQuizQuestions', JSON.stringify(questions));
+  }
 };
 
 const makeQuestionsFalse = (questions, setQuestions, questionID, choiceID) => {
@@ -14,7 +16,9 @@ const makeQuestionsFalse = (questions, setQuestions, questionID, choiceID) => {
     return newQuestions;
   });
   questions.questions[0][questionID].choices[choiceID].checked = false;
-  localStorage.setItem('contentQuizQuestions', JSON.stringify(questions));
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('contentQuizQuestions', JSON.stringify(questions));
+  }
 };
 
 export { updateQuestions, makeQuestionsFalse };
