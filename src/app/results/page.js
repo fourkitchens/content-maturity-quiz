@@ -1,189 +1,33 @@
+/* eslint-disable no-fallthrough */
+
 'use client';
 
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
-import Image from 'next/image';
-import classNames from 'classnames';
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import Layout from '@/components/Layout';
-import windowImage from '@/assets/results/window.svg';
-import resultsHeroImage from '@/assets/results/result-hero.svg';
-import Section from '@/components/Section';
-import quizByImage from '@/assets/home/quiz-by-4k.png';
-import creditImage from '@/assets/results/credit.svg';
-import Typography from '@/components/Typography';
-import Divider from '@/components/Divider';
-import ButtonOrange from '@/components/ButtonOrange';
-import ResultsLevel from '@/components/ResultsLevel';
-import resultsLevelData from '@/data/resultsLevelData';
-import EmailResults from '@/components/EmailResults';
-
-const ResultsSwitcher = ({ setResultsLevel, resultsLevel }) => {
-  const handleChange = (value) => {
-    switch (true) {
-      case value >= 91:
-        setResultsLevel(4);
-        break;
-      case value >= 61:
-        setResultsLevel(3);
-        break;
-      case value >= 41:
-        setResultsLevel(2);
-        break;
-      case value >= 31:
-        setResultsLevel(1);
-        break;
-      default:
-        setResultsLevel(0);
-    }
-  };
-
-  return (
-    <div
-      className={classNames(
-        'text-sm flex flex-row gap-4 bg-slate-300 w-max p-4 rounded-sm fixed left-4 bottom-4 z-50 ',
-        'border border-solid border-slate-400',
-        'font-bold text-3xl shadow-xl'
-      )}
-    >
-      <div>
-        <input
-          type="range"
-          id="score"
-          name="score"
-          min="0"
-          max="100"
-          onChange={(e) => {
-            handleChange(e.target.value);
-          }}
-        />
-        <label htmlFor="score">Score: ?? / Level: {resultsLevel + 1} </label>
-      </div>
-    </div>
-  );
-};
-
-ResultsSwitcher.propTypes = {
-  resultsLevel: PropTypes.number.isRequired,
-  setResultsLevel: PropTypes.func.isRequired,
-};
+import { redirect } from 'next/navigation';
+import { useContext } from 'react';
+import calculateScore from '@/utils/calculateScore';
+import QuestionsContext from '@/utils/QuestionsContext';
 
 export default function Results() {
-  const [resultsLevel, setResultsLevel] = useState(0);
+  const { questions, setQuestions } = useContext(QuestionsContext);
+  const score = calculateScore(questions.questions[0]);
 
-  return (
-    <Layout>
-      <ResultsSwitcher
-        setResultsLevel={setResultsLevel}
-        resultsLevel={resultsLevel}
-      />
-      <Section className="relative !mt-[175px] md:!mt-[170px]">
-        <div
-          className={classNames(
-            '[--window-image-width:350px] sm:[--window-image-width:402px] md:[--window-image-width:425px] lg:[--window-image-width:475px]',
-            'w-[--window-image-width]',
-            'inline-block text-center',
-            'absolute -top-[150px] sm:-top-[15%] left-window-image'
-          )}
-        >
-          <div
-            className={classNames(
-              'absolute top-[32%] md:top-[35%] right-0 bottom-0 left-0'
-            )}
-          >
-            <p className="text-gray-300 uppercase font-semibold tracking-wider text-xl mb-1 md:mb-4">
-              Your results
-            </p>
-            <h1
-              className={classNames(
-                'inline-block rounded-full z-20',
-                'border-solid border-green',
-                'px-6 pt-3 pb-2',
-                'text-green leading-none',
-                {
-                  'border-4 text-3xl sm:text-4xl md:text-4xl':
-                    resultsLevel <= 1,
-                },
-                {
-                  'border-2 md:border-[3px] text-lg sm:text-xl md:text-2xl':
-                    resultsLevel >= 2,
-                }
-              )}
-            >
-              {resultsLevelData[resultsLevel].title}
-            </h1>
-          </div>
-          <Image
-            src={windowImage}
-            alt=""
-            className="w-[--window-image-width]"
-          />
-        </div>
+  if (localStorage.getItem('contentQuizQuestions')) {
+    setQuestions(JSON.parse(localStorage.getItem('contentQuizQuestions')));
+  }
 
-        <Image
-          src={resultsHeroImage}
-          alt=""
-          className={classNames(
-            'mx-auto -z-10 relative',
-            'sm:!-mt-6 sm:!mb-11 md:!mb-24 lg:!mt-6 lg:!mb-36',
-            'scale-[120%] lg:scale-[125%] xl:scale-125 '
-          )}
-        />
-
-        <p className="!mt-[100px]">
-          {resultsLevelData[resultsLevel].description}
-        </p>
-      </Section>
-
-      <Divider />
-
-      <EmailResults />
-
-      <Divider />
-
-      <ResultsLevel content={resultsLevelData[resultsLevel]} />
-
-      <Divider />
-
-      <Section className="!mt-20" wrapperClassName="lg:max-w-[960px]">
-        <Image
-          src={quizByImage}
-          alt=""
-          className="sm:float-right sm:w-[46%] sm:relative sm:top-11"
-        />
-        <Typography tag="h2">Ready for the next level?</Typography>
-        <p>
-          Driven by our content expertise, technical excellence, and
-          partnerships rooted in shared values,{' '}
-          <a href="https://www.fourkitchens.com">Four Kitchens</a> crafts
-          websites that help organizations fulfill their missions.
-        </p>
-        <ButtonOrange url="https://www.fourkitchens.com">
-          Let's talk content!
-        </ButtonOrange>
-      </Section>
-
-      <Divider />
-
-      <Section
-        className="!mt-20"
-        wrapperClassName="lg:max-w-[960px] md:flex md:flex-row md:gap-2 md:items-start"
-      >
-        <Image
-          src={creditImage}
-          alt=""
-          className="sm:float-left sm:w-[46%] sm:relative sm:top-11 md:top-0"
-        />
-        <div className="space-y-6">
-          <Typography tag="h2">Credit where credit is due</Typography>
-          <p>
-            We’ve adapted our maturity model from research conducted by Hilary
-            Marsh, Carrie Hane, and Dina Lewis. Check out their findings if
-            you’d like to learn more about content maturity!
-          </p>
-          <ButtonOrange url="#">Learn about their research</ButtonOrange>
-        </div>
-      </Section>
-    </Layout>
-  );
+  switch (true) {
+    case score >= 91:
+      redirect('/results/strategic');
+    case score >= 61:
+      redirect('/results/organized');
+    case score >= 41:
+      redirect('/results/managed');
+    case score >= 31:
+      redirect('/results/emerging');
+    case score > 0:
+      redirect('/results/ad-hoc');
+    default:
+      redirect('/');
+  }
 }

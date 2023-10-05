@@ -26,7 +26,7 @@ const Typography = ({ tag, children, className }) => {
       classList.push('md:text-3xl');
       break;
     default:
-      console.log(`No tag match.`);
+      console.error(`No tag match.`);
   }
 
   return <Tag className={classList.join(' ')}>{children}</Tag>;
