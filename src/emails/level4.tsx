@@ -17,7 +17,7 @@ import { ReactElement } from 'react';
 import resultsLevelData from '../data/resultsLevelData.js';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASEURL
-  ? `https://${process.env.NEXT_PUBLIC_BASEURL}`
+  ? `${process.env.NEXT_PUBLIC_BASEURL}`
   : 'https://contentstrategyquiz.com';
 
 const colors = {
