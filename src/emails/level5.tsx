@@ -18,7 +18,7 @@ import resultsLevelData from '../data/resultsLevelData.js';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASEURL
   ? `https://${process.env.NEXT_PUBLIC_BASEURL}`
-  : '';
+  : 'https://contentstrategyquiz.com';
 
 const colors = {
   beige: '#FDF6E0',
@@ -68,7 +68,7 @@ export default function Email(): ReactElement {
           <Container className="pt-4">
             <Link href="https://contentstrategyquiz.com">
               <Img
-                src={`${baseUrl}/static/email-logo.png`}
+                src={`${baseUrl}/public/email-logo.png`}
                 alt="The Content Strategy Quiz. Better results through content."
                 width="100%"
               />
@@ -76,12 +76,12 @@ export default function Email(): ReactElement {
 
             <Section className="bg-beige border border-solid border-gold-700 p-8 mt-8 mx-auto max-w-[464px] !space-y-4">
               <Img
-                src={`${baseUrl}/static/your-results.png`}
+                src={`${baseUrl}/public/your-results.png`}
                 alt="Your Results"
                 className="mx-auto max-w-[122px] mb-4"
               />
               <Img
-                src={`${baseUrl}/static/level-5.png`}
+                src={`${baseUrl}/public/level-5.png`}
                 alt={title}
                 className="mx-auto max-w-[354px] mb-4"
               />
@@ -90,7 +90,7 @@ export default function Email(): ReactElement {
 
             <Section className="mt-16 max-w-[400px] mx-auto">
               <Img
-                src={`${baseUrl}/static/next-steps.png`}
+                src={`${baseUrl}/public/next-steps.png`}
                 alt="Next Steps"
                 width="151px"
                 className="mx-auto mb-8"
