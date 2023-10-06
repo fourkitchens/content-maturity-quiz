@@ -1,6 +1,6 @@
 /* eslint import/no-unresolved: [2, { ignore: ['\\@'] }] */
 import { Resend } from 'resend';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import PropTypes from 'prop-types';
 import Email1 from '@/emails/level1';
 import Email2 from '@/emails/level2';
@@ -34,7 +34,7 @@ Email.propTypes = {
   resultsLevel: PropTypes.number.isRequired,
 };
 
-export async function POST(req = NextRequest) {
+export async function POST(req) {
   const { email, resultsLevel } = await req.json();
 
   try {

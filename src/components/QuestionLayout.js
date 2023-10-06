@@ -20,6 +20,7 @@ const QuestionLayout = ({ columns, currentID, image }) => {
     questions.questions[0][currentID];
 
   const setScorePath = (score) => {
+    console.log('setScorePath: ', score);
     if (score >= 91) {
       setResultsPath('/results/strategic');
     } else if (score >= 61) {
@@ -42,11 +43,13 @@ const QuestionLayout = ({ columns, currentID, image }) => {
       }
       setQuestionsLoaded(true);
     }
-
-    const score = calculateScore(questions.questions[0]);
-    setScorePath(score);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const score = calculateScore(questions.questions[0]);
+    setScorePath(score);
+  }, [questions]);
 
   return (
     <div className="prose lg:max-w-[1000px] mx-auto space-y-8 md:space-y-14">
