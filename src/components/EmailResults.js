@@ -32,7 +32,7 @@ const EmailResultsForm = () => {
     try {
       const emailResponse = await resend.emails.send({
         from: 'randy@fourkitchens.com',
-        to: emailAddressValue,
+        to: [emailAddressValue],
         subject: 'FOO • The Content Strategy Quiz',
         react: <Email />,
       });
@@ -51,6 +51,7 @@ const EmailResultsForm = () => {
 
       // Send a success response to the client
       res.status(200).json(sendResult);
+      console.log('emailAddress', emailAddress);
       setEmailSent(true);
     } catch (error) {
       // Send an error response to the client
