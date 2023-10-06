@@ -45,9 +45,9 @@ const RightArrowIcon = () => (
   </svg>
 );
 
-const Pagination = ({ currentID }) => {
+const Pagination = ({ currentID, resultsPath }) => {
   const previousLink = currentID > 0 ? `/${currentID}` : '/';
-  const nextLink = currentID < 8 ? `/${currentID + 2}` : '/results';
+  const nextLink = currentID < 9 ? `/${currentID + 2}` : resultsPath;
 
   return (
     <ul className="flex flex-row gap-4 items-center justify-between mx-auto my-10 p-0  text-base">
@@ -69,7 +69,7 @@ const Pagination = ({ currentID }) => {
         Question {currentID + 1}/10
       </li>
 
-      {currentID < 9 && (
+      {currentID < 10 && (
         <li>
           <a
             href={nextLink}
@@ -90,6 +90,7 @@ const Pagination = ({ currentID }) => {
 
 Pagination.propTypes = {
   currentID: PropTypes.number.isRequired,
+  resultsPath: PropTypes.string,
 };
 
 export default Pagination;

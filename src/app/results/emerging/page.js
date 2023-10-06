@@ -4,5 +4,5 @@
 import ResultsPage from '@/components/ResultsPage';
 
 export default function Page() {
-  return <ResultsPage level={0} />;
+  return <ResultsPage level={1} />;
 }
