@@ -9,10 +9,12 @@ import Pagination from '@/components/Pagination';
 import ProgressTracker from './ProgressTracker';
 import QuestionsContext from '@/utils/QuestionsContext';
 import q from '@/data/questions.json';
+import calculateScore from '@/utils/calculateScore';
 
 const QuestionLayout = ({ columns, currentID, image }) => {
   const { questions, setQuestions } = useContext(QuestionsContext);
   const [questionsLoaded, setQuestionsLoaded] = useState(false);
+  const [resultsPath, setResultsPath] = useState('/');
 
   const { choices, shortname, type, question } =
     questions.questions[0][currentID];
@@ -24,12 +26,25 @@ const QuestionLayout = ({ columns, currentID, image }) => {
       setQuestions(q);
     }
     setQuestionsLoaded(true);
-  }, [setQuestions]);
+
+    const score = calculateScore(questions.questions[0]);
+
+    if (score >= 91) {
+      setResultsPath('/results/strategic');
+    } else if (score >= 61) {
+      setResultsPath('/results/organized');
+    } else if (score >= 41) {
+      setResultsPath('/results/managed');
+    } else if (score >= 31) {
+      setResultsPath('/results/emerging');
+    } else if (score > 0) {
+      setResultsPath('/results/ad-hoc');
+    }
+  }, [questions.questions, setQuestions]);
 
   return (
     <div className="prose lg:max-w-[1000px] mx-auto space-y-8 md:space-y-14">
       <ProgressTracker currentID={currentID} />
-
       <Typography tag="h1" className="md:text-center px-4">
         {question}
         {type === 'multiple' && (
@@ -38,7 +53,6 @@ const QuestionLayout = ({ columns, currentID, image }) => {
           </span>
         )}
       </Typography>
-
       <section
         className={classNames('px-2 mt-8 md:px-8', {
           'md:grid md:gap-2 grid-cols-2': !columns,
@@ -54,7 +68,7 @@ const QuestionLayout = ({ columns, currentID, image }) => {
             />
           </div>
 
-          <Pagination currentID={currentID} />
+          <Pagination currentID={currentID} resultsPath={resultsPath} />
         </main>
 
         <aside className="col-start-1 row-start-1 ">
