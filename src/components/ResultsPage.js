@@ -82,7 +82,7 @@ export default function ResultsPage({ level }) {
 
       <Divider />
 
-      <EmailResults />
+      <EmailResults resultsLevel={resultsLevel} />
 
       <Divider />
 

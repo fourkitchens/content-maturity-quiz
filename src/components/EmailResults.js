@@ -2,14 +2,13 @@
 import Image from 'next/image';
 import classNames from 'classnames';
 import { useState } from 'react';
-import { Resend } from 'resend';
+import PropTypes from 'prop-types';
 import Section from '@/components/Section';
 import takeResultsWithYouImage from '@/assets/results/take-results-with-you.svg';
 import Typography from '@/components/Typography';
 import ButtonSubmit from '@/components/ButtonSubmit';
-import Email from '@/emails/level1';
 
-const EmailResultsForm = () => {
+const EmailResultsForm = ({ resultsLevel }) => {
   const [emailAddress, setEmailAddress] = useState('');
   const [validEmailAddress, setValidEmailAddress] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
@@ -26,40 +25,21 @@ const EmailResultsForm = () => {
     isValidEmail(emailAddress);
   };
 
-  const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-
-  const sendEmail = async (emailAddressValue) => {
-    try {
-      const emailResponse = await resend.emails.send({
-        from: 'results@contentstrategyquiz.com',
-        to: [emailAddressValue],
-        subject: 'FOO • The Content Strategy Quiz',
-        react: <Email />,
-      });
-
-      return emailResponse;
-    } catch (sendError) {
-      throw new Error(`Failed to send email: ${sendError.message}`);
-    }
-  };
-
   const onSubmit = async (e, res) => {
     e.preventDefault();
+    await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
 
-    try {
-      const sendResult = await sendEmail(emailAddress);
-
-      // Send a success response to the client
-      res.status(200).json(sendResult);
-      console.log('emailAddress', emailAddress);
-      setEmailSent(true);
-    } catch (error) {
-      // Send an error response to the client
-      res.status(400).json({ error: error.message });
-      console.error(error);
-    } finally {
-      setEmailSent(true);
-    }
+      body: JSON.stringify({
+        email: emailAddress,
+        resultsLevel,
+      }),
+    }).then(() => {
+      console.log('Your email message has been sent successfully');
+    });
   };
 
   return (
@@ -115,7 +95,11 @@ const EmailResultsForm = () => {
   );
 };
 
-const EmailResults = () => (
+EmailResultsForm.propTypes = {
+  resultsLevel: PropTypes.number.isRequired,
+};
+
+const EmailResults = ({ resultsLevel }) => (
   <Section
     className="!mt-20"
     wrapperClassName="lg:max-w-[960px] lg:flex lg:flex-row lg:gap-20 lg:items-start"
@@ -142,9 +126,13 @@ const EmailResults = () => (
         without spamming your inbox. Refer back when you're ready to take
         action, or use them to craft a roadmap to success!
       </p>
-      <EmailResultsForm />
+      <EmailResultsForm resultsLevel={resultsLevel} />
     </div>
   </Section>
 );
+
+EmailResults.propTypes = {
+  resultsLevel: PropTypes.number.isRequired,
+};
 
 export default EmailResults;
