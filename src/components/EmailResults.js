@@ -31,7 +31,7 @@ const EmailResultsForm = () => {
   const sendEmail = async (emailAddressValue) => {
     try {
       const emailResponse = await resend.emails.send({
-        from: 'randy@fourkitchens.com',
+        from: 'results@contentstrategyquiz.com',
         to: [emailAddressValue],
         subject: 'FOO • The Content Strategy Quiz',
         react: <Email />,
