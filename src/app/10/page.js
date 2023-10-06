@@ -7,7 +7,7 @@ import QuestionLayout from '@/components/QuestionLayout';
 export default function Page() {
   return (
     <Layout>
-      <QuestionLayout currentID={9} columns={2} />
+      <QuestionLayout currentID={9} columns />
     </Layout>
   );
 }

@@ -19,19 +19,7 @@ const QuestionLayout = ({ columns, currentID, image }) => {
   const { choices, shortname, type, question } =
     questions.questions[0][currentID];
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      if (localStorage.getItem('contentQuizQuestions')) {
-        setQuestions(JSON.parse(localStorage.getItem('contentQuizQuestions')));
-      } else {
-        setQuestions(q);
-      }
-      setQuestionsLoaded(true);
-    }
-    setQuestionsLoaded(true);
-
-    const score = calculateScore(questions.questions[0]);
-
+  const setScorePath = (score) => {
     if (score >= 91) {
       setResultsPath('/results/strategic');
     } else if (score >= 61) {
@@ -43,7 +31,22 @@ const QuestionLayout = ({ columns, currentID, image }) => {
     } else if (score > 0) {
       setResultsPath('/results/ad-hoc');
     }
-  }, [questions.questions, setQuestions]);
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('contentQuizQuestions')) {
+        setQuestions(JSON.parse(localStorage.getItem('contentQuizQuestions')));
+      } else {
+        setQuestions(q);
+      }
+      setQuestionsLoaded(true);
+    }
+
+    const score = calculateScore(questions.questions[0]);
+    setScorePath(score);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="prose lg:max-w-[1000px] mx-auto space-y-8 md:space-y-14">
@@ -74,23 +77,25 @@ const QuestionLayout = ({ columns, currentID, image }) => {
           <Pagination currentID={currentID} resultsPath={resultsPath} />
         </main>
 
-        <aside className="col-start-1 row-start-1 ">
-          <Image
-            src={image}
-            alt=""
-            className={classNames(
-              'lg:w-[120%] lg:max-w-[120%] lg:-translate-x-[15%] lg:sticky',
-              'sticky top-[10vh] block mt-10'
-            )}
-          />
-        </aside>
+        {image && (
+          <aside className="col-start-1 row-start-1 ">
+            <Image
+              src={image}
+              alt=""
+              className={classNames(
+                'lg:w-[120%] lg:max-w-[120%] lg:-translate-x-[15%] lg:sticky',
+                'sticky top-[10vh] block mt-10'
+              )}
+            />
+          </aside>
+        )}
       </section>
     </div>
   );
 };
 
 QuestionLayout.propTypes = {
-  columns: PropTypes.number,
+  columns: PropTypes.bool,
   currentID: PropTypes.number.isRequired,
   image: PropTypes.any,
 };
