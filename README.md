@@ -1,5 +1,7 @@
 # The Content Strategy Quiz
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fcb1d30f-68d4-469d-8f73-3063aea1bc04/deploy-status)](https://app.netlify.com/sites/content-maturity-quiz/deploys)
+
 <img src="public/sharing.png" width="600">
 
 ## Prerequisites
