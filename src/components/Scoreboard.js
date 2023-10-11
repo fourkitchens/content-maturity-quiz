@@ -6,10 +6,9 @@ import calculateScore from '@/utils/calculateScore';
 
 const Scoreboard = () => {
   const { questions } = useContext(QuestionsContext);
-
   const score = calculateScore(questions.questions[0]);
 
-  return (
+  return process.env.NEXT_PUBLIC_LOCAL ? (
     <div
       className={classNames(
         'flex flex-col items-center gap-0 bg-slate-100 w-max p-4 rounded-lg fixed right-6 top-4 z-50 ',
@@ -20,6 +19,8 @@ const Scoreboard = () => {
       <span className="inline-block text-sm">SCORE</span>
       {score}
     </div>
+  ) : (
+    console.log(score)
   );
 };
 
