@@ -47,7 +47,7 @@ export default function Email(): ReactElement {
   return (
     <Html>
       <Head>
-        <title>{title} • The Content Strategy Quiz</title>
+        <title>{`${title} • The Content Strategy Quiz`}</title>
       </Head>
       <Preview>Your content strategy result is '{title}'</Preview>
       <Tailwind

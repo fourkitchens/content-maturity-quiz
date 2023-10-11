@@ -38,6 +38,8 @@ const EmailResultsForm = ({ resultsLevel }) => {
         resultsLevel,
       }),
     }).then(() => {
+      setEmailSent(true);
+      setEmailAddress('');
       console.log('Your email message has been sent successfully');
     });
   };
