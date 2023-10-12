@@ -61,7 +61,7 @@ const Pagination = ({ currentID, resultsPath }) => {
             'transition-[top] relative top-0 hover:-top-1'
           )}
         >
-          <LeftArrowIcon /> Previous
+          <LeftArrowIcon /> {currentID === 0 ? 'Back to home' : 'Previous'}
         </a>
       </li>
 
