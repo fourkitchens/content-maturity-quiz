@@ -121,6 +121,11 @@ export default function Email(): ReactElement {
                 <Heading className="text-2xl my-0">{sections[4].title}</Heading>
                 <Text className="text-lg my-0">{sections[4].description}</Text>
               </div>
+
+              <div className="mb-8">
+                <Heading className="text-2xl my-0">{sections[5].title}</Heading>
+                <Text className="text-lg my-0">{sections[5].description}</Text>
+              </div>
             </Section>
 
             <Section className="bg-beige p-8 mt-8">
