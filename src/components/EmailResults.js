@@ -128,7 +128,7 @@ const EmailResults = ({ resultsLevel }) => (
         without spamming your inbox. Refer back when you're ready to take
         action, or use them to craft a roadmap to success!
       </p>
-      <EmailResultsForm resultsLevel={resultsLevel} />
+      <EmailResultsForm resultsLevel={resultsLevel + 1} />
     </div>
   </Section>
 );
