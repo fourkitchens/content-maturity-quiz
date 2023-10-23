@@ -47,7 +47,7 @@ export default function Email(): ReactElement {
   return (
     <Html>
       <Head>
-        <title>{title} • The Content Strategy Quiz</title>
+        <title>{`${title} • The Content Strategy Quiz`}</title>
       </Head>
       <Preview>Your content strategy result is '{title}'</Preview>
       <Tailwind
@@ -120,6 +120,11 @@ export default function Email(): ReactElement {
               <div className="mb-8">
                 <Heading className="text-2xl my-0">{sections[4].title}</Heading>
                 <Text className="text-lg my-0">{sections[4].description}</Text>
+              </div>
+
+              <div className="mb-8">
+                <Heading className="text-2xl my-0">{sections[5].title}</Heading>
+                <Text className="text-lg my-0">{sections[5].description}</Text>
               </div>
             </Section>
           </Container>

@@ -38,6 +38,8 @@ const EmailResultsForm = ({ resultsLevel }) => {
         resultsLevel,
       }),
     }).then(() => {
+      setEmailSent(true);
+      setEmailAddress('');
       console.log('Your email message has been sent successfully');
     });
   };
@@ -52,7 +54,7 @@ const EmailResultsForm = ({ resultsLevel }) => {
             onClick={() => {
               setEmailSent(false);
             }}
-            className="ml-auto text-sm uppercase font-bold text-gray-600 opacity-70"
+            className="ml-auto text-sm uppercase font-bold text-gray-600 opacity-70 cursor-hand"
           >
             Dismiss
           </button>
@@ -126,7 +128,7 @@ const EmailResults = ({ resultsLevel }) => (
         without spamming your inbox. Refer back when you're ready to take
         action, or use them to craft a roadmap to success!
       </p>
-      <EmailResultsForm resultsLevel={resultsLevel} />
+      <EmailResultsForm resultsLevel={resultsLevel + 1} />
     </div>
   </Section>
 );

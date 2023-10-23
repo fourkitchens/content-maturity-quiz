@@ -126,7 +126,9 @@ export default function ResultsPage({ level }) {
             Marsh, Carrie Hane, and Dina Lewis. Check out their findings if
             you’d like to learn more about content maturity!
           </p>
-          <ButtonOrange url="#">Learn about their research</ButtonOrange>
+          <ButtonOrange url="https://www.asaecenter.org/publications/110419-association-content-strategies-for-a-changing-world-pdf">
+            Learn about their research
+          </ButtonOrange>
         </div>
       </Section>
     </Layout>
