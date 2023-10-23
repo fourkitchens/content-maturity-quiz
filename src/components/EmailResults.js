@@ -54,7 +54,7 @@ const EmailResultsForm = ({ resultsLevel }) => {
             onClick={() => {
               setEmailSent(false);
             }}
-            className="ml-auto text-sm uppercase font-bold text-gray-600 opacity-70"
+            className="ml-auto text-sm uppercase font-bold text-gray-600 opacity-70 cursor-hand"
           >
             Dismiss
           </button>
