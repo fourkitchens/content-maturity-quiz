@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import CheckboxImage from './CheckboxImage';
+import RadioImage from './RadioImage';
 import Scoreboard from './Scoreboard';
 import QuestionsContext from '@/utils/QuestionsContext';
 import { updateQuestions, makeQuestionsFalse } from '@/utils/updateQuestions';
@@ -70,7 +71,12 @@ const Checkbox = ({ id, name, text, type, value, isChecked, questionID }) => {
           'h-full'
         )}
       >
-        <CheckboxImage className="block w-14" />
+        {type === 'single' ? (
+          <RadioImage className="block w-14" />
+        ) : (
+          <CheckboxImage className="block w-14" />
+        )}
+
         <span className="relative top-[.2rem]">{text}</span>
       </label>
     </div>
