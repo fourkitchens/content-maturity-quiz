@@ -6,7 +6,7 @@
 
 ## Prerequisites
 
-- Running node 18.16 per the .npmrc file.
+- Running node 18.16 per the .nvmrc file.
 - `npm install`
 
 ## Built with
@@ -19,6 +19,7 @@
 - Email sent with [Resend](https://resend.com/home).
 - Deploys to [Netlify](https://www.netlify.com/)
 - Domain name through [Namecheap](https://www.namecheap.com/)
+- Analytics by [Fathom Analytics](https://usefathom.com/)
 
 ## Running the site locally
 
@@ -33,4 +34,3 @@
 - Randy Oest, creative direction and frontend engineering
 - Brendan Wu, project lead and UI designer
 - Ashley Hitson, UI
-- YOUR NAME HERE, ROLE(S)
