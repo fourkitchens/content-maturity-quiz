@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import * as Fathom from 'fathom-client';
 
 function Underline(props) {
   return (
@@ -39,6 +40,9 @@ export default function ButtonSubmit({ children, disabled }) {
         'sm:inline-block sm:w-auto sm:text-center',
         'text-white text-center text-base no-underline'
       )}
+      onClick={() => {
+        Fathom.trackEvent(`ButtonSubmitEmail`);
+      }}
     >
       <div className="relative whitespace-nowrap">
         {children}

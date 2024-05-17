@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import * as Fathom from 'fathom-client';
 
 const LeftArrowIcon = () => (
   <svg
@@ -60,6 +61,9 @@ const Pagination = ({ currentID, resultsPath }) => {
             'border border-solid border-green-400',
             'transition-[top] relative top-0 hover:-top-1'
           )}
+          onClick={() => {
+            Fathom.trackEvent(`Previous ${previousLink}`);
+          }}
         >
           <LeftArrowIcon /> {currentID === 0 ? 'Back to home' : 'Previous'}
         </a>
@@ -79,6 +83,9 @@ const Pagination = ({ currentID, resultsPath }) => {
               'border border-solid border-green',
               'transition-[top] relative top-0 hover:-top-1'
             )}
+            onClick={() => {
+              Fathom.trackEvent(`Next ${nextLink}`);
+            }}
           >
             Next <RightArrowIcon />
           </a>
