@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
           'after:content-[""] after:absolute after:-inset-1 after:-z-10',
           'after:border after:border-solid after:border-gold',
           'cursor-arrow',
-          aleo.className
+          aleo.className,
         )}
       >
         <Fathom />

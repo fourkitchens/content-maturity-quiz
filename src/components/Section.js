@@ -6,7 +6,7 @@ const Section = ({ children, className, wrapperClassName }) => (
     <div
       className={classNames(
         'space-y-6 max-w-[650px] mx-auto lg:max-w-[750px]',
-        wrapperClassName
+        wrapperClassName,
       )}
     >
       {children}

@@ -87,7 +87,7 @@ const QuestionLayout = ({ columns, currentID, image }) => {
               alt=""
               className={classNames(
                 'lg:w-[120%] lg:max-w-[120%] lg:-translate-x-[15%] lg:sticky',
-                'sticky top-[10vh] block mt-10'
+                'sticky top-[10vh] block mt-10',
               )}
             />
           </aside>

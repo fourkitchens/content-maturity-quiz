@@ -82,7 +82,7 @@ const EmailResultsForm = ({ resultsLevel }) => {
                     'text-[0.9375rem] text-gray-900 font-normal leading-6',
                     'px-4 py-[0.81rem]',
                     'w-full relative',
-                    'border border-green-400 border-solid bg-white rounded-lg'
+                    'border border-green-400 border-solid bg-white rounded-lg',
                   )}
                 />
               </div>
@@ -117,7 +117,7 @@ const EmailResults = ({ resultsLevel }) => (
         <span
           className={classNames(
             "relative whitespace-nowrap after:content-[''] after:bg-content-underline-yellow after:bg-no-repeat after:bg-contain after:absolute after:block after:-bottom-[25px] after:-left-0 after:right-0 after:-z-[1] after:h-full",
-            'sm:after:-bottom-[34px] lg:after:-bottom-[33px]'
+            'sm:after:-bottom-[34px] lg:after:-bottom-[33px]',
           )}
         >
           with you!

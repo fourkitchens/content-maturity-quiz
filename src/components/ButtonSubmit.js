@@ -38,7 +38,7 @@ export default function ButtonSubmit({ children, disabled }) {
         'bg-green inline-block rounded-lg group relative',
         'px-4 py-[0.81rem] block w-full',
         'sm:inline-block sm:w-auto sm:text-center',
-        'text-white text-center text-base no-underline'
+        'text-white text-center text-base no-underline',
       )}
       onClick={() => {
         Fathom.trackEvent(`ButtonSubmitEmail`);

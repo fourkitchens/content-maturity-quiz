@@ -37,7 +37,7 @@ export default function ButtonTakeQuiz({ children, url, className }) {
         'sm:block sm:w-auto sm:text-center',
         'sm:pt-5 sm:pb-5 sm:px-10 sm:max-w-fit sm:mx-auto',
         'text-white text-center text-2xl no-underline',
-        className
+        className,
       )}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}
