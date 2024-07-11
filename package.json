@@ -12,30 +12,30 @@
     "start": "next start"
   },
   "dependencies": {
-    "@react-email/button": "0.0.10",
-    "@react-email/components": "^0.0.7",
-    "@react-email/html": "0.0.4",
+    "@react-email/button": "0.0.15",
+    "@react-email/components": "^0.0.21",
+    "@react-email/html": "0.0.8",
     "@tailwindcss/container-queries": "^0.1.1",
-    "autoprefixer": "10.4.14",
-    "classnames": "^2.3.2",
-    "eslint-config-next": "^13.4.9",
-    "eslint-config-wesbos": "^3.2.3",
-    "eslint-plugin-import": "^2.27.5",
-    "fathom-client": "^3.6.0",
-    "framer-motion": "^10.12.18",
-    "next": "13.4.9",
-    "postcss": "8.4.25",
+    "autoprefixer": "10.4.19",
+    "classnames": "^2.5.1",
+    "eslint-config-next": "^14.2.5",
+    "eslint-config-wesbos": "^4.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "fathom-client": "^3.7.2",
+    "framer-motion": "^11.3.2",
+    "next": "14.2.5",
+    "postcss": "8.4.39",
     "prop-types": "^15.8.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-email": "1.9.4",
-    "resend": "^1.1.0"
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-email": "2.1.5",
+    "resend": "^3.4.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.4.9",
-    "@tailwindcss/typography": "^0.5.9",
-    "@types/react": "18.2.22",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "tailwindcss": "^3.3.3"
+    "@next/eslint-plugin-next": "^14.2.5",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/react": "18.3.3",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "tailwindcss": "^3.4.4"
   }
 }
