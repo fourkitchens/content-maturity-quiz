@@ -30,7 +30,7 @@ const ResultsLevel = ({ content }) => {
     >
       <section
         className={classNames(
-          'space-y-6 max-w-[650px] mx-auto lg:max-w-[750px]'
+          'space-y-6 max-w-[650px] mx-auto lg:max-w-[750px]',
         )}
       >
         <Typography tag="h1" className="text-center">
@@ -38,7 +38,7 @@ const ResultsLevel = ({ content }) => {
             className={classNames(
               "relative after:content-[''] after:bg-burst-top after:bg-no-repeat after:bg-contain after:absolute",
               'after:h-[30px] after:left-0 after:right-0 after:top-[-35px] after:block ',
-              'sm:after:h-[35px] sm:after:left-8 sm:after:top-[-45px]'
+              'sm:after:h-[35px] sm:after:left-8 sm:after:top-[-45px]',
             )}
           >
             Next Steps
@@ -55,7 +55,7 @@ const ResultsLevel = ({ content }) => {
               alt=""
               className={classNames(
                 'md:hidden float-right w-[150px] -ml-7 mt-[-1.7rem] airplane -rotate-12',
-                'sm:rotate-0 sm:w-[200px] sm:-mt-16'
+                'sm:rotate-0 sm:w-[200px] sm:-mt-16',
               )}
             />
             {sections[0].title}
@@ -66,7 +66,7 @@ const ResultsLevel = ({ content }) => {
           src={airplaneImage}
           alt=""
           className={classNames(
-            'hidden md:block w-[200px] justify-self-center self-center lg:justify-self-start'
+            'hidden md:block w-[200px] justify-self-center self-center lg:justify-self-start',
           )}
         />
       </Section>
@@ -110,7 +110,7 @@ const ResultsLevel = ({ content }) => {
             'float-right w-[150px] bubble mr-[-1.2rem] mt-[2rem] p-4',
             'sm:w-[200px] sm:mt-0',
             'md:m-0 md:float-none md:justify-self-center',
-            'lg:justify-self-end'
+            'lg:justify-self-end',
           )}
         />
         <div>
@@ -133,7 +133,7 @@ const ResultsLevel = ({ content }) => {
                 alt=""
                 className={classNames(
                   'w-[80px] float-left -ml-4 -mt-4 mr-4 heart',
-                  'sm:w-[120px] md:hidden'
+                  'sm:w-[120px] md:hidden',
                 )}
               />
               {sections[3].description}
@@ -143,7 +143,7 @@ const ResultsLevel = ({ content }) => {
             src={heartImage}
             alt=""
             className={classNames(
-              'w-[150px] justify-self-center lg:justify-self-start'
+              'w-[150px] justify-self-center lg:justify-self-start',
             )}
           />
         </Section>
@@ -162,7 +162,7 @@ const ResultsLevel = ({ content }) => {
                 alt=""
                 className={classNames(
                   'w-[100px] float-right ml-3',
-                  'sm:w-[150px] sm:-mt-8 md:hidden'
+                  'sm:w-[150px] sm:-mt-8 md:hidden',
                 )}
               />
               {sections[4].description}
@@ -186,7 +186,7 @@ const ResultsLevel = ({ content }) => {
                 alt=""
                 className={classNames(
                   'w-[200px] mb-3',
-                  'sm:w-[250px] md:hidden'
+                  'sm:w-[250px] md:hidden',
                 )}
               />
               {sections[5].title}

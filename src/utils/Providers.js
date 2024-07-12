@@ -10,7 +10,7 @@ export default function Providers({ children }) {
   const [questions, setQuestions] = useState(q);
   const questionValue = useMemo(
     () => ({ questions, setQuestions }),
-    [questions]
+    [questions],
   );
 
   return (

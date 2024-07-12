@@ -16,7 +16,7 @@ const Checkbox = ({ id, name, text, type, value, isChecked, questionID }) => {
 
   function handleRadioChange() {
     for (const [key] of Object.entries(
-      questions.questions[0][questionID].choices
+      questions.questions[0][questionID].choices,
     )) {
       if (Number(key) === id) {
         updateQuestions(questions, setQuestions, questionID, id);
@@ -42,7 +42,7 @@ const Checkbox = ({ id, name, text, type, value, isChecked, questionID }) => {
         scope.current,
         { top: [0, 35, 0] },
         { duration: 0.15 },
-        { ease: easeInOut }
+        { ease: easeInOut },
       );
     }
   }
@@ -68,7 +68,7 @@ const Checkbox = ({ id, name, text, type, value, isChecked, questionID }) => {
           'hover:scale-[102%]',
           'lg:p-8',
           'peer-checked:bg-beige',
-          'h-full'
+          'h-full',
         )}
       >
         {type === 'single' ? (
@@ -102,7 +102,7 @@ const PlaceholderCheckbox = () => (
       'hover:scale-[102%]',
       'lg:p-8',
       'peer-checked:bg-beige',
-      'h-full'
+      'h-full',
     )}
   >
     <CheckboxImage className="block w-14" />
@@ -131,7 +131,7 @@ const CheckboxList = ({
       className={classNames(
         { 'space-y-4': !columns },
         { 'grid gap-4 grid-cols-1 md:grid-cols-2': columns },
-        className
+        className,
       )}
     >
       <Scoreboard />
@@ -151,7 +151,7 @@ const CheckboxList = ({
           />
         ) : (
           <PlaceholderCheckbox key={i} />
-        )
+        ),
       )}
     </div>
   );

@@ -59,7 +59,7 @@ const Pagination = ({ currentID, resultsPath }) => {
             'flex flex-row gap-2 items-center',
             'rounded-lg bg-white text-green-400 px-6 py-2',
             'border border-solid border-green-400',
-            'transition-[top] relative top-0 hover:-top-1'
+            'transition-[top] relative top-0 hover:-top-1',
           )}
           onClick={() => {
             Fathom.trackEvent(`Previous ${previousLink}`);
@@ -81,7 +81,7 @@ const Pagination = ({ currentID, resultsPath }) => {
               'flex flex-row gap-2 items-center',
               'rounded-lg bg-green text-white inline-block px-6 py-2',
               'border border-solid border-green',
-              'transition-[top] relative top-0 hover:-top-1'
+              'transition-[top] relative top-0 hover:-top-1',
             )}
             onClick={() => {
               Fathom.trackEvent(`Next ${nextLink}`);

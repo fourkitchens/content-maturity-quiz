@@ -11,7 +11,7 @@ const ButtonOrange = ({ children, url, className }) => (
       'hover:-top-1',
       'py-3 px-5 block w-full',
       'sm:inline-block sm:w-auto',
-      className
+      className,
     )}
     onClick={() => {
       Fathom.trackEvent(`ButtonOrange ${url}`);

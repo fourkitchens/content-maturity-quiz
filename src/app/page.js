@@ -44,7 +44,7 @@ export default function Home() {
             className={classNames(
               'mx-auto -z-10 relative',
               'sm:!-mt-6 sm:scale-110 sm:!mb-11 md:!mb-24 lg:!mt-6 lg:!mb-36',
-              'md:scale-125 lg:scale-[135%] xl:scale-150 '
+              'md:scale-125 lg:scale-[135%] xl:scale-150 ',
             )}
           />
           <div className="space-y-6 lg:space-y-0 relative @container lg:max-w-[850px] lg:flex lg:flex-row lg:items-center">
@@ -79,7 +79,7 @@ export default function Home() {
                 "after:content-[''] after:bg-oval after:bg-no-repeat after:bg-contain after:absolute after:block after:-z-[1]",
                 'after:-top-6 after:-bottom-8 after:-left-2 after:-right-3',
                 'sm:after:-top-8 sm:after:-bottom-10 sm:after:-left-4 sm:after:-right-5 sm:ml-2',
-                'md:after:-top-10 md:after:-bottom-12 md:after:-left-6 md:after:-right-7 md:ml-4'
+                'md:after:-top-10 md:after:-bottom-12 md:after:-left-6 md:after:-right-7 md:ml-4',
               )}
             >
               Content
@@ -103,7 +103,7 @@ export default function Home() {
                 'absolute -left-[190px] -top-4 -z-10 max-h-[300px] w-[270px] max-w-none',
                 '@[248px]:-top-6 @[248px]:-left-[190px] @[248px]:w-[250px]',
                 '@[315px]:-top-11 @[315px]:-left-[190px]',
-                'sm:max-h-[400px] sm:!w-[400px] sm:!-left-[280px]'
+                'sm:max-h-[400px] sm:!w-[400px] sm:!-left-[280px]',
               )}
             />
             It should go without saying, but the better your content strategy
@@ -111,7 +111,7 @@ export default function Home() {
             <span
               className={classNames(
                 "relative whitespace-nowrap after:content-[''] after:bg-content-underline after:bg-no-repeat after:bg-contain after:absolute after:block after:-bottom-[23px] after:-left-0 after:right-0 after:-z-[1] after:h-full",
-                'md:after:-bottom-[33px]'
+                'md:after:-bottom-[33px]',
               )}
             >
               your content.

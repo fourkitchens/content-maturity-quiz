@@ -28,12 +28,12 @@ export default function ResultsPage({ level }) {
             '[--window-image-width:350px] sm:[--window-image-width:402px] md:[--window-image-width:425px] lg:[--window-image-width:475px]',
             'w-[--window-image-width]',
             'inline-block text-center',
-            'absolute -top-[150px] sm:-top-[15%] left-window-image'
+            'absolute -top-[150px] sm:-top-[15%] left-window-image',
           )}
         >
           <div
             className={classNames(
-              'absolute top-[32%] md:top-[35%] right-0 bottom-0 left-0'
+              'absolute top-[32%] md:top-[35%] right-0 bottom-0 left-0',
             )}
           >
             <p className="text-gray-300 uppercase font-semibold tracking-wider text-xl mb-1 md:mb-4">
@@ -52,7 +52,7 @@ export default function ResultsPage({ level }) {
                 {
                   'border-2 md:border-[3px] text-lg sm:text-xl md:text-2xl':
                     resultsLevel >= 2,
-                }
+                },
               )}
             >
               {resultsLevelData[resultsLevel].title}
@@ -71,7 +71,7 @@ export default function ResultsPage({ level }) {
           className={classNames(
             'mx-auto -z-10 relative',
             'sm:!-mt-6 sm:!mb-11 md:!mb-24 lg:!mt-6 lg:!mb-36',
-            'scale-[120%] lg:scale-[125%] xl:scale-125 '
+            'scale-[120%] lg:scale-[125%] xl:scale-125 ',
           )}
         />
 

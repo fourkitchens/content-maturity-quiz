@@ -19,7 +19,7 @@ const Marker = ({ currentID, i }) => (
       },
       {
         'w-[36px] h-[36px] bg-green-300 text-white': i === currentID,
-      }
+      },
     )}
   >
     {i + 1}
@@ -39,7 +39,7 @@ const ProgressTracker = ({ currentID }) => {
       <ul
         className={classNames(
           'flex flex-row items-center min-[485px]:justify-center',
-          'w-max pr-10 pl-[40%] min-[485px]:px-0'
+          'w-max pr-10 pl-[40%] min-[485px]:px-0',
         )}
       >
         {steps.map((v, i) => (
@@ -60,7 +60,7 @@ const ProgressTracker = ({ currentID }) => {
               {
                 'snap-center': i === currentID,
               },
-              { ' after:content-none': i === steps.length - 1 }
+              { ' after:content-none': i === steps.length - 1 },
             )}
           >
             {i < currentID ? (
