@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import metadataDefaults from '@/data/metadata';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import Providers from '@/utils/Providers';
-import Fathom from '@/utils/Fathom';
 
 const aleo = Aleo({
   weight: ['300', '400', '700'],
@@ -50,8 +49,6 @@ export default function RootLayout({ children }) {
           aleo.className,
         )}
       >
-        <Fathom />
-
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics gaID={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}

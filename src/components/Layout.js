@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
-import * as Fathom from 'fathom-client';
 
 const PencilIcon = ({ className }) => (
   <svg
@@ -53,15 +52,7 @@ export default function Layout({ children }) {
 
         <footer className="p-10">
           <p className="text-center sm:text-right font-bold text-gray text-lg">
-            Cooked up by{' '}
-            <a
-              href="https://fourkitchens.com"
-              onClick={() => {
-                Fathom.trackEvent('Cooked up for Four Kitchens');
-              }}
-            >
-              Four Kitchens
-            </a>
+            Cooked up by <a href="https://fourkitchens.com">Four Kitchens</a>
           </p>
         </footer>
       </div>

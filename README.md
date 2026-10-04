@@ -19,7 +19,6 @@
 - Email sent with [Resend](https://resend.com/home).
 - Deploys to [Netlify](https://www.netlify.com/)
 - Domain name through [Namecheap](https://www.namecheap.com/)
-- Analytics by [Fathom Analytics](https://usefathom.com/)
 
 ## Running the site locally
 

@@ -21,7 +21,6 @@
     "eslint-config-next": "^14.2.5",
     "eslint-config-wesbos": "^4.0.1",
     "eslint-plugin-import": "^2.29.1",
-    "fathom-client": "^3.7.2",
     "framer-motion": "^11.3.2",
     "next": "14.2.5",
     "postcss": "8.4.39",

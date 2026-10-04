@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import * as Fathom from 'fathom-client';
 
 const ButtonOrange = ({ children, url, className }) => (
   <a
@@ -13,9 +12,6 @@ const ButtonOrange = ({ children, url, className }) => (
       'sm:inline-block sm:w-auto',
       className,
     )}
-    onClick={() => {
-      Fathom.trackEvent(`ButtonOrange ${url}`);
-    }}
   >
     {children}
   </a>
